@@ -230,16 +230,12 @@ header{
 
 .hero{
   position:relative;
-
   background:
-    radial-gradient(circle at 80% 25%,rgba(63,118,80,.28),transparent 28%),
-    radial-gradient(circle at 10% 90%,rgba(220,168,63,.12),transparent 30%),
+    radial-gradient(circle at 82% 30%,rgba(63,118,80,.22),transparent 30%),
+    radial-gradient(circle at 10% 90%,rgba(220,168,63,.10),transparent 30%),
     var(--navy-dark);
-
   color:white;
-
-  padding:95px 0 105px;
-
+  padding:90px 0 95px;
   overflow:hidden;
 }
 
@@ -253,18 +249,31 @@ header{
     linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
 
   background-size:55px 55px;
+
+  pointer-events:none;
 }
 
 .hero-grid{
   position:relative;
   z-index:2;
 
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
+  width:min(1180px,calc(100% - 60px));
+  margin:0 auto;
 
-  gap:70px;
+  display:grid;
+
+  grid-template-columns:
+    minmax(0, 0.90fr)
+    minmax(0, 1.10fr);
 
   align-items:center;
+
+  gap:60px;
+}
+
+.hero-content{
+  min-width:0;
+  max-width:570px;
 }
 
 .badge{
@@ -291,6 +300,8 @@ header{
   width:7px;
   height:7px;
 
+  flex-shrink:0;
+
   border-radius:50%;
 
   background:#79c77e;
@@ -299,11 +310,15 @@ header{
 }
 
 .hero h1{
-  font-size:clamp(43px,6vw,70px);
+  margin:0;
+
+  font-size:clamp(46px,5vw,68px);
+
+  line-height:1.04;
 
   letter-spacing:-.045em;
 
-  max-width:750px;
+  max-width:600px;
 }
 
 .hero h1 em{
@@ -312,29 +327,33 @@ header{
 }
 
 .hero-description{
-  margin-top:25px;
+  margin:25px 0 0;
 
-  max-width:610px;
+  max-width:540px;
 
   color:rgba(255,255,255,.74);
 
-  font-size:18px;
+  font-size:17px;
+
+  line-height:1.7;
 }
 
 .hero-actions{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:13px;
 
-  margin-top:34px;
+  margin-top:32px;
 }
 
 .hero-note{
-  margin-top:18px;
+  margin-top:17px;
 
   color:rgba(255,255,255,.45);
 
-  font-size:12px;
+  font-size:11px;
 }
 
 
@@ -344,44 +363,107 @@ header{
 
 .hero-visual{
   width:100%;
-  max-width:620px;
 
-  margin:0 auto;
+  max-width:650px;
 
-  position:relative;
+  justify-self:end;
 
-  border-radius:28px;
+  margin:0;
+
+  border-radius:24px;
 
   overflow:hidden;
 
   box-shadow:
-    0 35px 90px rgba(0,0,0,.35),
-    0 0 0 1px rgba(255,255,255,.08);
+    0 35px 80px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.10);
+
+  background:#fff;
+
+  transform:translateY(0);
+
+  transition:transform .4s ease;
 }
 
-.hero-visual::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  border:1px solid rgba(255,255,255,.12);
-
-  border-radius:28px;
-
-  pointer-events:none;
+.hero-visual:hover{
+  transform:translateY(-4px);
 }
 
 .hero-visual img{
   display:block;
 
   width:100%;
+
   height:auto;
+
+  aspect-ratio:16 / 9;
 
   object-fit:cover;
 }
 
 
+/* =========================
+   HERO RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+    width:min(760px,calc(100% - 40px));
+  }
+
+  .hero-content{
+    max-width:680px;
+  }
+
+  .hero-visual{
+    justify-self:center;
+
+    max-width:700px;
+  }
+
+}
+
+
+@media(max-width:560px){
+
+  .hero{
+    padding:60px 0 70px;
+  }
+
+  .hero-grid{
+    width:calc(100% - 32px);
+
+    gap:35px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero-description{
+    font-size:15px;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+
+    align-items:stretch;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .hero-visual{
+    border-radius:18px;
+  }
+
+}
 /* =========================
    TRUST / STATS
 ========================= */
@@ -1081,86 +1163,84 @@ footer{
 
 <section class="hero">
 
-  <div class="container hero-grid">
+  <div class="hero-grid">
 
-```
-<!-- TEXTE HERO -->
+    <!-- CONTENU À GAUCHE -->
 
-<div class="reveal">
+    <div class="hero-content reveal">
 
-  <div class="badge">
+      <div class="badge">
 
-    <span class="badge-dot"></span>
+        <span class="badge-dot"></span>
 
-    Assistant agricole intelligent
+        Assistant agricole intelligent
 
-  </div>
-
-
-  <h1>
-
-    Le conseil agricole qui
-
-    <em>parle votre langue.</em>
-
-  </h1>
+      </div>
 
 
-  <p class="hero-description">
+      <h1>
 
-    SikaGlé accompagne les agriculteurs directement sur WhatsApp.
-    Une question par texte, par vocal ou par photo — une réponse
-    adaptée à votre culture, votre situation et votre réalité de terrain.
+        Le conseil agricole qui
 
-  </p>
+        <em>parle votre langue.</em>
 
-
-  <div class="hero-actions">
-
-    <a
-      class="btn btn-gold"
-      href="https://wa.me/22966024902"
-      target="_blank"
-      rel="noopener"
-    >
-
-      💬 Parler à SikaGlé
-
-    </a>
+      </h1>
 
 
-    <a
-      class="btn btn-outline"
-      href="#fonctionnement"
-    >
+      <p class="hero-description">
 
-      Découvrir SikaGlé
+        SikaGlé accompagne les agriculteurs directement sur WhatsApp.
+        Une question par texte, par vocal ou par photo — une réponse
+        adaptée à votre culture, votre situation et votre réalité de terrain.
 
-    </a>
-
-  </div>
+      </p>
 
 
-  <div class="hero-note">
+      <div class="hero-actions">
 
-    Aucun téléchargement · Disponible 24h/24 · Accessible depuis WhatsApp
+        <a
+          class="btn btn-gold"
+          href="https://wa.me/22966024902"
+          target="_blank"
+          rel="noopener"
+        >
 
-  </div>
+          💬 Parler à SikaGlé
 
-</div>
+        </a>
 
 
-<!-- IMAGE PRODUCTEUR + SIKAGLÉ -->
+        <a
+          class="btn btn-outline"
+          href="#fonctionnement"
+        >
 
-<div class="hero-visual reveal">
+          Découvrir SikaGlé
 
-  <img
-    src="images/hero-sikagle.png"
-    alt="Producteur béninois dans son champ utilisant SikaGlé sur WhatsApp"
-  >
+        </a>
 
-</div>
-```
+      </div>
+
+
+      <div class="hero-note">
+
+        Aucun téléchargement · Disponible 24h/24 · Accessible depuis WhatsApp
+
+      </div>
+
+    </div>
+
+
+    <!-- IMAGE À DROITE -->
+
+    <div class="hero-visual reveal">
+
+      <img
+        src="images/hero-sikagle.png"
+        alt="Producteur béninois utilisant SikaGlé sur WhatsApp dans son champ"
+      >
+
+    </div>
 
   </div>
 
