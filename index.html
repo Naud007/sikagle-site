@@ -61,6 +61,7 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:16px 28px;
     max-width:1120px; margin:0 auto;
+    gap:16px;
   }
   .wordmark{
     font-family:var(--font-display);
@@ -69,9 +70,34 @@
     color:var(--forest);
     letter-spacing:-0.01em;
   }
-  .navlinks{display:flex; gap:26px; font-size:15px;}
+  .navlinks{display:flex; gap:26px; font-size:15px; flex:1;}
   .navlinks a{text-decoration:none; opacity:0.7; transition:opacity 0.2s ease;}
   .navlinks a:hover{opacity:1;}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .lang-toggle{
+    display:flex;
+    border:1.5px solid var(--rule);
+    border-radius:999px;
+    overflow:hidden;
+    font-size:13px;
+    font-weight:700;
+  }
+  .lang-toggle button{
+    border:none;
+    background:transparent;
+    padding:7px 14px;
+    cursor:pointer;
+    color:var(--ink);
+    opacity:0.5;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:13px;
+  }
+  .lang-toggle button.active{
+    background:var(--forest);
+    color:var(--paper);
+    opacity:1;
+  }
   .btn{
     display:inline-flex; align-items:center; gap:10px;
     background:var(--forest);
@@ -327,51 +353,57 @@
   <div class="nav">
     <div class="wordmark">SikaGlé</div>
     <nav class="navlinks">
-      <a href="#fonctionnalites">Fonctionnalités</a>
-      <a href="#sources">Sources</a>
-      <a href="#pour-qui">Pour qui</a>
-      <a href="#contact">Partenariats</a>
+      <a href="#fonctionnalites" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+      <a href="#sources" data-fr="Sources" data-en="Sources">Sources</a>
+      <a href="#pour-qui" data-fr="Pour qui" data-en="Who it's for">Pour qui</a>
+      <a href="#contact" data-fr="Partenariats" data-en="Partnerships">Partenariats</a>
     </nav>
-    <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener">Essayer sur WhatsApp</a>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener" data-fr="Essayer sur WhatsApp" data-en="Try it on WhatsApp">Essayer sur WhatsApp</a>
+    </div>
   </div>
 </header>
 
 <div class="hero-banner">
-  <img src="images/hero-sikagle.png" alt="SikaGlé, l'assistant agricole du Bénin — conversation WhatsApp montrant un diagnostic de plant de piment">
+  <img src="images/hero-sikagle.png" data-fr="SikaGlé, l'assistant agricole du Bénin — conversation WhatsApp montrant un diagnostic de plant de piment" data-en="SikaGlé, the agricultural assistant of Benin — WhatsApp conversation showing a pepper plant diagnosis" alt="SikaGlé, l'assistant agricole du Bénin — conversation WhatsApp montrant un diagnostic de plant de piment">
 </div>
 
 <section class="hero-intro">
   <div class="wrap">
-    <div class="eyebrow">Assistant agricole conversationnel</div>
-    <h1>L'intelligence artificielle au service des petits producteurs d'Afrique de l'Ouest</h1>
-    <p>SikaGlé accompagne déjà des agriculteurs béninois au quotidien, en texte, en voix ou à partir d'une simple photo — avec des conseils ancrés dans des sources scientifiques vérifiées, jamais dans des suppositions.</p>
+    <div class="eyebrow" data-fr="Assistant agricole conversationnel" data-en="Conversational agricultural assistant">Assistant agricole conversationnel</div>
+    <h1 data-fr="L'intelligence artificielle au service des petits producteurs d'Afrique de l'Ouest" data-en="Artificial intelligence in service of smallholder farmers across West Africa">L'intelligence artificielle au service des petits producteurs d'Afrique de l'Ouest</h1>
+    <p data-fr="SikaGlé accompagne déjà des agriculteurs béninois au quotidien, en texte, en voix ou à partir d'une simple photo — avec des conseils ancrés dans des sources scientifiques vérifiées, jamais dans des suppositions." data-en="SikaGlé already supports Beninese farmers every day, through text, voice, or a simple photo — with advice grounded in verified scientific sources, never guesswork.">SikaGlé accompagne déjà des agriculteurs béninois au quotidien, en texte, en voix ou à partir d'une simple photo — avec des conseils ancrés dans des sources scientifiques vérifiées, jamais dans des suppositions.</p>
     <div class="cta-row">
-      <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener">Essayer SikaGlé maintenant</a>
-      <a class="btn ghost" style="border-color:rgba(251,248,241,0.3); color:var(--paper);" href="#fonctionnalites">Découvrir le produit</a>
+      <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener" data-fr="Essayer SikaGlé maintenant" data-en="Try SikaGlé now">Essayer SikaGlé maintenant</a>
+      <a class="btn ghost" style="border-color:rgba(251,248,241,0.3); color:var(--paper);" href="#fonctionnalites" data-fr="Découvrir le produit" data-en="Explore the product">Découvrir le produit</a>
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="wrap reveal">
-    <div class="stat"><b>7</b><span>langues comprises, dont le fon en développement</span></div>
-    <div class="stat"><b>24/7</b><span>disponible sur WhatsApp, sans application à installer</span></div>
-    <div class="stat"><b>📸</b><span>diagnostic à partir d'une simple photo</span></div>
-    <div class="stat"><b>🌦️</b><span>conseils ajustés à la météo locale en temps réel</span></div>
+    <div class="stat"><b>7</b><span data-fr="langues comprises, dont le fon en développement" data-en="languages understood, including Fon in development">langues comprises, dont le fon en développement</span></div>
+    <div class="stat"><b>24/7</b><span data-fr="disponible sur WhatsApp, sans application à installer" data-en="available on WhatsApp, no app to install">disponible sur WhatsApp, sans application à installer</span></div>
+    <div class="stat"><b>📸</b><span data-fr="diagnostic à partir d'une simple photo" data-en="diagnosis from a simple photo">diagnostic à partir d'une simple photo</span></div>
+    <div class="stat"><b>🌦️</b><span data-fr="conseils ajustés à la météo locale en temps réel" data-en="advice adjusted to real-time local weather">conseils ajustés à la météo locale en temps réel</span></div>
   </div>
 </div>
 
 <section id="fonctionnalites">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>Comment SikaGlé aide, concrètement</h2>
-      <p>Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère.</p>
+      <h2 data-fr="Comment SikaGlé aide, concrètement" data-en="How SikaGlé helps, in practice">Comment SikaGlé aide, concrètement</h2>
+      <p data-fr="Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère." data-en="No jargon, no report to read. A direct conversation, in whichever language and format the farmer prefers.">Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère.</p>
     </div>
 
     <div class="feature-row reveal">
       <div class="feature-copy">
-        <h3>Texte, voix ou photo — au choix</h3>
-        <p>Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction.</p>
+        <h3 data-fr="Texte, voix ou photo — au choix" data-en="Text, voice, or photo — the farmer's choice">Texte, voix ou photo — au choix</h3>
+        <p data-fr="Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction." data-en="A farmer can type a question, record a voice note, or send a photo of a diseased leaf directly. SikaGlé understands all three, seamlessly.">Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction.</p>
       </div>
       <div class="feature-visual">
         <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
@@ -387,8 +419,8 @@
 
     <div class="feature-row reverse reveal">
       <div class="feature-copy">
-        <h3>Une photo comparée à des milliers de cas connus</h3>
-        <p>Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire.</p>
+        <h3 data-fr="Une photo comparée à des milliers de cas connus" data-en="A photo compared against thousands of known cases">Une photo comparée à des milliers de cas connus</h3>
+        <p data-fr="Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire." data-en="Every photo sent is also visually compared against a large reference base of already-documented diseases, complementing the direct analysis — refining the observation even before consulting the knowledge base.">Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire.</p>
       </div>
       <div class="feature-visual">
         <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
@@ -405,8 +437,8 @@
 
     <div class="feature-row reveal">
       <div class="feature-copy">
-        <h3>Des réponses ancrées dans la science, pas inventées</h3>
-        <p>Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner.</p>
+        <h3 data-fr="Des réponses ancrées dans la science, pas inventées" data-en="Answers grounded in science, never invented">Des réponses ancrées dans la science, pas inventées</h3>
+        <p data-fr="Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner." data-en="Every recommendation relies on a verified knowledge base — agricultural research institutes, practical guides, African scientific publications. When information is missing, SikaGlé says so clearly rather than guessing.">Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner.</p>
       </div>
       <div class="feature-visual">
         <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
@@ -421,8 +453,8 @@
 
     <div class="feature-row reverse reveal">
       <div class="feature-copy">
-        <h3>La météo, quand elle compte vraiment</h3>
-        <p>Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise.</p>
+        <h3 data-fr="La météo, quand elle compte vraiment" data-en="Weather, when it truly matters">La météo, quand elle compte vraiment</h3>
+        <p data-fr="Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise." data-en="Before recommending a treatment, SikaGlé checks whether rain is expected in the farmer's area — and adjusts its answer accordingly. A farmer can also share their exact location on WhatsApp for even more precise weather.">Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise.</p>
       </div>
       <div class="feature-visual">
         <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
@@ -437,8 +469,8 @@
 
     <div class="feature-row reveal">
       <div class="feature-copy">
-        <h3>Un vrai agronome, quand il le faut</h3>
-        <p>Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — plusieurs consultations incluses chaque mois pour les abonnés.</p>
+        <h3 data-fr="Un vrai agronome, quand il le faut" data-en="A real agronomist, when it's needed">Un vrai agronome, quand il le faut</h3>
+        <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — plusieurs consultations incluses chaque mois pour les abonnés." data-en="When a situation goes beyond what SikaGlé can state with certainty, the farmer can be connected with an agronomist who calls them back directly — several consultations included each month for subscribers.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — plusieurs consultations incluses chaque mois pour les abonnés.</p>
       </div>
       <div class="feature-visual">
         <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
@@ -457,16 +489,16 @@
 <section class="sources-band" id="sources">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>Une base documentaire construite avec rigueur</h2>
-      <p>Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs.</p>
+      <h2 data-fr="Une base documentaire construite avec rigueur" data-en="A knowledge base built with rigor">Une base documentaire construite avec rigueur</h2>
+      <p data-fr="Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs." data-en="Dozens of scientific sources and practical guides, each individually verified and cleared for use, covering African agricultural research and leading international institutes — from crop genetics to pest management.">Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs.</p>
     </div>
     <div class="source-grid reveal">
-      <div>Instituts de recherche agricole internationaux</div>
-      <div>Centres de recherche spécialisés par culture</div>
-      <div>Fiches pratiques pour petits producteurs</div>
-      <div>Recherche agronomique béninoise</div>
-      <div>Bases de diagnostic visuel des maladies</div>
-      <div>Programmes régionaux ouest-africains</div>
+      <div data-fr="Instituts de recherche agricole internationaux" data-en="International agricultural research institutes">Instituts de recherche agricole internationaux</div>
+      <div data-fr="Centres de recherche spécialisés par culture" data-en="Crop-specific research centers">Centres de recherche spécialisés par culture</div>
+      <div data-fr="Fiches pratiques pour petits producteurs" data-en="Practical guides for smallholder farmers">Fiches pratiques pour petits producteurs</div>
+      <div data-fr="Recherche agronomique béninoise" data-en="Beninese agronomic research">Recherche agronomique béninoise</div>
+      <div data-fr="Bases de diagnostic visuel des maladies" data-en="Visual disease diagnosis databases">Bases de diagnostic visuel des maladies</div>
+      <div data-fr="Programmes régionaux ouest-africains" data-en="West African regional programs">Programmes régionaux ouest-africains</div>
     </div>
   </div>
 </section>
@@ -474,18 +506,18 @@
 <section>
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>Parlé dans les langues du terrain</h2>
-      <p>Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend sept langues parlées au Bénin.</p>
+      <h2 data-fr="Parlé dans les langues du terrain" data-en="Spoken in the languages of the field">Parlé dans les langues du terrain</h2>
+      <p data-fr="Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend sept langues parlées au Bénin." data-en="Advice only helps if it's understood in the right language. SikaGlé understands seven languages spoken in Benin.">Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend sept langues parlées au Bénin.</p>
     </div>
     <div class="langs">
-      <span class="lang-pill">Français — texte et voix</span>
-      <span class="lang-pill">Yoruba — texte et voix</span>
-      <span class="lang-pill">Fon — texte, voix en développement</span>
-      <span class="lang-pill pending">Bariba — compris</span>
-      <span class="lang-pill pending">Adja — compris</span>
-      <span class="lang-pill pending">Goun — compris</span>
-      <span class="lang-pill pending">Dendi — compris</span>
-      <span class="lang-pill pending">Fulfuldé — compris</span>
+      <span class="lang-pill" data-fr="Français — texte et voix" data-en="French — text and voice">Français — texte et voix</span>
+      <span class="lang-pill" data-fr="Yoruba — texte et voix" data-en="Yoruba — text and voice">Yoruba — texte et voix</span>
+      <span class="lang-pill" data-fr="Fon — texte, voix en développement" data-en="Fon — text, voice in development">Fon — texte, voix en développement</span>
+      <span class="lang-pill pending" data-fr="Bariba — compris" data-en="Bariba — understood">Bariba — compris</span>
+      <span class="lang-pill pending" data-fr="Adja — compris" data-en="Adja — understood">Adja — compris</span>
+      <span class="lang-pill pending" data-fr="Goun — compris" data-en="Goun — understood">Goun — compris</span>
+      <span class="lang-pill pending" data-fr="Dendi — compris" data-en="Dendi — understood">Dendi — compris</span>
+      <span class="lang-pill pending" data-fr="Fulfuldé — compris" data-en="Fulfulde — understood">Fulfuldé — compris</span>
     </div>
   </div>
 </section>
@@ -493,24 +525,24 @@
 <section>
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>Commencer prend trois messages</h2>
-      <p>Aucune formation, aucune application à installer.</p>
+      <h2 data-fr="Commencer prend trois messages" data-en="Getting started takes three messages">Commencer prend trois messages</h2>
+      <p data-fr="Aucune formation, aucune application à installer." data-en="No training needed, no app to install.">Aucune formation, aucune application à installer.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
-        <h3>Choisir sa langue</h3>
-        <p>SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger.</p>
+        <h3 data-fr="Choisir sa langue" data-en="Choose a language">Choisir sa langue</h3>
+        <p data-fr="SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger." data-en="SikaGlé simply asks which language the farmer prefers to use.">SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
-        <h3>Indiquer ses cultures</h3>
-        <p>Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé.</p>
+        <h3 data-fr="Indiquer ses cultures" data-en="Share their crops">Indiquer ses cultures</h3>
+        <p data-fr="Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé." data-en="One sentence is enough — SikaGlé then tailors its answers to what's actually being grown.">Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h3>Poser sa première question</h3>
-        <p>Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation.</p>
+        <h3 data-fr="Poser sa première question" data-en="Ask their first question">Poser sa première question</h3>
+        <p data-fr="Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation." data-en="By text, voice, or photo. SikaGlé replies right in the conversation.">Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation.</p>
       </div>
     </div>
   </div>
@@ -519,20 +551,20 @@
 <section id="pour-qui">
   <div class="wrap reveal">
     <div class="section-head">
-      <h2>Pour qui</h2>
+      <h2 data-fr="Pour qui" data-en="Who it's for">Pour qui</h2>
     </div>
     <div class="audience-grid">
       <div class="audience-item">
-        <h3>Agriculteur</h3>
-        <p>Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà.</p>
+        <h3 data-fr="Agriculteur" data-en="Farmer">Agriculteur</h3>
+        <p data-fr="Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà." data-en="Immediate answers about your crops, plant diseases, and local weather — right on the phone you already use.">Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà.</p>
       </div>
       <div class="audience-item">
-        <h3>Coopérative</h3>
-        <p>Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu.</p>
+        <h3 data-fr="Coopérative" data-en="Cooperative">Coopérative</h3>
+        <p data-fr="Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu." data-en="Make SikaGlé available to your members for a consistent, always-on first level of advice.">Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu.</p>
       </div>
       <div class="audience-item">
-        <h3>ONG &amp; programmes de développement</h3>
-        <p>Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain.</p>
+        <h3 data-fr="ONG &amp; programmes de développement" data-en="NGOs &amp; development programs">ONG &amp; programmes de développement</h3>
+        <p data-fr="Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain." data-en="Integrate SikaGlé into your agricultural programs to multiply the reach of your field teams.">Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain.</p>
       </div>
     </div>
   </div>
@@ -540,15 +572,15 @@
 
 <section class="final-cta" id="contact">
   <div class="wrap reveal">
-    <h2>Vous représentez une organisation agricole ?</h2>
-    <p>Fournisseur de semences, coopérative, ONG ou institution — discutons de la manière dont SikaGlé peut s'intégrer à vos programmes ou enrichir votre offre auprès des producteurs.</p>
-    <a class="btn" href="https://wa.me/22996118335" target="_blank" rel="noopener">Nous contacter pour un partenariat</a>
+    <h2 data-fr="Vous représentez une organisation agricole ?" data-en="Do you represent an agricultural organization?">Vous représentez une organisation agricole ?</h2>
+    <p data-fr="Fournisseur de semences, coopérative, ONG ou institution — discutons de la manière dont SikaGlé peut s'intégrer à vos programmes ou enrichir votre offre auprès des producteurs." data-en="Seed supplier, cooperative, NGO, or institution — let's discuss how SikaGlé can fit into your programs or enhance your offering for farmers.">Fournisseur de semences, coopérative, ONG ou institution — discutons de la manière dont SikaGlé peut s'intégrer à vos programmes ou enrichir votre offre auprès des producteurs.</p>
+    <a class="btn" href="https://wa.me/22996118335" target="_blank" rel="noopener" data-fr="Nous contacter pour un partenariat" data-en="Contact us about a partnership">Nous contacter pour un partenariat</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div>SikaGlé — assistant agricole, Bénin</div>
+    <div data-fr="SikaGlé — assistant agricole, Bénin" data-en="SikaGlé — agricultural assistant, Benin">SikaGlé — assistant agricole, Bénin</div>
     <div>© 2026 SikaGlé</div>
   </div>
 </footer>
@@ -564,6 +596,24 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach((el) => observer.observe(el));
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-fr]').forEach((el) => {
+      const text = el.getAttribute('data-' + lang);
+      if (text !== null) {
+        if (el.tagName === 'IMG') {
+          el.setAttribute('alt', text);
+        } else {
+          el.textContent = text;
+        }
+      }
+    });
+
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
 </script>
 
 </body>
