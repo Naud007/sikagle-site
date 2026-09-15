@@ -1,1868 +1,645 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>SikaGlé — L'assistant agricole qui parle votre langue</title>
-  <meta name="description" content="SikaGlé est l'assistant agricole intelligent sur WhatsApp pour les agriculteurs du Bénin et d'Afrique de l'Ouest.">
-
-  <style>
-    /* =========================================================
-       SIKAGLÉ — SITE VITRINE
-       Version sans images externes
-       ========================================================= */
-
-    :root {
-      --navy: #172642;
-      --navy-dark: #0d172b;
-      --navy-soft: #223657;
-
-      --green: #3f7650;
-      --green-dark: #315e40;
-      --green-light: #e8f0e8;
-
-      --gold: #dca83f;
-      --gold-light: #f4e4b9;
-
-      --cream: #f8f3e7;
-      --cream-dark: #eee6d5;
-
-      --white: #ffffff;
-      --text: #263044;
-      --muted: #687285;
-
-      --radius: 20px;
-      --shadow: 0 18px 50px rgba(13, 23, 43, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        "Segoe UI",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(248, 243, 231, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(23, 38, 66, 0.08);
-    }
-
-    .nav {
-      height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-weight: 800;
-      font-size: 25px;
-      letter-spacing: -0.8px;
-      color: var(--navy);
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      background: var(--navy);
-      position: relative;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 8px 20px rgba(23, 38, 66, 0.18);
-      overflow: hidden;
-    }
-
-    .logo-mark::before {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50% 50% 50% 0;
-      background: var(--gold);
-      transform: rotate(-45deg);
-      top: 7px;
-      left: 8px;
-    }
-
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      width: 5px;
-      height: 18px;
-      border-radius: 5px;
-      background: var(--white);
-      transform: rotate(42deg);
-      left: 20px;
-      top: 12px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      transition: color 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--navy);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 14px;
-      border: 1px solid transparent;
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--navy);
-      color: white;
-      box-shadow: 0 10px 25px rgba(23, 38, 66, 0.18);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 15px 32px rgba(23, 38, 66, 0.25);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,0.28);
-      color: white;
-      background: rgba(255,255,255,0.04);
-    }
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: var(--navy-dark);
-      color: white;
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 650px;
-      height: 650px;
-      border-radius: 50%;
-      border: 1px solid rgba(220, 168, 63, 0.13);
-      right: -230px;
-      top: -180px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.07);
-      left: -210px;
-      bottom: -230px;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
-      align-items: center;
-      padding: 85px 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      margin-bottom: 20px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 26px;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      font-size: clamp(44px, 5.3vw, 72px);
-      line-height: 1.03;
-      letter-spacing: -2.8px;
-      max-width: 720px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero-text {
-      max-width: 620px;
-      color: #d5dbea;
-      font-size: 18px;
-      line-height: 1.75;
-      margin-bottom: 34px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    /* =========================================================
-       HERO — VISUEL HTML
-       ========================================================= */
-
-    .hero-visual {
-      position: relative;
-      min-height: 470px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .visual-circle {
-      position: absolute;
-      width: 410px;
-      height: 410px;
-      border-radius: 50%;
-      background:
-        radial-gradient(
-          circle at 50% 40%,
-          rgba(220,168,63,0.18),
-          rgba(63,118,80,0.07) 48%,
-          transparent 70%
-        );
-      border: 1px solid rgba(220,168,63,0.12);
-      animation: pulseCircle 5s ease-in-out infinite;
-    }
-
-    .phone {
-      position: relative;
-      z-index: 3;
-      width: 285px;
-      height: 530px;
-      border-radius: 38px;
-      background: #101c32;
-      border: 7px solid #2a3a56;
-      box-shadow:
-        0 35px 80px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(255,255,255,0.08);
-      overflow: hidden;
-      transform: rotate(2deg);
-      animation: floatingPhone 5s ease-in-out infinite;
-    }
-
-    .phone-top {
-      height: 58px;
-      background: #21324f;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 17px;
-    }
-
-    .phone-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--gold);
-      display: grid;
-      place-items: center;
-      color: var(--navy);
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .phone-name {
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .phone-status {
-      font-size: 9px;
-      color: #aeb9c9;
-    }
-
-    .phone-body {
-      height: calc(100% - 58px);
-      padding: 22px 13px;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(220,168,63,0.05), transparent 30%),
-        #e8e3d8;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .bubble {
-      max-width: 82%;
-      padding: 11px 13px;
-      border-radius: 14px;
-      font-size: 11px;
-      line-height: 1.5;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-    }
-
-    .bubble-farmer {
-      align-self: flex-end;
-      background: #d8edc9;
-      border-bottom-right-radius: 4px;
-      color: #213222;
-    }
-
-    .bubble-ai {
-      align-self: flex-start;
-      background: white;
-      border-bottom-left-radius: 4px;
-      color: #263044;
-    }
-
-    .bubble-photo {
-      width: 145px;
-      height: 95px;
-      border-radius: 12px;
-      background:
-        linear-gradient(145deg, #456b42, #78924d 50%, #b6a151);
-      position: relative;
-      overflow: hidden;
-      align-self: flex-end;
-    }
-
-    .bubble-photo::before,
-    .bubble-photo::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      width: 100px;
-      height: 70px;
-      background: #315b35;
-      border-radius: 50%;
-    }
-
-    .bubble-photo::before {
-      left: -30px;
-    }
-
-    .bubble-photo::after {
-      right: -30px;
-      background: #557a3e;
-    }
-
-    .photo-leaf {
-      position: absolute;
-      width: 40px;
-      height: 70px;
-      background: #294d2c;
-      border-radius: 100% 0 100% 0;
-      transform: rotate(35deg);
-      left: 52px;
-      top: 18px;
-    }
-
-    .typing {
-      align-self: flex-start;
-      display: flex;
-      gap: 4px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: white;
-    }
-
-    .typing span {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #9da5af;
-      animation: typing 1.2s infinite;
-    }
-
-    .typing span:nth-child(2) {
-      animation-delay: 0.15s;
-    }
-
-    .typing span:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 5;
-      background: white;
-      color: var(--navy);
-      padding: 16px 18px;
-      border-radius: 15px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .floating-card strong {
-      display: block;
-      font-size: 19px;
-      margin-bottom: 2px;
-    }
-
-    .card-one {
-      left: 0;
-      top: 105px;
-      animation: floatingSmall 4s ease-in-out infinite;
-    }
-
-    .card-two {
-      right: -5px;
-      bottom: 85px;
-      animation: floatingSmall 4s ease-in-out infinite 1s;
-    }
-
-    /* =========================================================
-       STATS
-       ========================================================= */
-
-    .stats {
-      background: var(--gold);
-      color: var(--navy);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat {
-      padding: 28px 22px;
-      text-align: center;
-      border-right: 1px solid rgba(23,38,66,0.13);
-    }
-
-    .stat:last-child {
-      border-right: none;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 27px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 2px;
-    }
-
-    .stat-label {
-      font-size: 12px;
-      font-weight: 700;
-      opacity: 0.75;
-    }
-
-    /* =========================================================
-       SECTIONS
-       ========================================================= */
-
-    section {
-      padding: 105px 0;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 55px;
-    }
-
-    .section-kicker {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      margin-bottom: 13px;
-    }
-
-    .section-heading h2 {
-      color: var(--navy);
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.08;
-      letter-spacing: -1.7px;
-      margin-bottom: 18px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    /* =========================================================
-       FEATURES
-       ========================================================= */
-
-    .features {
-      background: var(--cream);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .feature {
-      background: white;
-      border: 1px solid rgba(23,38,66,0.08);
-      border-radius: var(--radius);
-      padding: 31px;
-      box-shadow: 0 7px 25px rgba(23,38,66,0.05);
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      background: var(--green-light);
-      color: var(--green);
-      display: grid;
-      place-items: center;
-      font-size: 23px;
-      margin-bottom: 23px;
-    }
-
-    .feature h3 {
-      color: var(--navy);
-      font-size: 20px;
-      line-height: 1.25;
-      margin-bottom: 13px;
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    /* =========================================================
-       DEMO
-       ========================================================= */
-
-    .demo {
-      background: var(--white);
-    }
-
-    .demo-box {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-      background: var(--navy);
-      border-radius: 28px;
-      padding: 60px;
-      overflow: hidden;
-      position: relative;
-      color: white;
-    }
-
-    .demo-box::after {
-      content: "";
-      position: absolute;
-      width: 380px;
-      height: 380px;
-      border-radius: 50%;
-      border: 1px solid rgba(220,168,63,0.15);
-      right: -170px;
-      top: -170px;
-    }
-
-    .demo-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .demo-copy .section-kicker {
-      color: var(--gold);
-    }
-
-    .demo-copy h2 {
-      font-size: 42px;
-      line-height: 1.1;
-      letter-spacing: -1.4px;
-      margin-bottom: 18px;
-    }
-
-    .demo-copy p {
-      color: #ccd4e1;
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .conversation {
-      position: relative;
-      z-index: 2;
-      background: #f0ede5;
-      border-radius: 20px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.22);
-    }
-
-    .message {
-      max-width: 78%;
-      padding: 13px 15px;
-      border-radius: 15px;
-      color: var(--text);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .message.farmer {
-      align-self: flex-end;
-      background: #d5ebc9;
-      border-bottom-right-radius: 4px;
-    }
-
-    .message.sikagle {
-      align-self: flex-start;
-      background: white;
-      border-bottom-left-radius: 4px;
-    }
-
-    .message-label {
-      display: block;
-      font-size: 9px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      opacity: 0.55;
-      margin-bottom: 4px;
-    }
-
-    /* =========================================================
-       SOURCES
-       ========================================================= */
-
-    .sources {
-      background: var(--cream-dark);
-    }
-
-    .source-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .source-item {
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(23,38,66,0.07);
-      padding: 24px;
-      border-radius: 16px;
-      transition: transform 0.25s ease;
-    }
-
-    .source-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .source-item h3 {
-      color: var(--navy);
-      font-size: 16px;
-      margin-bottom: 7px;
-    }
-
-    .source-item p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    /* =========================================================
-       LANGUES
-       ========================================================= */
-
-    .languages {
-      background: white;
-    }
-
-    .language-box {
-      background: var(--green);
-      color: white;
-      border-radius: 27px;
-      padding: 55px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .language-box::after {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.12);
-      right: -160px;
-      top: -170px;
-    }
-
-    .language-box h2 {
-      font-size: 40px;
-      line-height: 1.12;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .language-box p {
-      color: #e1ebe2;
-      max-width: 690px;
-      font-size: 15px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .language-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 27px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .pill {
-      padding: 9px 15px;
-      border-radius: 100px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    /* =========================================================
-       AUDIENCE
-       ========================================================= */
-
-    .audience {
-      background: var(--cream);
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .audience-card {
-      padding: 30px;
-      background: white;
-      border-radius: 19px;
-      border: 1px solid rgba(23,38,66,0.07);
-    }
-
-    .audience-card span {
-      display: block;
-      font-size: 30px;
-      margin-bottom: 16px;
-    }
-
-    .audience-card h3 {
-      color: var(--navy);
-      font-size: 19px;
-      margin-bottom: 9px;
-    }
-
-    .audience-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* =========================================================
-       CTA
-       ========================================================= */
-
-    .cta {
-      background: var(--navy-dark);
-      color: white;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      border: 1px solid rgba(220,168,63,0.12);
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .cta h2 {
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      color: #cbd4e1;
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      background: #091224;
-      color: #9da8ba;
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      color: white;
-      font-weight: 800;
-      font-size: 20px;
-    }
-
-    .footer-copy {
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       ANIMATIONS
-       ========================================================= */
-
-    @keyframes floatingPhone {
-      0%, 100% {
-        transform: translateY(0) rotate(2deg);
-      }
-      50% {
-        transform: translateY(-12px) rotate(2deg);
-      }
-    }
-
-    @keyframes floatingSmall {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-9px);
-      }
-    }
-
-    @keyframes pulseCircle {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        transform: scale(1.04);
-        opacity: 1;
-      }
-    }
-
-    @keyframes typing {
-      0%, 60%, 100% {
-        transform: translateY(0);
-      }
-      30% {
-        transform: translateY(-4px);
-      }
-    }
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .hero-text {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-visual {
-        min-height: 500px;
-      }
-
-      .feature-grid,
-      .source-grid,
-      .audience-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .demo-box {
-        grid-template-columns: 1fr;
-        padding: 40px;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .nav {
-        height: 68px;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .logo-mark {
-        width: 37px;
-        height: 37px;
-      }
-
-      .nav .btn {
-        min-height: 42px;
-        padding: 0 15px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-grid {
-        padding: 65px 0 55px;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-        letter-spacing: -1.8px;
-      }
-
-      .hero-text {
-        font-size: 15px;
-      }
-
-      .hero-visual {
-        min-height: 430px;
-      }
-
-      .visual-circle {
-        width: 310px;
-        height: 310px;
-      }
-
-      .phone {
-        width: 235px;
-        height: 445px;
-        border-width: 6px;
-        border-radius: 31px;
-      }
-
-      .card-one {
-        left: 0;
-        top: 60px;
-      }
-
-      .card-two {
-        right: 0;
-        bottom: 55px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stat {
-        border-bottom: 1px solid rgba(23,38,66,0.13);
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 38px;
-      }
-
-      .section-heading h2 {
-        font-size: 35px;
-      }
-
-      .feature-grid,
-      .source-grid,
-      .audience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .demo-box {
-        padding: 28px 20px;
-        border-radius: 20px;
-      }
-
-      .demo-copy h2 {
-        font-size: 34px;
-      }
-
-      .conversation {
-        padding: 14px;
-      }
-
-      .message {
-        max-width: 88%;
-        font-size: 12px;
-      }
-
-      .language-box {
-        padding: 35px 25px;
-        border-radius: 21px;
-      }
-
-      .language-box h2 {
-        font-size: 33px;
-      }
-
-      .cta h2 {
-        font-size: 39px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SikaGlé — l'assistant agricole du Bénin, sur WhatsApp</title>
+<style>
+  :root{
+    --indigo: #1E2E52;
+    --indigo-deep: #16223E;
+    --gold: #D9A441;
+    --gold-soft: #E8C378;
+    --paper: #F5EFE0;
+    --paper-warm: #EFE6D2;
+    --ink: #221B12;
+    --leaf: #3F6B4A;
+    --rule: rgba(34,27,18,0.14);
+    --font-display: Georgia, 'Times New Roman', 'Noto Serif', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    line-height:1.15;
+    margin:0;
+  }
+  a{color:inherit;}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .measure{max-width:62ch;}
+
+  /* ---------- REVEAL AU DÉFILEMENT ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:1080px; margin:0 auto;
+  }
+  .wordmark{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:-0.01em;
+  }
+  .navlinks{display:flex; gap:28px; font-size:15px;}
+  .navlinks a{text-decoration:none; opacity:0.75; transition:opacity 0.2s ease;}
+  .navlinks a:hover{opacity:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--indigo);
+    color:var(--paper);
+    border:none;
+    border-radius:3px;
+    padding:13px 22px;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{background:var(--indigo-deep); transform:translateY(-1px);}
+  .btn.gold{background:var(--gold); color:var(--indigo-deep);}
+  .btn.gold:hover{background:var(--gold-soft);}
+  @media (max-width:720px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--indigo);
+    color:var(--paper);
+    padding:88px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:end;
+    position:relative;
+    z-index:2;
+  }
+  .eyebrow{
+    font-size:15px;
+    color:var(--gold-soft);
+    font-family:var(--font-body);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 50px);
+    letter-spacing:-0.01em;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:19px;
+    max-width:46ch;
+    color:rgba(245,239,224,0.86);
+  }
+  .hero .cta-row{
+    margin-top:34px;
+    margin-bottom:56px;
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CONVERSATION SIMULÉE ---------- */
+  .chat-mock{
+    background:var(--indigo-deep);
+    border-radius:16px 16px 0 0;
+    padding:22px 20px 0;
+    max-width:340px;
+    margin:0 auto;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28);
+  }
+  .chat-header{
+    display:flex; align-items:center; gap:10px;
+    padding-bottom:16px;
+    border-bottom:1px solid rgba(245,239,224,0.12);
+    margin-bottom:16px;
+  }
+  .chat-avatar{
+    width:34px; height:34px; border-radius:50%;
+    background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-weight:700; color:var(--indigo-deep);
+    font-size:15px;
+    flex-shrink:0;
+  }
+  .chat-header b{font-size:15px; display:block;}
+  .chat-header span{font-size:12px; color:var(--leaf); opacity:0.95;}
+  .bubble{
+    max-width:82%;
+    padding:10px 14px;
+    border-radius:12px;
+    font-size:14.5px;
+    line-height:1.45;
+    margin-bottom:10px;
+    animation:pop 0.4s ease both;
+  }
+  .bubble.in{
+    background:rgba(245,239,224,0.94);
+    color:var(--ink);
+    border-bottom-left-radius:3px;
+  }
+  .bubble.out{
+    background:var(--gold);
+    color:var(--indigo-deep);
+    margin-left:auto;
+    border-bottom-right-radius:3px;
+  }
+  .bubble.photo{
+    display:flex; align-items:center; gap:8px;
+    font-weight:600;
+  }
+  .bubble .thumb{
+    width:34px; height:34px; border-radius:6px;
+    background:linear-gradient(135deg, var(--leaf), #2c4d33);
+    flex-shrink:0;
+  }
+  .typing-dots{
+    display:inline-flex; gap:4px; padding:12px 14px;
+    background:rgba(245,239,224,0.94);
+    border-radius:12px; border-bottom-left-radius:3px;
+    width:fit-content;
+    margin-bottom:10px;
+    animation:pop 0.4s ease both;
+  }
+  .typing-dots span{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--indigo);
+    opacity:0.5;
+    animation:blink 1.2s infinite ease-in-out;
+  }
+  .typing-dots span:nth-child(2){animation-delay:0.2s;}
+  .typing-dots span:nth-child(3){animation-delay:0.4s;}
+  @keyframes blink{0%,80%,100%{opacity:0.3;} 40%{opacity:1;}}
+  @keyframes pop{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  .chat-bottom-bar{
+    height:14px;
+  }
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    background:var(--paper-warm);
+    border-bottom:1px solid var(--rule);
+  }
+  .stats .wrap{
+    display:flex; flex-wrap:wrap;
+    gap:40px 56px;
+    padding:36px 28px;
+  }
+  .stat b{
+    display:block;
+    font-family:var(--font-display);
+    font-size:32px;
+    font-weight:700;
+    color:var(--indigo);
+  }
+  .stat span{
+    font-size:14px;
+    opacity:0.75;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:88px 0;}
+  .section-head{
+    max-width:56ch;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(26px,3.4vw,36px);
+  }
+  .section-head p{
+    margin-top:14px;
+    font-size:17px;
+    opacity:0.82;
+  }
+
+  .feature-row{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:48px;
+    align-items:center;
+    padding:44px 0;
+    border-top:1px solid var(--rule);
+  }
+  .feature-row:last-child{border-bottom:1px solid var(--rule);}
+  .feature-row.reverse{grid-template-columns:1.1fr 0.9fr;}
+  .feature-row.reverse .feature-visual{order:2;}
+  @media (max-width:760px){
+    .feature-row, .feature-row.reverse{grid-template-columns:1fr;}
+    .feature-row.reverse .feature-visual{order:0;}
+  }
+  .feature-copy h3{font-size:24px; margin-bottom:12px;}
+  .feature-copy p{opacity:0.85;}
+  .feature-visual{
+    background:var(--paper-warm);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:28px;
+    min-height:160px;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform 0.3s ease;
+  }
+  .feature-row:hover .feature-visual{transform:translateY(-3px);}
+  .feature-visual svg{width:100%; max-width:220px; height:auto;}
+
+  /* ---------- SOURCES LIST ---------- */
+  .sources-band{
+    background:var(--indigo-deep);
+    color:var(--paper);
+  }
+  .sources-band .section-head p{color:rgba(245,239,224,0.78);}
+  .source-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:rgba(245,239,224,0.14);
+    border:1px solid rgba(245,239,224,0.14);
+  }
+  .source-grid div{
+    background:var(--indigo-deep);
+    padding:20px 18px;
+    font-size:15px;
+    transition:background 0.2s ease;
+  }
+  .source-grid div:hover{background:#1c2c4f;}
+  @media (max-width:760px){ .source-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .source-grid{grid-template-columns:1fr;} }
+
+  /* ---------- LANGUES ---------- */
+  .langs{display:flex; flex-wrap:wrap; gap:16px; margin-top:32px;}
+  .lang-pill{
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:10px 20px;
+    font-size:15px;
+    font-weight:600;
+    background:var(--paper-warm);
+    transition:transform 0.2s ease;
+  }
+  .lang-pill:hover{transform:translateY(-2px);}
+  .lang-pill.pending{
+    border-style:dashed;
+    opacity:0.7;
+  }
+
+  /* ---------- ONBOARDING STEPS ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-left:1px solid var(--rule);
+  }
+  .step{
+    padding:32px 28px;
+    border-right:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .step .num{
+    font-family:var(--font-display);
+    font-size:15px;
+    color:var(--leaf);
+    font-weight:700;
+  }
+  .step h3{font-size:19px; margin:10px 0 8px;}
+  .step p{font-size:15px; opacity:0.8;}
+  @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
+
+  /* ---------- POUR QUI ---------- */
+  .audience-list{border-top:1px solid var(--rule);}
+  .audience-item{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .audience-item h3{font-size:20px;}
+  @media (max-width:600px){ .audience-item{grid-template-columns:1fr; gap:6px;} }
+
+  /* ---------- CTA FINAL ---------- */
+  .final-cta{
+    background:var(--gold);
+    color:var(--indigo-deep);
+  }
+  .final-cta .wrap{
+    text-align:left;
+    padding:72px 28px;
+  }
+  .final-cta h2{font-size:clamp(28px,4vw,40px); max-width:20ch;}
+  .final-cta p{margin-top:16px; font-size:18px; max-width:48ch; opacity:0.85;}
+  .final-cta .btn{margin-top:28px; background:var(--indigo); color:var(--paper);}
+  .final-cta .btn:hover{background:var(--indigo-deep);}
+
+  footer{
+    padding:40px 0;
+    font-size:14px;
+    opacity:0.7;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
+<header>
+  <div class="nav">
+    <div class="wordmark">SikaGlé</div>
+    <nav class="navlinks">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#sources">Sources</a>
+      <a href="#pour-qui">Pour qui</a>
+      <a href="#contact">Partenariats</a>
+    </nav>
+    <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener">Essayer sur WhatsApp</a>
+  </div>
+</header>
 
-  <header>
-    <div class="container nav">
-
-      <a href="#" class="logo">
-        <span class="logo-mark"></span>
-        <span>SikaGlé</span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="#comment">Comment ça marche</a>
-        <a href="#sources">Sources</a>
-        <a href="#pourqui">Pour qui</a>
-      </nav>
-
-      <a
-        href="https://wa.me/22966024902"
-        class="btn btn-primary"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp →
-      </a>
-
-    </div>
-  </header>
-
-
-  <!-- =======================================================
-       HERO
-       ======================================================= -->
-
-  <main>
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            Assistant agricole intelligent
-          </div>
-
-          <h1>
-            Le conseiller agricole qui
-            <span>parle votre langue.</span>
-          </h1>
-
-          <p class="hero-text">
-            SikaGlé accompagne les agriculteurs directement sur WhatsApp.
-            Posez une question, envoyez une photo ou un message vocal :
-            SikaGlé analyse votre situation et vous aide à prendre
-            les bonnes décisions.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a
-              href="https://wa.me/22966024902"
-              class="btn btn-gold"
-              target="_blank"
-              rel="noopener"
-            >
-              Discuter avec SikaGlé →
-            </a>
-
-            <a href="#comment" class="btn btn-outline">
-              Découvrir comment ça marche
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- VISUEL SANS IMAGE -->
-
-        <div class="hero-visual">
-
-          <div class="visual-circle"></div>
-
-          <div class="floating-card card-one">
-            <strong>24/7</strong>
-            Disponible sur WhatsApp
-          </div>
-
-          <div class="floating-card card-two">
-            <strong>7</strong>
-            langues comprises
-          </div>
-
-          <div class="phone">
-
-            <div class="phone-top">
-
-              <div class="phone-avatar">
-                S
-              </div>
-
-              <div>
-                <div class="phone-name">
-                  SikaGlé
-                </div>
-
-                <div class="phone-status">
-                  Assistant agricole
-                </div>
-              </div>
-
-            </div>
-
-            <div class="phone-body">
-
-              <div class="bubble bubble-farmer">
-                Bonjour. Mes plants de tomate ont des taches sur les feuilles.
-              </div>
-
-              <div class="bubble-photo">
-                <div class="photo-leaf"></div>
-              </div>
-
-              <div class="bubble bubble-ai">
-                Avec les conditions récentes, cela peut correspondre à une maladie fongique.
-                Les taches ont-elles de petits cercles à l'intérieur ?
-              </div>
-
-              <div class="bubble bubble-farmer">
-                Oui, exactement.
-              </div>
-
-              <div class="typing">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Assistant agricole conversationnel</div>
+      <h1>Un conseiller agricole dans la poche de chaque producteur, par WhatsApp.</h1>
+      <p class="lede">SikaGlé répond aux questions des agriculteurs béninois en texte, en voix ou à partir d'une photo — en s'appuyant sur des sources scientifiques vérifiées, pas sur des suppositions.</p>
+      <div class="cta-row">
+        <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener">Discuter avec SikaGlé</a>
+        <a class="btn" href="#fonctionnalites" style="background:transparent; border:1px solid rgba(245,239,224,0.4);">Voir comment ça marche</a>
       </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         STATS
-         ===================================================== -->
-
-    <section class="stats">
-
-      <div class="container stats-grid">
-
-        <div class="stat">
-          <span class="stat-number">10 000+</span>
-          <span class="stat-label">documents de référence</span>
-        </div>
-
-        <div class="stat">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">sur WhatsApp</span>
-        </div>
-
-        <div class="stat">
-          <span class="stat-number">7</span>
-          <span class="stat-label">langues comprises</span>
-        </div>
-
-        <div class="stat">
-          <span class="stat-number">0 FCFA</span>
-          <span class="stat-label">pour le pilote</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FONCTIONNALITÉS
-         ===================================================== -->
-
-    <section class="features" id="fonctionnalites">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
-            Ce que SikaGlé peut faire
-          </div>
-
-          <h2>
-            Un assistant agricole pensé pour le terrain.
-          </h2>
-
-          <p>
-            Pas besoin d'être expert en technologie.
-            L'agriculteur utilise simplement WhatsApp,
-            comme il le fait déjà chaque jour.
-          </p>
-
-        </div>
-
-
-        <div class="feature-grid">
-
-          <article class="feature">
-
-            <div class="feature-icon">💬</div>
-
-            <h3>
-              Texte, voix ou photo
-            </h3>
-
-            <p>
-              Posez votre question par écrit, envoyez un message vocal
-              ou partagez une photo de votre culture. SikaGlé adapte
-              son analyse au type d'information reçu.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">📚</div>
-
-            <h3>
-              Des conseils fondés sur des sources
-            </h3>
-
-            <p>
-              SikaGlé recherche les informations pertinentes dans une
-              base documentaire scientifique et agricole avant de
-              formuler sa réponse.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">🌦️</div>
-
-            <h3>
-              La météo, quand elle compte vraiment
-            </h3>
-
-            <p>
-              Les conditions météorologiques peuvent changer
-              complètement une recommandation agricole.
-              SikaGlé peut les prendre en compte avant de conseiller.
-              Un agriculteur peut aussi partager sa position exacte
-              sur WhatsApp pour une météo encore plus précise.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">🔎</div>
-
-            <h3>
-              Une photo comparée à des milliers de cas connus
-            </h3>
-
-            <p>
-              Chaque photo envoyée est aussi comparée visuellement
-              à une large base de référence de maladies déjà
-              répertoriées, en complément de l'analyse directe —
-              pour affiner l'observation avant même de consulter
-              la base documentaire.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">👨🏾‍🌾</div>
-
-            <h3>
-              Un vrai agronome, quand il le faut
-            </h3>
-
-            <p>
-              Quand une situation dépasse ce que SikaGlé peut
-              affirmer avec certitude, l'agriculteur peut être mis
-              en relation avec un agronome qui le rappelle directement.
-              Plusieurs consultations sont incluses chaque mois
-              pour les abonnés.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">🧠</div>
-
-            <h3>
-              Un conseil qui tient compte du contexte
-            </h3>
-
-            <p>
-              Au fil du temps, SikaGlé pourra tenir compte de la
-              culture, de la localisation, de la langue préférée
-              et d'autres informations utiles de l'exploitation.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         COMMENT ÇA MARCHE
-         ===================================================== -->
-
-    <section class="demo" id="comment">
-
-      <div class="container">
-
-        <div class="demo-box">
-
-          <div class="demo-copy">
-
-            <div class="section-kicker">
-              Comment ça marche
-            </div>
-
-            <h2>
-              Vous demandez.<br>
-              SikaGlé comprend.
-            </h2>
-
-            <p>
-              L'objectif est simple : transformer une question
-              de terrain en une réponse claire, contextualisée
-              et exploitable par l'agriculteur.
-            </p>
-
-          </div>
-
-
-          <div class="conversation">
-
-            <div class="message farmer">
-
-              <span class="message-label">
-                Agriculteur
-              </span>
-
-              Mes plants de tomate ont des taches brunes sur les feuilles.
-
-            </div>
-
-
-            <div class="message sikagle">
-
-              <span class="message-label">
-                SikaGlé
-              </span>
-
-              Avec la pluie de ces derniers jours, ça ressemble
-              à un champignon comme le mildiou.
-              Les taches ont-elles des petits cercles à l'intérieur ?
-
-            </div>
-
-
-            <div class="message farmer">
-
-              <span class="message-label">
-                Agriculteur
-              </span>
-
-              Oui, exactement ça.
-
-            </div>
-
-
-            <div class="message sikagle">
-
-              <span class="message-label">
-                SikaGlé
-              </span>
-
-              D'accord. Je vais vérifier les informations
-              disponibles et vous donner les mesures adaptées
-              à votre situation.
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SOURCES
-         ===================================================== -->
-
-    <section class="sources" id="sources">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
-            Base de connaissances
-          </div>
-
-          <h2>
-            Des connaissances agricoles, pas seulement une IA.
-          </h2>
-
-          <p>
-            SikaGlé s'appuie sur des sources documentaires agricoles
-            et scientifiques provenant notamment de la recherche
-            internationale et africaine.
-          </p>
-
-        </div>
-
-
-        <div class="source-grid">
-
-          <div class="source-item">
-            <h3>Recherche internationale</h3>
-            <p>
-              Publications et ressources issues d'organisations
-              et programmes de recherche agricole reconnus.
-            </p>
-          </div>
-
-          <div class="source-item">
-            <h3>Recherche africaine</h3>
-            <p>
-              Travaux et ressources produits dans le contexte
-              agricole africain.
-            </p>
-          </div>
-
-          <div class="source-item">
-            <h3>Ressources sur les cultures</h3>
-            <p>
-              Informations structurées autour des cultures,
-              pratiques agricoles et problèmes rencontrés.
-            </p>
-          </div>
-
-          <div class="source-item">
-            <h3>Maladies et ravageurs</h3>
-            <p>
-              Informations permettant d'orienter l'observation
-              et l'identification des problèmes phytosanitaires.
-            </p>
-          </div>
-
-          <div class="source-item">
-            <h3>Contexte africain</h3>
-            <p>
-              Une priorité donnée aux connaissances pertinentes
-              pour les réalités agricoles de l'Afrique.
-            </p>
-          </div>
-
-          <div class="source-item">
-            <h3>Réponses vérifiables</h3>
-            <p>
-              L'objectif est de pouvoir relier les conseils
-              aux connaissances documentaires utilisées.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         LANGUES
-         ===================================================== -->
-
-    <section class="languages">
-
-      <div class="container">
-
-        <div class="language-box">
-
-          <h2>
-            L'agriculteur parle comme il veut.
-          </h2>
-
-          <p>
-            SikaGlé est conçu pour dépasser la barrière de la langue
-            et rendre le conseil agricole accessible au plus grand nombre.
-          </p>
-
-          <div class="language-pills">
-
-            <span class="pill">Français</span>
-            <span class="pill">Yoruba</span>
-            <span class="pill">Fon</span>
-            <span class="pill">Bariba</span>
-            <span class="pill">Adja</span>
-            <span class="pill">Goun</span>
-            <span class="pill">Dendi</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         POUR QUI
-         ===================================================== -->
-
-    <section class="audience" id="pourqui">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="section-kicker">
-            Pour qui ?
-          </div>
-
-          <h2>
-            Conçu pour ceux qui font vivre l'agriculture.
-          </h2>
-
-          <p>
-            SikaGlé peut accompagner directement les agriculteurs
-            mais aussi les organisations qui les accompagnent.
-          </p>
-
-        </div>
-
-
-        <div class="audience-grid">
-
-          <div class="audience-card">
-            <span>🌱</span>
-
-            <h3>Agriculteurs</h3>
-
-            <p>
-              Un accès simple au conseil agricole directement
-              depuis WhatsApp, sans application compliquée.
-            </p>
-          </div>
-
-
-          <div class="audience-card">
-            <span>🤝</span>
-
-            <h3>Coopératives</h3>
-
-            <p>
-              Un outil pouvant renforcer l'accompagnement
-              technique des producteurs membres.
-            </p>
-          </div>
-
-
-          <div class="audience-card">
-            <span>🏢</span>
-
-            <h3>ONG & programmes</h3>
-
-            <p>
-              Une infrastructure d'assistance agricole pouvant
-              être intégrée à des programmes d'accompagnement
-              des producteurs.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CTA
-         ===================================================== -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <div class="cta-content">
-
-          <h2>
-            Votre champ a une question ?
-          </h2>
-
-          <p>
-            SikaGlé est disponible directement sur WhatsApp.
-            Essayez-le simplement.
-          </p>
-
-          <a
-            href="https://wa.me/22966024902"
-            class="btn btn-gold"
-            target="_blank"
-            rel="noopener"
-          >
-            Essayer SikaGlé sur WhatsApp →
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
-
-  <footer>
-
-    <div class="container footer-inner">
-
-      <div class="footer-logo">
-        SikaGlé
-      </div>
-
-      <div class="footer-copy">
-        © 2026 SikaGlé — Assistant agricole intelligent
-      </div>
-
     </div>
 
-  </footer>
+    <div class="chat-mock reveal">
+      <div class="chat-header">
+        <div class="chat-avatar">SG</div>
+        <div>
+          <b>SikaGlé</b>
+          <span>● en ligne</span>
+        </div>
+      </div>
+      <div class="bubble out photo">
+        <div class="thumb"></div>
+        <span>Mes plants de tomate ont des taches brunes sur les feuilles</span>
+      </div>
+      <div class="bubble in">Avec la pluie de ces derniers jours, ça ressemble à un champignon comme le mildiou. Les taches ont-elles des petits cercles à l'intérieur ?</div>
+      <div class="bubble out">Oui, exactement ça</div>
+      <div class="typing-dots"><span></span><span></span><span></span></div>
+      <div class="chat-bottom-bar"></div>
+    </div>
+  </div>
+</section>
 
+<div class="stats">
+  <div class="wrap reveal">
+    <div class="stat"><b>7</b><span>langues comprises, dont le fon en développement</span></div>
+    <div class="stat"><b>24/7</b><span>disponible sur WhatsApp, sans application à installer</span></div>
+    <div class="stat"><b>📸</b><span>diagnostic à partir d'une simple photo</span></div>
+    <div class="stat"><b>0 fr</b><span>pour commencer — essai gratuit inclus</span></div>
+  </div>
+</div>
 
-  <!-- =======================================================
-       PETITES ANIMATIONS AU SCROLL
-       ======================================================= -->
+<section id="fonctionnalites">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Comment SikaGlé aide, concrètement</h2>
+      <p>Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère.</p>
+    </div>
 
-  <script>
+    <div class="feature-row reveal">
+      <div class="feature-copy">
+        <h3>Texte, voix ou photo — au choix</h3>
+        <p>Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction.</p>
+      </div>
+      <div class="feature-visual">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="20" width="55" height="40" rx="6" fill="#1E2E52"/>
+          <path d="M20 60 L30 72 L30 60 Z" fill="#1E2E52"/>
+          <circle cx="105" cy="40" r="24" fill="#D9A441"/>
+          <path d="M97 40 L103 46 L114 32" stroke="#221B12" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="150" y="18" width="42" height="52" rx="4" fill="#3F6B4A"/>
+          <circle cx="171" cy="34" r="6" fill="#F5EFE0"/>
+        </svg>
+      </div>
+    </div>
 
-    const elements = document.querySelectorAll(
-      ".feature, .source-item, .audience-card, .demo-box, .language-box"
-    );
+    <div class="feature-row reverse reveal">
+      <div class="feature-copy">
+        <h3>Une photo comparée à des milliers de cas connus</h3>
+        <p>Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire.</p>
+      </div>
+      <div class="feature-visual">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="20" width="50" height="50" rx="4" fill="#3F6B4A"/>
+          <rect x="75" y="20" width="50" height="50" rx="4" fill="#EFE6D2" stroke="#1E2E52" stroke-width="2"/>
+          <rect x="135" y="20" width="50" height="50" rx="4" fill="#EFE6D2" stroke="#1E2E52" stroke-width="2"/>
+          <path d="M65 45 L75 45" stroke="#D9A441" stroke-width="3" stroke-dasharray="3 3"/>
+          <path d="M125 45 L135 45" stroke="#D9A441" stroke-width="3" stroke-dasharray="3 3"/>
+          <circle cx="40" cy="45" r="10" fill="#D9A441"/>
+          <path d="M32 45 L38 51 L49 38" stroke="#221B12" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+    <div class="feature-row reveal">
+      <div class="feature-copy">
+        <h3>Des réponses ancrées dans la science, pas inventées</h3>
+        <p>Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner.</p>
+      </div>
+      <div class="feature-visual">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="20" width="90" height="100" rx="4" fill="#F5EFE0" stroke="#1E2E52" stroke-width="3"/>
+          <line x1="55" y1="42" x2="115" y2="42" stroke="#1E2E52" stroke-width="3"/>
+          <line x1="55" y1="58" x2="115" y2="58" stroke="#1E2E52" stroke-width="3"/>
+          <line x1="55" y1="74" x2="95" y2="74" stroke="#D9A441" stroke-width="3"/>
+          <rect x="120" y="70" width="45" height="45" rx="4" fill="#3F6B4A"/>
+        </svg>
+      </div>
+    </div>
 
-        entries.forEach((entry) => {
+    <div class="feature-row reverse reveal">
+      <div class="feature-copy">
+        <h3>La météo, quand elle compte vraiment</h3>
+        <p>Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise.</p>
+      </div>
+      <div class="feature-visual">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="80" cy="55" r="28" fill="#D9A441"/>
+          <ellipse cx="120" cy="70" rx="42" ry="24" fill="#F5EFE0" stroke="#1E2E52" stroke-width="3"/>
+          <line x1="95" y1="105" x2="88" y2="122" stroke="#3F6B4A" stroke-width="3" stroke-linecap="round"/>
+          <line x1="115" y1="105" x2="108" y2="122" stroke="#3F6B4A" stroke-width="3" stroke-linecap="round"/>
+          <line x1="135" y1="105" x2="128" y2="122" stroke="#3F6B4A" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
 
-          if (entry.isIntersecting) {
+    <div class="feature-row reveal">
+      <div class="feature-copy">
+        <h3>Un vrai agronome, quand il le faut</h3>
+        <p>Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — plusieurs consultations incluses chaque mois pour les abonnés.</p>
+      </div>
+      <div class="feature-visual">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="70" cy="55" r="22" fill="#EFE6D2" stroke="#1E2E52" stroke-width="3"/>
+          <circle cx="70" cy="46" r="8" fill="#1E2E52"/>
+          <path d="M55 68 Q70 58 85 68" stroke="#1E2E52" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M110 55 L130 55" stroke="#D9A441" stroke-width="3" stroke-dasharray="4 4"/>
+          <circle cx="150" cy="55" r="22" fill="#3F6B4A"/>
+          <path d="M140 55 Q150 42 160 55 Q150 68 140 55 Z" fill="#F5EFE0"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+<section class="sources-band" id="sources">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Une base documentaire construite avec rigueur</h2>
+      <p>Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs.</p>
+    </div>
+    <div class="source-grid reveal">
+      <div>Instituts de recherche agricole internationaux</div>
+      <div>Centres de recherche spécialisés par culture</div>
+      <div>Fiches pratiques pour petits producteurs</div>
+      <div>Recherche agronomique béninoise</div>
+      <div>Bases de diagnostic visuel des maladies</div>
+      <div>Programmes régionaux ouest-africains</div>
+    </div>
+  </div>
+</section>
 
-            observer.unobserve(entry.target);
+<section>
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Parlé dans les langues du terrain</h2>
+      <p>Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend sept langues parlées au Bénin.</p>
+    </div>
+    <div class="langs">
+      <span class="lang-pill">Français — texte et voix</span>
+      <span class="lang-pill">Yoruba — texte et voix</span>
+      <span class="lang-pill">Fon — texte, voix en développement</span>
+      <span class="lang-pill pending">Bariba — compris</span>
+      <span class="lang-pill pending">Adja — compris</span>
+      <span class="lang-pill pending">Goun — compris</span>
+      <span class="lang-pill pending">Dendi — compris</span>
+      <span class="lang-pill pending">Fulfuldé — compris</span>
+    </div>
+  </div>
+</section>
 
-          }
+<section>
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Commencer prend trois messages</h2>
+      <p>Aucune formation, aucune application à installer.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Choisir sa langue</h3>
+        <p>SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Indiquer ses cultures</h3>
+        <p>Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Poser sa première question</h3>
+        <p>Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        });
+<section id="pour-qui">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Pour qui</h2>
+    </div>
+    <div class="audience-list">
+      <div class="audience-item">
+        <h3>Agriculteur</h3>
+        <p>Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà.</p>
+      </div>
+      <div class="audience-item">
+        <h3>Coopérative</h3>
+        <p>Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu.</p>
+      </div>
+      <div class="audience-item">
+        <h3>ONG &amp; programmes de développement</h3>
+        <p>Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      },
-      {
-        threshold: 0.12
+<section class="final-cta" id="contact">
+  <div class="wrap reveal">
+    <h2>Discutons de votre projet</h2>
+    <p>Que vous soyez une organisation agricole, une coopérative, un partenaire technologique ou une institution intéressée par une collaboration, nous sommes ouverts à en parler.</p>
+    <a class="btn" href="https://wa.me/22966024902" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>SikaGlé — assistant agricole, Bénin</div>
+    <div>© 2026 SikaGlé</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       }
-    );
-
-
-    elements.forEach((element) => {
-
-      element.style.opacity = "0";
-      element.style.transform = "translateY(25px)";
-      element.style.transition =
-        "opacity 0.7s ease, transform 0.7s ease";
-
-      observer.observe(element);
-
     });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => observer.observe(el));
 
-  </script>
+  const heroChat = document.querySelector('.hero .chat-mock');
+  if (heroChat) {
+    heroChat.classList.add('is-visible');
+  }
+</script>
 
 </body>
 </html>
