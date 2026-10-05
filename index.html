@@ -6,13 +6,13 @@
 <title>SikaGlé — l'assistant agricole du Bénin, sur WhatsApp</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' rx='44' fill='%23123528'/><g transform='translate(58.9,154)'><path d='M44.1 1.65Q32.25 1.65 23.02 -3.22Q13.79 -8.1 8.54 -16.8Q3.3 -25.5 3.3 -36.45Q3.3 -47.4 8.47 -56.02Q13.65 -64.64 22.5 -69.6Q31.34 -74.55 42.44 -74.55Q53.25 -74.55 61.5 -69.9Q69.75 -65.25 74.47 -57.0Q79.2 -48.75 79.2 -38.1Q79.2 -36.15 78.97 -33.97Q78.75 -31.79 78.14 -28.95L25.95 -28.79Q26.4 -27.15 27.3 -25.65Q29.54 -21.0 33.82 -18.52Q38.1 -16.05 43.94 -16.05Q49.35 -16.05 53.7 -17.92Q58.05 -19.8 61.34 -23.55L73.95 -10.95Q68.55 -4.64 60.9 -1.49Q53.25 1.65 44.1 1.65ZM25.95 -44.55 57.75 -44.69Q57.3 -46.8 56.55 -48.6Q54.75 -52.65 51.22 -54.82Q47.69 -57.0 42.6 -57.0Q37.19 -57.0 33.22 -54.52Q29.25 -52.05 27.15 -47.55Q26.4 -46.19 25.95 -44.55Z' fill='%23F5F1E6'></path></g><path d='M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z' fill='%23E3A93B' transform='translate(119.7,40.0) rotate(52) scale(0.34)'></path></svg>">
 <meta name="theme-color" content="#123528">
-<meta name="description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par texte, vocal ou photo, en français, anglais, yoruba et bientôt en fon.">
+<meta name="description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.">
 <link rel="canonical" href="https://sikagle.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SikaGlé">
 <meta property="og:url" content="https://sikagle.com/">
 <meta property="og:title" content="SikaGlé — l'assistant agricole du Bénin, sur WhatsApp">
-<meta property="og:description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par texte, vocal ou photo, en français, anglais, yoruba et bientôt en fon.">
+<meta property="og:description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.">
 <meta property="og:image" content="https://sikagle.com/images/partage-sikagle.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -21,599 +21,633 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"SikaGlé","url":"https://sikagle.com/","email":"contact@sikagle.com","description":"SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par texte, vocal ou photo, en français, anglais, yoruba et bientôt en fon.","areaServed":"Bénin"}
+{"@context":"https://schema.org","@type":"Organization","name":"SikaGlé","url":"https://sikagle.com/","email":"contact@sikagle.com","description":"SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.","areaServed":"Bénin"}
 </script>
 <style>
   :root{
-    --forest: #123528;
-    --forest-deep: #0C271D;
-    --gold: #E3A93B;
-    --gold-soft: #F0C273;
-    --paper: #FBF8F1;
-    --paper-warm: #F2ECDD;
-    --ink: #17231C;
-    --rule: rgba(18,53,40,0.14);
-    --font-display: Georgia, 'Times New Roman', 'Noto Serif', serif;
-    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --forest:#123528;
+    --forest-deep:#0C271D;
+    --forest-mid:#1E4A39;
+    --gold:#E3A93B;
+    --gold-soft:#F0C273;
+    --paper:#F7F4EC;
+    --cream:#F5F1E6;
+    --ink:#17231C;
+    --muted:#4F5D54;
+    --rule:rgba(18,53,40,0.14);
+    --rule-light:rgba(245,241,230,0.16);
+    --font-display:Georgia,'Times New Roman','Noto Serif',serif;
+    --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--font-body);
-    font-size:17px;
-    line-height:1.6;
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{
-    font-family:var(--font-display);
-    font-weight:700;
-    line-height:1.15;
-    margin:0;
-  }
+  h1,h2,h3{font-family:var(--font-display); font-weight:700; line-height:1.12; margin:0;}
+  p{margin:0;}
   a{color:inherit;}
   img{max-width:100%; display:block;}
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-  .reveal{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.is-visible{
-    opacity:1;
-    transform:translateY(0);
-  }
+  ::selection{background:var(--gold); color:var(--forest-deep);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:4px;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  .skip{position:absolute; left:16px; top:-60px; background:var(--gold); color:var(--forest-deep); padding:8px 14px; border-radius:8px; font-weight:700; z-index:50;}
+  .skip:focus{top:12px;}
+
+  /* ---------- En-tête ---------- */
   header{
     position:sticky; top:0; z-index:20;
-    background:var(--paper);
+    background:rgba(247,244,236,0.94);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--rule);
   }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 28px;
-    max-width:1120px; margin:0 auto;
-    gap:16px;
-  }
-  .wordmark{
-    font-family:var(--font-display);
-    font-weight:700;
-    font-size:21px;
-    color:var(--forest);
-    letter-spacing:-0.01em;
-  }
-  .navlinks{display:flex; gap:26px; font-size:15px; flex:1;}
-  .navlinks a{text-decoration:none; opacity:0.7; transition:opacity 0.2s ease;}
-  .navlinks a:hover{opacity:1;}
-  .nav-right{display:flex; align-items:center; gap:14px;}
-  .lang-toggle{
-    display:flex;
-    border:1.5px solid var(--rule);
-    border-radius:999px; overflow:hidden;
-    font-size:13px;
-    font-weight:700;
-  }
-  .lang-toggle button{
-    border:none;
-    background:transparent;
-    padding:7px 14px;
-    cursor:pointer;
-    color:var(--ink);
-    opacity:0.5;
-    font-family:var(--font-body);
-    font-weight:700;
-    font-size:13px;
-  }
-  .lang-toggle button.active{
-    background:var(--forest);
-    color:var(--paper);
-    opacity:1;
-  }
+  .nav{display:flex; align-items:center; gap:24px; padding:14px 24px; max-width:1140px; margin:0 auto;}
+  a.wordmark{display:block; text-decoration:none; flex-shrink:0;}
+  .navlinks{display:flex; gap:26px; font-size:15px; margin-left:auto;}
+  .navlinks a{text-decoration:none; color:var(--muted); padding:4px 0; border-bottom:2px solid transparent;}
+  .navlinks a:hover{color:var(--forest); border-bottom-color:var(--gold);}
+  .nav-right{display:flex; align-items:center; gap:12px;}
+  .lang-toggle{display:flex; border:1.5px solid var(--rule); border-radius:999px; overflow:hidden;}
+  .lang-toggle button{border:none; background:transparent; padding:6px 12px; cursor:pointer; color:var(--muted); font:700 13px var(--font-body);}
+  .lang-toggle button.active{background:var(--forest); color:var(--cream);}
+  @media (max-width:900px){ .navlinks{display:none;} .nav-right{margin-left:auto;} }
+
+  /* ---------- Boutons ---------- */
   .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    white-space:nowrap;
-    background:var(--forest);
-    color:var(--paper);
-    border:none;
-    border-radius:4px;
-    padding:13px 24px;
-    font-family:var(--font-body);
-    font-weight:600;
-    font-size:15px;
-    text-decoration:none;
-    cursor:pointer;
-    transition:background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .btn:hover{background:var(--forest-deep); transform:translateY(-1px); box-shadow:0 6px 16px rgba(18,53,40,0.25);}
-  .btn.gold{background:var(--gold); color:var(--forest-deep);}
-  .btn.gold:hover{background:var(--gold-soft); box-shadow:0 6px 16px rgba(227,169,59,0.35);}
-  .btn.ghost{background:transparent; border:1.5px solid var(--rule); color:var(--ink);}
-  .btn.ghost:hover{background:var(--paper-warm); box-shadow:none;}
-  @media (max-width:760px){ .navlinks{display:none;} }
-  .hero-banner{
-    width:100%;
-    line-height:0;
-  }
-  .hero-banner img{
-    width:100%;
-    height:auto;
-  }
-  .hero-intro{
-    background:var(--forest);
-    color:var(--paper);
-    padding:56px 0 64px;
-  }
-  .hero-intro .wrap{
-    max-width:820px;
-    text-align:center;
-  }
-  .hero-intro .eyebrow{
-    font-size:14px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--gold-soft);
-    font-weight:700;
-    margin-bottom:16px;
-  }
-  .hero-intro h1{
-    font-size:clamp(26px,3.6vw,38px);
-    color:var(--paper);
-  }
-  .hero-intro p{
-    margin-top:18px;font-size:18px;
-    color:rgba(251,248,241,0.86);
-    max-width:60ch;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .hero-intro .cta-row{
-    margin-top:32px;
-    display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
-  }
-  .stats{
-    background:var(--paper-warm);
-    border-bottom:1px solid var(--rule);
-  }
-  .stats .wrap{ display:flex; flex-wrap:wrap;
-    gap:36px 56px;
-    padding:34px 28px;
-    justify-content:center;
-    text-align:center;
-  }
-  .stat b{
-    display:block;
-    font-family:var(--font-display);
-    font-size:30px;
-    font-weight:700;
-    color:var(--forest);
-  }
-  .stat span{
-    font-size:13.5px;
-    opacity:0.7;
-  }
-  section{padding:84px 0;}
-  .section-head{
-    max-width:58ch;
-    margin:0 auto 52px;
-    text-align:center;
-  }
-  .section-head h2{
-    font-size:clamp(26px,3.4vw,36px);
-    color:var(--forest);
-  }
-  .section-head p{
-    margin-top:14px;
-    font-size:17px;
-    opacity:0.78;
-  }
-  .feature-row{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:48px;
-    align-items:center;
-    padding:40px 0;
-    border-top:1px solid var(--rule);
-  }
-  .feature-row:last-child{border-bottom:1px solid var(--rule);}
-  .feature-row.reverse{grid-template-columns:1.1fr 0.9fr;}
-  .feature-row.reverse .feature-visual{order:2;}
-  @media (max-width:760px){  .feature-row, .feature-row.reverse{grid-template-columns:1fr;}
-    .feature-row.reverse .feature-visual{order:0;}
-  }
-  .feature-copy h3{font-size:23px; margin-bottom:12px; color:var(--forest);}
-  .feature-copy p{opacity:0.82;}
-  .feature-visual{
-    background:var(--paper-warm);
-    border:1px solid var(--rule);
-    border-radius:8px;
-    padding:28px;
-    min-height:150px;
-    display:flex; align-items:center; justify-content:center;
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .feature-row:hover .feature-visual{transform:translateY(-4px); box-shadow:0 14px 28px rgba(18,53,40,0.1);}
-  .feature-visual svg{width:100%; max-width:210px; height:auto;}
-  .sources-band{
-    background:var(--forest-deep);
-    color:var(--paper);
-  }
-  .sources-band .section-head h2{color:var(--paper);}
-  .sources-band .section-head p{color:rgba(251,248,241,0.75);}
-  .source-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1px;
-    background:rgba(251,248,241,0.12);
-    border:1px solid rgba(251,248,241,0.12);
-    border-radius:8px;
-    overflow:hidden;
-  }
-  .source-grid div{
-    background:var(--forest-deep);
-    padding:22px 20px;
-    font-size:15px;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    white-space:nowrap; border:none; border-radius:999px;
+    padding:13px 24px; font:600 15px var(--font-body);
+    text-decoration:none; cursor:pointer;
+    background:var(--forest); color:var(--cream);
     transition:background 0.2s ease;
   }
-  .source-grid div:hover{background:#14382a;}
-  @media (max-width:760px){ .source-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:480px){ .source-grid{grid-template-columns:1fr;} }
-  .langs{display:flex; flex-wrap:wrap; gap:14px; margin-top:8px; justify-content:center;}
-  .lang-pill{
-    border:1px solid var(--rule);
-    border-radius:999px;
-    padding:10px 20px;
-    font-size:14.5px;
-    font-weight:600;
-    background:var(--paper-warm);
-    color:var(--forest);
-    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  .btn:hover{background:var(--forest-deep);}
+  .btn svg{width:18px; height:18px; flex-shrink:0;}
+  .btn.gold{background:var(--gold); color:var(--forest-deep);}
+  .btn.gold:hover{background:var(--gold-soft);}
+  .btn.small{padding:9px 16px; font-size:14px;}
+
+  /* ---------- Hero : la démo est le hero ---------- */
+  .hero{background:var(--forest-deep); color:var(--cream); padding:72px 0 80px; overflow:hidden;}
+  .hero .wrap{display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:72px; align-items:center;}
+  .hero h1{font-size:clamp(36px,5.2vw,64px); letter-spacing:-0.025em; text-wrap:balance;}
+  .hero .lead{margin-top:24px; font-size:19px; color:rgba(245,241,230,0.8); max-width:46ch;}
+  .reach{margin-top:40px; padding-top:28px; border-top:1px solid var(--rule-light); display:flex; flex-wrap:wrap; align-items:center; gap:18px 28px;}
+  .reach .number{font-family:var(--font-display); font-size:clamp(24px,2.6vw,30px); color:var(--gold); text-decoration:none; letter-spacing:0.01em;}
+  .reach .number:hover{text-decoration:underline; text-underline-offset:5px;}
+  .reach small{display:block; font-size:14px; color:rgba(245,241,230,0.62); margin-bottom:2px;}
+
+  .phone{background:#06190F; border-radius:38px; padding:11px; box-shadow:0 0 0 1px rgba(245,241,230,0.08), 0 40px 70px -30px rgba(0,0,0,0.7);}
+  .screen{background:var(--forest); border-radius:28px; overflow:hidden;}
+  .chat-head{display:flex; align-items:center; gap:12px; padding:15px 18px; background:#0A2219;}
+  .avatar{
+    width:38px; height:38px; border-radius:12px; background:var(--forest);
+    display:flex; align-items:center; justify-content:center;
+    font:700 22px var(--font-display); color:var(--cream); position:relative;
   }
-  .lang-pill:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(18,53,40,0.1);}
-  .lang-pill.pending{
-    border-style:dashed;
-    opacity:0.65;
+  .avatar::after{
+    content:""; position:absolute; top:6px; right:9px; width:6px; height:9px;
+    background:var(--gold); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; transform:rotate(40deg);
   }
-  .steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
+  .chat-name{color:var(--cream); font-weight:600; font-size:15px; line-height:1.2;}
+  .chat-status{color:rgba(245,241,230,0.6); font-size:12.5px;}
+  .chat{min-height:500px; padding:18px 14px 22px; display:flex; flex-direction:column; gap:10px;}
+  .chat[hidden]{display:none;}
+  .bubble{max-width:84%; padding:10px 13px 6px; border-radius:16px; font-size:14.5px; line-height:1.45;}
+  .bubble .time{display:block; text-align:right; font-size:11px; opacity:0.6; margin-top:3px;}
+  .bubble.me{align-self:flex-end; background:var(--forest-mid); color:var(--cream); border-bottom-right-radius:5px;}
+  .bubble.bot{align-self:flex-start; background:var(--cream); color:var(--ink); border-bottom-left-radius:5px;}
+  .bubble ol{margin:6px 0 2px; padding-left:20px;}
+  .bubble li{margin:2px 0;}
+  .voice{display:flex; align-items:center; gap:10px; min-width:200px;}
+  .voice .play{width:30px; height:30px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;}
+  .me .voice .play{background:var(--gold);}
+  .bot .voice .play{background:var(--forest);}
+  .voice .play svg{width:12px; height:12px;}
+  .voice .wave{flex:1; height:24px;}
+  .voice .dur{font-size:12px; opacity:0.75;}
+  .photo{border-radius:10px; overflow:hidden; margin-bottom:6px; line-height:0;}
+  .photo svg{width:100%; height:auto; max-height:150px;}
+  .chat.play .bubble{animation:pop 0.45s ease both;}
+  .chat.play .bubble:nth-child(2){animation-delay:0.9s;}
+  .chat.play .bubble:nth-child(3){animation-delay:1.9s;}
+  .chat.play .bubble:nth-child(4){animation-delay:2.9s;}
+  @keyframes pop{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+
+  .scenes{margin-top:18px;}
+  .scenes p{font-size:13.5px; color:rgba(245,241,230,0.6); margin-bottom:10px;}
+  .tabs{display:flex; flex-wrap:wrap; gap:8px;}
+  .tab{
+    cursor:pointer; border:1.5px solid var(--rule-light); background:transparent;
+    color:var(--cream); border-radius:999px; padding:7px 14px;
+    font:600 13.5px var(--font-body); transition:background 0.2s ease, border-color 0.2s ease;
   }
-  .step{
-    padding:30px 26px;
-    background:var(--paper-warm);
-    border-radius:10px;
-    border:1px solid var(--rule);
-  }
-  .step .num{
-    font-family:var(--font-display);
-    font-size:14px;
-    color:var(--gold);
-    font-weight:700;
-    background:var(--forest);
-    display:inline-flex;
-    width:30px; height:30px;
-    align-items:center; justify-content:center;
-    border-radius:50%;
-    margin-bottom:14px;
-  }
-  .step h3{font-size:18px; margin-bottom:8px; color:var(--forest);}
-  .step p{font-size:15px; opacity:0.78;}
-  @media (max-width:760px){ .steps{grid-template-columns:1fr;} }
-  .audience-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:24px;
-  }
-  .audience-item{
-    padding:30px 26px;
-    border:1px solid var(--rule);
-    border-radius:10px;
-    transition:transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .audience-item:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(18,53,40,0.08);}
-  .audience-item h3{font-size:19px; color:var(--forest); margin-bottom:10px;}
-  .audience-item p{font-size:15px; opacity:0.8;}
-  @media (max-width:760px){ .audience-grid{grid-template-columns:1fr;} }
-  .final-cta{
-    background:var(--gold);
-    color:var(--forest-deep);
-  }
-  .final-cta .wrap{
-    text-align:center;
-    padding:68px 28px;
-    max-width:720px; }
-  .final-cta h2{font-size:clamp(26px,3.6vw,36px);}
-  .final-cta p{margin-top:16px; font-size:17px; opacity:0.85;}
-  .final-cta .btn{margin-top:26px; background:var(--forest); color:var(--paper);}
-  .final-cta .btn:hover{background:var(--forest-deep);}
-  .final-cta .contact-mail{margin-top:18px; font-size:16px; opacity:1;}
-  .final-cta .contact-mail a{color:var(--forest-deep); font-weight:600; text-decoration:underline; overflow-wrap:anywhere;}
-  footer{
-    padding:36px 0;
-    font-size:14px;
-    opacity:0.65;
-  }
-  footer .wrap{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  .tab:hover{border-color:rgba(227,169,59,0.6);}
+  .tab[aria-selected="true"]{background:var(--gold); border-color:var(--gold); color:var(--forest-deep);}
+
+  @media (max-width:960px){
+    .hero{padding:52px 0 60px;}
+    .hero .wrap{grid-template-columns:minmax(0,1fr); gap:48px;}
+    .demo{max-width:400px; width:100%; margin:0 auto;}
+    .chat{min-height:440px;}
   }
 
-  a.wordmark{color:inherit; text-decoration:none;}
+  /* ---------- Sections-conversation ---------- */
+  section.q{padding:96px 0;}
+  .ask{
+    display:inline-block; position:relative;
+    background:var(--forest-mid); color:var(--cream);
+    padding:10px 16px; border-radius:18px 18px 18px 5px;
+    font-size:16px; margin-bottom:22px; max-width:34ch;
+  }
+  .ask small{display:block; font-size:12px; color:rgba(245,241,230,0.6); margin-bottom:1px;}
+  .answer h2{font-size:clamp(30px,3.8vw,46px); color:var(--forest); letter-spacing:-0.02em; max-width:22ch; text-wrap:balance;}
+  .answer > p{margin-top:16px; font-size:18px; color:var(--muted); max-width:58ch;}
+  @media (max-width:860px){ section.q{padding:68px 0;} }
+
+  /* Façons de demander */
+  .ways{list-style:none; margin:52px 0 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .ways li{padding:4px 28px 4px 0; margin-right:28px; border-right:1px solid var(--rule);}
+  .ways li:last-child{border-right:none; margin-right:0;}
+  .ways svg{width:26px; height:26px; color:var(--forest); margin-bottom:14px;}
+  .ways h3{font-size:20px; color:var(--forest); margin-bottom:6px;}
+  .ways p{font-size:15.5px; color:var(--muted);}
+  @media (max-width:900px){
+    .ways{grid-template-columns:1fr 1fr; gap:36px 0;}
+    .ways li:nth-child(2){border-right:none; margin-right:0;}
+  }
+  @media (max-width:560px){
+    .ways{grid-template-columns:1fr; gap:0;}
+    .ways li{border-right:none; margin-right:0; padding:22px 0; border-top:1px solid var(--rule);}
+  }
+
+  /* Langues */
+  .languages{background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .spoken{list-style:none; margin:44px 0 0; padding:0; border-top:1px solid var(--rule);}
+  .spoken li{display:flex; align-items:baseline; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; padding:18px 0; border-bottom:1px solid var(--rule);}
+  .spoken .name{font-family:var(--font-display); font-size:clamp(38px,6vw,72px); line-height:1; color:var(--forest); letter-spacing:-0.025em;}
+  .spoken .what{font-size:15.5px; color:var(--muted); text-align:right;}
+  .spoken .soon{display:inline-block; margin-left:6px; padding:2px 10px; border-radius:999px; background:var(--gold); color:var(--forest-deep); font-size:13px; font-weight:700; white-space:nowrap;}
+  .understood{margin-top:40px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:16px 40px; align-items:baseline;}
+  .understood h3{font-size:20px; color:var(--forest);}
+  .understood h3 + p{font-size:15.5px; color:var(--muted); margin-top:6px;}
+  .understood .names{font-family:var(--font-display); font-size:clamp(22px,2.4vw,28px); color:var(--forest); line-height:1.45;}
+  @media (max-width:760px){
+    .spoken .what{text-align:left;}
+    .understood{grid-template-columns:1fr;}
+  }
+
+  /* Sources */
+  .sources{background:var(--forest-deep); color:var(--cream);}
+  .sources .ask{background:var(--forest-mid);}
+  .sources .answer h2{color:var(--cream);}
+  .sources .answer > p{color:rgba(245,241,230,0.72);}
+  .source-list{list-style:none; margin:44px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:0 40px;}
+  .source-list li{padding:18px 0 18px 26px; border-top:1px solid var(--rule-light); position:relative; font-size:16px;}
+  .source-list li::before{
+    content:""; position:absolute; left:2px; top:26px; width:8px; height:12px;
+    background:var(--gold); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; transform:rotate(40deg);
+  }
+  @media (max-width:860px){ .source-list{grid-template-columns:1fr;} }
+
+  /* Agronome */
+  .agro .wrap{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:56px; align-items:end;}
+  .agro-steps{list-style:none; margin:0; padding:0; counter-reset:a;}
+  .agro-steps li{counter-increment:a; display:grid; grid-template-columns:36px 1fr; gap:14px; padding:16px 0; border-top:1px solid var(--rule); font-size:16px;}
+  .agro-steps li:last-child{border-bottom:1px solid var(--rule);}
+  .agro-steps li::before{content:counter(a); font:700 18px var(--font-display); color:var(--gold); background:var(--forest); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  @media (max-width:860px){ .agro .wrap{grid-template-columns:1fr; gap:36px;} }
+
+  /* Démarrer */
+  .start{background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .steps{list-style:none; margin:48px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; counter-reset:step;}
+  .steps li{counter-increment:step;}
+  .steps li::before{
+    content:counter(step); display:block;
+    font:700 56px/1 var(--font-display); color:var(--gold); margin-bottom:14px;
+  }
+  .steps h3{font-size:21px; color:var(--forest); margin-bottom:8px;}
+  .steps p{font-size:15.5px; color:var(--muted);}
+  @media (max-width:760px){ .steps{grid-template-columns:1fr; gap:30px;} }
+
+  /* Pour qui */
+  .audience{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:48px;}
+  .audience div{border-top:3px solid var(--gold); padding-top:22px;}
+  .audience h3{font-size:21px; color:var(--forest); margin-bottom:10px;}
+  .audience p{font-size:15.5px; color:var(--muted);}
+  @media (max-width:760px){ .audience{grid-template-columns:1fr; gap:30px;} }
+
+  /* Partenariats */
+  .partner{background:var(--gold); color:var(--forest-deep); padding:84px 0;}
+  .partner .wrap{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:48px; align-items:center;}
+  .partner h2{font-size:clamp(30px,3.8vw,44px); text-wrap:balance;}
+  .partner p{margin-top:14px; font-size:17px; max-width:52ch;}
+  .partner-actions{display:flex; flex-direction:column; align-items:flex-start; gap:14px;}
+  .partner-actions .mail a{font-weight:700; overflow-wrap:anywhere;}
+  @media (max-width:860px){ .partner{padding:60px 0;} .partner .wrap{grid-template-columns:1fr; gap:28px;} }
+
+  /* Bannière photo */
+  .banner{margin:0; line-height:0; background:var(--forest-deep);}
+  .banner img{width:100%; height:auto;}
+
+  /* Preuves */
+  .proof{background:var(--forest); color:var(--cream);}
+  .proof ul{list-style:none; margin:0; padding:44px 0; display:grid; grid-template-columns:repeat(4,1fr); gap:28px 40px;}
+  .proof li{border-left:2px solid rgba(227,169,59,0.55); padding-left:18px;}
+  .proof b{display:block; font:700 clamp(30px,3.4vw,42px)/1.05 var(--font-display); color:var(--gold); letter-spacing:-0.01em;}
+  .proof span{display:block; margin-top:8px; font-size:15px; color:rgba(245,241,230,0.78); line-height:1.45;}
+  @media (max-width:860px){ .proof ul{grid-template-columns:1fr 1fr;} }
+  @media (max-width:440px){ .proof ul{grid-template-columns:1fr;} }
+
+  /* Deuxième porte d'entrée */
+  .org-link{display:inline-block; margin-top:18px; font-size:15px; color:rgba(245,241,230,0.75); text-underline-offset:4px;}
+  .org-link:hover{color:var(--gold);}
+
+  /* Questions fréquentes */
+  .faq-list{margin-top:44px; border-top:1px solid var(--rule); max-width:820px;}
+  .faq-list details{border-bottom:1px solid var(--rule);}
+  .faq-list summary{
+    list-style:none; cursor:pointer; padding:22px 44px 22px 0; position:relative;
+    font:700 clamp(19px,2vw,22px)/1.3 var(--font-display); color:var(--forest);
+  }
+  .faq-list summary::-webkit-details-marker{display:none;}
+  .faq-list summary::after{
+    content:""; position:absolute; right:6px; top:50%; width:12px; height:12px; margin-top:-9px;
+    border-right:2px solid var(--gold); border-bottom:2px solid var(--gold); transform:rotate(45deg);
+    transition:transform 0.2s ease;
+  }
+  .faq-list details[open] summary::after{transform:rotate(-135deg); margin-top:-3px;}
+  .faq-list details p{padding:0 0 24px; font-size:16.5px; color:var(--muted); max-width:66ch;}
+  .faq-list details p a{color:var(--forest); font-weight:600;}
+
+  footer{background:var(--forest-deep); color:rgba(245,241,230,0.7); font-size:14px; padding:32px 0;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px 24px;}
+  footer a{text-decoration:none;}
+  footer a:hover{color:var(--cream); text-decoration:underline;}
+  footer .links{display:flex; flex-wrap:wrap; gap:8px 20px;}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .chat.play .bubble{animation:none;}
+  }
 </style>
 </head>
 <body id="top">
+<a class="skip" href="#contenu" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
 
 <header>
   <div class="nav">
-    <a class="wordmark" href="#top" aria-label="SikaGlé — retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:30px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg>
-</a>
-    <nav class="navlinks">
+    <a class="wordmark" href="#top" aria-label="SikaGlé — retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a>
+    <nav class="navlinks" aria-label="Navigation principale">
       <a href="#fonctionnalites" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+      <a href="#langues" data-fr="Langues" data-en="Languages">Langues</a>
       <a href="#sources" data-fr="Sources" data-en="Sources">Sources</a>
       <a href="#pour-qui" data-fr="Pour qui" data-en="Who it's for">Pour qui</a>
+      <a href="#faq" data-fr="Questions" data-en="FAQ">Questions</a>
       <a href="#contact" data-fr="Partenariats" data-en="Partnerships">Partenariats</a>
     </nav>
     <div class="nav-right">
-      <div class="lang-toggle">
-        <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
-        <button id="btn-en" onclick="setLang('en')">EN</button>
+      <div class="lang-toggle" role="group" aria-label="Langue">
+        <button id="btn-fr" class="active" onclick="setLang('fr')" aria-pressed="true">FR</button>
+        <button id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
       </div>
-      <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener" data-fr="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+      <a class="btn gold small" href="https://wa.me/22966024902" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </header>
 
-<div class="hero-banner">
-  <img src="images/hero-sikagle.png" width="2400" height="1260" data-fr="SikaGlé, l'assistant agricole du Bénin — conversation WhatsApp montrant un diagnostic de plant de piment" data-en="SikaGlé, the agricultural assistant of Benin — WhatsApp conversation showing a pepper plant diagnosis" alt="SikaGlé, l'assistant agricole du Bénin — conversation WhatsApp montrant un diagnostic de plant de piment">
-</div>
+<main id="contenu">
 
-<section class="hero-intro">
+<section class="hero" aria-labelledby="titre-principal">
   <div class="wrap">
-    <div class="eyebrow" data-fr="Assistant agricole conversationnel" data-en="Conversational agricultural assistant">Assistant agricole conversationnel</div>
-    <h1 data-fr="L'intelligence artificielle au service des producteurs agricoles d'Afrique de l'Ouest" data-en="Artificial intelligence in service of agricultural producers across West Africa">L'intelligence artificielle au service des producteurs agricoles d'Afrique de l'Ouest</h1>
-    <p data-fr="SikaGlé accompagne déjà des agriculteurs béninois au quotidien, en texte, en voix ou à partir d'une simple photo — avec des conseils ancrés dans des sources scientifiques vérifiées, jamais dans des suppositions." data-en="SikaGlé already supports Beninese farmers every day, through text, voice, or a simple photo — with advice grounded in verified scientific sources, never guesswork.">SikaGlé accompagne déjà des agriculteurs béninois au quotidien, en texte, en voix ou à partir d'une simple photo — avec des conseils ancrés dans des sources scientifiques vérifiées, jamais dans des suppositions.</p>
-    <div class="cta-row">
-      <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener" data-fr="Essayer SikaGlé maintenant" data-en="Try SikaGlé now">Essayer SikaGlé maintenant</a>
-      <a class="btn ghost" style="border-color:rgba(251,248,241,0.3); color:var(--paper);" href="#fonctionnalites" data-fr="Découvrir le produit" data-en="Explore the product">Découvrir le produit</a>
+    <div>
+      <h1 id="titre-principal" data-fr="Un conseiller agricole dans la poche de chaque producteur." data-en="An agricultural advisor in every farmer's pocket.">Un conseiller agricole dans la poche de chaque producteur.</h1>
+      <p class="lead" data-fr="Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées." data-en="Ask your question on WhatsApp, in writing, by voice note or with a photo. SikaGlé answers in French, English or Fon, with advice drawn from verified agricultural sources.">Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées.</p>
+      <div class="reach">
+        <div>
+          <small data-fr="Le numéro de SikaGlé sur WhatsApp" data-en="SikaGlé's WhatsApp number">Le numéro de SikaGlé sur WhatsApp</small>
+          <a class="number" href="https://wa.me/22966024902" target="_blank" rel="noopener">+229 01 66 02 49 02</a>
+        </div>
+        <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><span data-fr="Démarrer la conversation" data-en="Start the conversation">Démarrer la conversation</span></a>
+      </div>
+      <a class="org-link" href="#contact" data-fr="Vous êtes une coopérative, une ONG ou une entreprise ? Parlons partenariat." data-en="Are you a cooperative, an NGO or a company? Let's talk partnership.">Vous êtes une coopérative, une ONG ou une entreprise ? Parlons partenariat.</a>
+    </div>
+
+    <div class="demo">
+      <div class="phone" role="region" aria-label="Exemple de conversation">
+        <div class="screen">
+          <div class="chat-head">
+            <div class="avatar" aria-hidden="true">e</div>
+            <div>
+              <div class="chat-name">SikaGlé</div>
+              <div class="chat-status" data-fr="En ligne" data-en="Online">En ligne</div>
+            </div>
+          </div>
+<div class="chat play" id="chat-texte" role="tabpanel" aria-labelledby="tab-texte">
+            <div class="bubble me"><span data-fr="Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants." data-en="Good evening. My maize leaves have holes and there's something like sawdust in the heart of the plants.">Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants.</span><span class="time">18:02</span></div>
+            <div class="bubble bot"><span data-fr="Bonsoir. Ces signes font penser à la chenille légionnaire. Voici quoi faire :" data-en="Good evening. These signs point to fall armyworm. Here's what to do:">Bonsoir. Ces signes font penser à la chenille légionnaire. Voici quoi faire :</span>
+              <ol>
+                <li data-fr="Ouvrez le cœur de quelques plants et écrasez les chenilles." data-en="Open the heart of a few plants and crush the caterpillars.">Ouvrez le cœur de quelques plants et écrasez les chenilles.</li>
+                <li data-fr="Pulvérisez un extrait de feuilles de neem le soir." data-en="Spray a neem leaf extract in the evening.">Pulvérisez un extrait de feuilles de neem le soir.</li>
+              </ol><span class="time">18:02</span></div>
+            <div class="bubble bot"><span data-fr="Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles." data-en="How old are your plants, roughly? Young plants are the most vulnerable.">Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles.</span><span class="time">18:03</span></div>
+          </div>
+
+          <div class="chat" id="chat-vocal" role="tabpanel" aria-labelledby="tab-vocal" hidden>
+            <div class="bubble me">
+              <div class="voice"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#0C271D"/></svg></span><svg class="wave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><g fill="#F5F1E6" opacity="0.85"><rect x="0" y="9" width="3" height="6" rx="1.5"/><rect x="7" y="5" width="3" height="14" rx="1.5"/><rect x="14" y="2" width="3" height="20" rx="1.5"/><rect x="21" y="7" width="3" height="10" rx="1.5"/><rect x="28" y="4" width="3" height="16" rx="1.5"/><rect x="35" y="9" width="3" height="6" rx="1.5"/><rect x="42" y="3" width="3" height="18" rx="1.5"/><rect x="49" y="6" width="3" height="12" rx="1.5"/><rect x="56" y="1" width="3" height="22" rx="1.5"/><rect x="63" y="8" width="3" height="8" rx="1.5"/><rect x="70" y="5" width="3" height="14" rx="1.5"/><rect x="77" y="9" width="3" height="6" rx="1.5"/><rect x="84" y="4" width="3" height="16" rx="1.5"/><rect x="91" y="7" width="3" height="10" rx="1.5"/><rect x="98" y="10" width="3" height="4" rx="1.5"/><rect x="105" y="6" width="3" height="12" rx="1.5"/><rect x="112" y="9" width="3" height="6" rx="1.5"/></g></svg><span class="dur">0:14</span></div>
+              <span class="time" data-fr="Message vocal en fon · 07:15" data-en="Voice note in Fon · 07:15">Message vocal en fon · 07:15</span>
+            </div>
+            <div class="bubble bot"><span data-fr="Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :" data-en="Got it. For your tomatoes that wilt as soon as the sun gets hot, here's my advice by voice:">Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :</span><span class="time">07:15</span></div>
+            <div class="bubble bot">
+              <div class="voice"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#F5F1E6"/></svg></span><svg class="wave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><g fill="#123528" opacity="0.75"><rect x="0" y="7" width="3" height="10" rx="1.5"/><rect x="7" y="3" width="3" height="18" rx="1.5"/><rect x="14" y="8" width="3" height="8" rx="1.5"/><rect x="21" y="2" width="3" height="20" rx="1.5"/><rect x="28" y="6" width="3" height="12" rx="1.5"/><rect x="35" y="4" width="3" height="16" rx="1.5"/><rect x="42" y="9" width="3" height="6" rx="1.5"/><rect x="49" y="5" width="3" height="14" rx="1.5"/><rect x="56" y="2" width="3" height="20" rx="1.5"/><rect x="63" y="7" width="3" height="10" rx="1.5"/><rect x="70" y="3" width="3" height="18" rx="1.5"/><rect x="77" y="8" width="3" height="8" rx="1.5"/><rect x="84" y="5" width="3" height="14" rx="1.5"/><rect x="91" y="9" width="3" height="6" rx="1.5"/><rect x="98" y="4" width="3" height="16" rx="1.5"/><rect x="105" y="7" width="3" height="10" rx="1.5"/><rect x="112" y="10" width="3" height="4" rx="1.5"/></g></svg><span class="dur">0:38</span></div>
+              <span class="time">07:16</span>
+            </div>
+          </div>
+
+          <div class="chat" id="chat-photo" role="tabpanel" aria-labelledby="tab-photo" hidden>
+            <div class="bubble me">
+              <div class="photo"><svg viewBox="0 0 240 150" role="img" data-fr="Photo d'une feuille de tomate avec des taches brunes" data-en="Photo of a tomato leaf with brown spots" aria-label="Photo d'une feuille de tomate avec des taches brunes"><rect width="240" height="150" fill="#3B5E2B"/><rect width="240" height="150" fill="#24401C" opacity="0.35"/><path d="M30 120 C70 40 160 20 215 30 C200 80 140 135 30 120 Z" fill="#6E9A3E"/><path d="M30 120 C90 90 150 60 215 30" stroke="#4E7529" stroke-width="3" fill="none"/><path d="M95 92 L80 62 M125 74 L118 44 M155 58 L156 34 M110 84 L132 98 M140 66 L166 80" stroke="#4E7529" stroke-width="2" fill="none"/><g fill="#5B3A1C"><circle cx="88" cy="80" r="9"/><circle cx="140" cy="88" r="7"/><circle cx="170" cy="50" r="6"/><circle cx="118" cy="60" r="5"/></g><g fill="none" stroke="#3A230F" stroke-width="1.5"><circle cx="88" cy="80" r="5"/><circle cx="140" cy="88" r="3.5"/><circle cx="170" cy="50" r="3"/></g><g fill="#C9B14A" opacity="0.55"><circle cx="88" cy="80" r="13"/><circle cx="140" cy="88" r="10"/></g></svg></div>
+              <span data-fr="Les feuilles du bas de mes tomates ont ces taches." data-en="The lower leaves of my tomatoes have these spots.">Les feuilles du bas de mes tomates ont ces taches.</span><span class="time">10:40</span>
+            </div>
+            <div class="bubble bot"><span data-fr="Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : cela ressemble à l'alternariose. Les cas connus les plus proches vont dans le même sens." data-en="Brown ringed spots with a yellow halo on the older leaves: this looks like early blight. The closest known cases point the same way.">Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : cela ressemble à l'alternariose. Les cas connus les plus proches vont dans le même sens.</span><span class="time">10:41</span></div>
+            <div class="bubble bot"><span data-fr="Retirez et brûlez les feuilles touchées, et arrosez au pied, pas sur les feuilles. Les taches sont-elles aussi sur les fruits ?" data-en="Remove and burn the affected leaves, and water at the base, not on the leaves. Are the spots on the fruit too?">Retirez et brûlez les feuilles touchées, et arrosez au pied, pas sur les feuilles. Les taches sont-elles aussi sur les fruits ?</span><span class="time">10:41</span></div>
+          </div>
+
+          <div class="chat" id="chat-meteo" role="tabpanel" aria-labelledby="tab-meteo" hidden>
+            <div class="bubble me"><span data-fr="Je veux pulvériser mon niébé demain." data-en="I want to spray my cowpeas tomorrow.">Je veux pulvériser mon niébé demain.</span><span class="time">16:20</span></div>
+            <div class="bubble bot"><span data-fr="Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir." data-en="Careful: rain is forecast tomorrow afternoon in your area. The product could be washed off before it works.">Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir.</span><span class="time">16:20</span></div>
+            <div class="bubble bot"><span data-fr="Le mieux : traitez tôt le matin, quand il n'y a pas de vent, et au moins quelques heures avant la pluie. Ou attendez un jour sec." data-en="Best option: spray early in the morning when there's no wind, and at least a few hours before the rain. Or wait for a dry day.">Le mieux : traitez tôt le matin, quand il n'y a pas de vent, et au moins quelques heures avant la pluie. Ou attendez un jour sec.</span><span class="time">16:21</span></div>
+          </div>
+
+          <div class="chat" id="chat-agronome" role="tabpanel" aria-labelledby="tab-agronome" hidden>
+            <div class="bubble me"><span data-fr="Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome." data-en="My pineapple plants are turning yellow and I've tried everything. I want to talk to an agronomist.">Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome.</span><span class="time">09:05</span></div>
+            <div class="bubble bot"><span data-fr="D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème." data-en="Sure. I found an agronomist from your region who speaks your language. I'm sending them a summary of your problem.">D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème.</span><span class="time">09:05</span></div>
+            <div class="bubble bot"><span data-fr="Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous." data-en="They will call you back directly on this number. Keep your phone close.">Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous.</span><span class="time">09:06</span></div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="scenes">
+        <p data-fr="Exemples de conversations : choisissez une situation." data-en="Example conversations: pick a situation.">Exemples de conversations : choisissez une situation.</p>
+        <div class="tabs" role="tablist" aria-label="Situations">
+          <button class="tab" role="tab" id="tab-texte" aria-controls="chat-texte" aria-selected="true" data-fr="Question écrite" data-en="Written question">Question écrite</button>
+          <button class="tab" role="tab" id="tab-vocal" aria-controls="chat-vocal" aria-selected="false" tabindex="-1" data-fr="Vocal en fon" data-en="Voice note in Fon">Vocal en fon</button>
+          <button class="tab" role="tab" id="tab-photo" aria-controls="chat-photo" aria-selected="false" tabindex="-1" data-fr="Photo" data-en="Photo">Photo</button>
+          <button class="tab" role="tab" id="tab-meteo" aria-controls="chat-meteo" aria-selected="false" tabindex="-1" data-fr="Météo" data-en="Weather">Météo</button>
+          <button class="tab" role="tab" id="tab-agronome" aria-controls="chat-agronome" aria-selected="false" tabindex="-1" data-fr="Agronome" data-en="Agronomist">Agronome</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="stats">
-  <div class="wrap reveal">
-    <div class="stat"><b>8</b><span data-fr="langues comprises, dont le fon en développement" data-en="languages understood, including Fon in development">langues comprises, dont le fon en développement</span></div>
-    <div class="stat"><b>24/7</b><span data-fr="disponible sur WhatsApp, sans application à installer" data-en="available on WhatsApp, no app to install">disponible sur WhatsApp, sans application à installer</span></div>
-    <div class="stat"><b>📸</b><span data-fr="diagnostic à partir d'une simple photo" data-en="diagnosis from a simple photo">diagnostic à partir d'une simple photo</span></div>
-    <div class="stat"><b>🌦️</b><span data-fr="conseils ajustés à la météo locale en temps réel" data-en="advice adjusted to real-time local weather">conseils ajustés à la météo locale en temps réel</span></div>
-  </div>
-</div>
+<figure class="banner">
+  <img src="images/hero-sikagle.png" width="2400" height="1260" loading="lazy" data-fr="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ de piment" data-en="A Beninese farmer consulting SikaGlé on WhatsApp in his pepper field" alt="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ de piment">
+</figure>
 
-<section id="fonctionnalites">
+<section class="proof" aria-label="SikaGlé en chiffres">
   <div class="wrap">
-    <div class="section-head reveal">
-      <h2 data-fr="Comment SikaGlé aide, concrètement" data-en="How SikaGlé helps, in practice">Comment SikaGlé aide, concrètement</h2>
-      <p data-fr="Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère." data-en="No jargon, no report to read. A direct conversation, in whichever language and format the farmer prefers.">Pas de jargon, pas de rapport à lire. Une conversation directe, dans la langue et le format que l'agriculteur préfère.</p>
-    </div>
+    <ul>
+      <li><b data-fr="6 000+" data-en="6,000+">6 000+</b><span data-fr="documents scientifiques et fiches pratiques dans sa base de connaissances" data-en="scientific documents and practical guides in its knowledge base">documents scientifiques et fiches pratiques dans sa base de connaissances</span></li>
+      <li><b data-fr="40 000+" data-en="40,000+">40 000+</b><span data-fr="images de maladies de référence pour comparer vos photos" data-en="reference disease images to compare your photos with">images de maladies de référence pour comparer vos photos</span></li>
+      <li><b>9</b><span data-fr="langues comprises, dont 3 dans lesquelles il répond" data-en="languages understood, 3 of which it answers in">langues comprises, dont 3 dans lesquelles il répond</span></li>
+      <li><b data-fr="24 h/24" data-en="24/7">24 h/24</b><span data-fr="sur WhatsApp, sans application à installer" data-en="on WhatsApp, with no app to install">sur WhatsApp, sans application à installer</span></li>
+    </ul>
+  </div>
+</section>
 
-    <div class="feature-row reveal">
-      <div class="feature-copy">
-        <h3 data-fr="Texte, voix ou photo — au choix" data-en="Text, voice, or photo — the farmer's choice">Texte, voix ou photo — au choix</h3>
-        <p data-fr="Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction." data-en="A farmer can type a question, record a voice note, or send a photo of a diseased leaf directly. SikaGlé understands all three, seamlessly.">Un agriculteur peut écrire sa question, l'enregistrer en vocal, ou envoyer directement une photo d'une feuille malade. SikaGlé comprend les trois, sans distinction.</p>
-      </div>
-      <div class="feature-visual">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="20" width="55" height="40" rx="6" fill="#123528"/>
-          <path d="M20 60 L30 72 L30 60 Z" fill="#123528"/>
-          <circle cx="105" cy="40" r="24" fill="#E3A93B"/>
-          <path d="M97 40 L103 46 L114 32" stroke="#17231C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="150" y="18" width="42" height="52" rx="4" fill="#2E5443"/>
-          <circle cx="171" cy="34" r="6" fill="#FBF8F1"/>
-        </svg>
-      </div>
-    </div>
+<section class="q" id="fonctionnalites" aria-labelledby="titre-facons">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Je ne connais pas les mots techniques. Je peux quand même te demander ?" data-en="I don't know the technical words. Can I still ask you?">Je ne connais pas les mots techniques. Je peux quand même te demander ?</span></div>
+    <h2 id="titre-facons" data-fr="Oui. Demandez comme vous parleriez à un voisin." data-en="Yes. Ask the way you'd talk to a neighbour.">Oui. Demandez comme vous parleriez à un voisin.</h2>
+    <p data-fr="SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ." data-en="SikaGlé understands the way you say things, then asks the questions it needs to understand your field.">SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ.</p>
+    <ul class="ways">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+        <h3 data-fr="Par écrit" data-en="In writing">Par écrit</h3>
+        <p data-fr="Décrivez ce que vous voyez, avec vos mots." data-en="Describe what you see, in your own words.">Décrivez ce que vous voyez, avec vos mots.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        <h3 data-fr="En vocal" data-en="By voice">En vocal</h3>
+        <p data-fr="Parlez simplement, même dans votre langue." data-en="Just speak, even in your own language.">Parlez simplement, même dans votre langue.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <h3 data-fr="En photo" data-en="With a photo">En photo</h3>
+        <p data-fr="La photo est comparée à des milliers de cas de maladies connus." data-en="The photo is compared with thousands of known disease cases.">La photo est comparée à des milliers de cas de maladies connus.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <h3 data-fr="Avec votre position" data-en="With your location">Avec votre position</h3>
+        <p data-fr="Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ." data-en="Share it if you like: the advice takes your field's weather into account.">Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ.</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <div class="feature-row reverse reveal">
-      <div class="feature-copy">
-        <h3 data-fr="Une photo comparée à des milliers de cas connus" data-en="A photo compared against thousands of known cases">Une photo comparée à des milliers de cas connus</h3>
-        <p data-fr="Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire." data-en="Every photo sent is also visually compared against a large reference base of already-documented diseases, complementing the direct analysis — refining the observation even before consulting the knowledge base.">Chaque photo envoyée est aussi comparée visuellement à une large base de référence de maladies déjà répertoriées, en complément de l'analyse directe — pour affiner l'observation avant même de consulter la base documentaire.</p>
+<section class="q languages" id="langues" aria-labelledby="titre-langues">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Tu parles fon ?" data-en="Do you speak Fon?">Tu parles fon ?</span></div>
+    <h2 id="titre-langues" data-fr="SikaGlé comprend et répond en trois langues." data-en="SikaGlé understands and answers in three languages.">SikaGlé comprend et répond en trois langues.</h2>
+    <ul class="spoken">
+      <li><span class="name" data-fr="Français" data-en="French">Français</span><span class="what" data-fr="par écrit et en vocal" data-en="in writing and by voice">par écrit et en vocal</span></li>
+      <li><span class="name" data-fr="Anglais" data-en="English">Anglais</span><span class="what" data-fr="par écrit et en vocal" data-en="in writing and by voice">par écrit et en vocal</span></li>
+      <li><span class="name">Fon</span><span class="what"><span data-fr="par écrit, et bientôt en vocal" data-en="in writing, and soon by voice">par écrit, et bientôt en vocal</span><span class="soon" data-fr="voix en finalisation" data-en="voice almost ready">voix en finalisation</span></span></li>
+    </ul>
+    <div class="understood">
+      <div>
+        <h3 data-fr="Il comprend aussi" data-en="It also understands">Il comprend aussi</h3>
+        <p data-fr="Posez votre question dans ces langues : SikaGlé la comprend et vous répond en français." data-en="Ask your question in these languages: SikaGlé understands it and answers in French.">Posez votre question dans ces langues : SikaGlé la comprend et vous répond en français.</p>
       </div>
-      <div class="feature-visual">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-          <rect x="15" y="20" width="50" height="50" rx="4" fill="#2E5443"/>
-          <rect x="75" y="20" width="50" height="50" rx="4" fill="#F2ECDD" stroke="#123528" stroke-width="2"/>
-          <rect x="135" y="20" width="50" height="50" rx="4" fill="#F2ECDD" stroke="#123528" stroke-width="2"/>
-          <path d="M65 45 L75 45" stroke="#E3A93B" stroke-width="3" stroke-dasharray="3 3"/>
-          <path d="M125 45 L135 45" stroke="#E3A93B" stroke-width="3" stroke-dasharray="3 3"/>
-          <circle cx="40" cy="45" r="10" fill="#E3A93B"/>
-          <path d="M32 45 L38 51 L49 38" stroke="#17231C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="feature-row reveal">
-      <div class="feature-copy">
-        <h3 data-fr="Des réponses ancrées dans la science, pas inventées" data-en="Answers grounded in science, never invented">Des réponses ancrées dans la science, pas inventées</h3>
-        <p data-fr="Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner." data-en="Every recommendation relies on a verified knowledge base — agricultural research institutes, practical guides, African scientific publications. When information is missing, SikaGlé says so clearly rather than guessing.">Chaque conseil s'appuie sur une base documentaire vérifiée — instituts de recherche agricole, fiches pratiques, publications scientifiques africaines. Quand l'information manque, SikaGlé le dit clairement plutôt que de deviner.</p>
-      </div>
-      <div class="feature-visual">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="20" width="90" height="100" rx="4" fill="#F2ECDD" stroke="#123528" stroke-width="3"/>
-          <line x1="55" y1="42" x2="115" y2="42" stroke="#123528" stroke-width="3"/>
-          <line x1="55" y1="58" x2="115" y2="58" stroke="#123528" stroke-width="3"/>
-          <line x1="55" y1="74" x2="95" y2="74" stroke="#E3A93B" stroke-width="3"/>
-          <rect x="120" y="70" width="45" height="45" rx="4" fill="#2E5443"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="feature-row reverse reveal">
-      <div class="feature-copy">
-        <h3 data-fr="La météo, quand elle compte vraiment" data-en="Weather, when it truly matters">La météo, quand elle compte vraiment</h3>
-        <p data-fr="Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise." data-en="Before recommending a treatment, SikaGlé checks whether rain is expected in the farmer's area — and adjusts its answer accordingly. A farmer can also share their exact location on WhatsApp for even more precise weather.">Avant de conseiller un traitement, SikaGlé regarde s'il va pleuvoir dans la zone de l'agriculteur — et ajuste sa réponse en conséquence. Un agriculteur peut aussi partager sa position exacte sur WhatsApp pour une météo encore plus précise.</p>
-      </div>
-      <div class="feature-visual">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="80" cy="55" r="28" fill="#E3A93B"/>
-          <ellipse cx="120" cy="70" rx="42" ry="24" fill="#F2ECDD" stroke="#123528" stroke-width="3"/>
-          <line x1="95" y1="105" x2="88" y2="122" stroke="#2E5443" stroke-width="3" stroke-linecap="round"/>
-          <line x1="115" y1="105" x2="108" y2="122" stroke="#2E5443" stroke-width="3" stroke-linecap="round"/>
-          <line x1="135" y1="105" x2="128" y2="122" stroke="#2E5443" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <div class="feature-row reveal">
-      <div class="feature-copy">
-        <h3 data-fr="Un vrai agronome, quand il le faut" data-en="A real agronomist, when it's needed">Un vrai agronome, quand il le faut</h3>
-        <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — à la demande pour tous, et avec des consultations incluses pour les abonnés Premium et les membres de coopératives." data-en="When a situation goes beyond what SikaGlé can state with certainty, the farmer can be connected with an agronomist who calls them back directly — on demand for everyone, with consultations included for Premium subscribers and cooperative members.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, l'agriculteur peut être mis en relation avec un agronome qui le rappelle directement — à la demande pour tous, et avec des consultations incluses pour les abonnés Premium et les membres de coopératives.</p>
-      </div>
-      <div class="feature-visual">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="70" cy="55" r="22" fill="#F2ECDD" stroke="#123528" stroke-width="3"/>
-          <circle cx="70" cy="46" r="8" fill="#123528"/>
-          <path d="M55 68 Q70 58 85 68" stroke="#123528" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <path d="M110 55 L130 55" stroke="#E3A93B" stroke-width="3" stroke-dasharray="4 4"/>
-          <circle cx="150" cy="55" r="22" fill="#2E5443"/>
-          <path d="M140 55 Q150 42 160 55 Q150 68 140 55 Z" fill="#F2ECDD"/>
-        </svg>
-      </div>
+      <p class="names" data-fr="Yoruba, bariba, adja, goun, dendi, fulfuldé" data-en="Yoruba, Bariba, Adja, Goun, Dendi, Fulfulde">Yoruba, bariba, adja, goun, dendi, fulfuldé</p>
     </div>
   </div>
 </section>
 
-<section class="sources-band" id="sources">
+<section class="q sources" id="sources" aria-labelledby="titre-sources">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Tes conseils, ils viennent d'où ?" data-en="Where does your advice come from?">Tes conseils, ils viennent d'où ?</span></div>
+    <h2 id="titre-sources" data-fr="De la recherche agricole, pas de suppositions." data-en="From agricultural research, not guesswork.">De la recherche agricole, pas de suppositions.</h2>
+    <p data-fr="Chaque réponse s'appuie sur des dizaines de sources scientifiques et de fiches pratiques, vérifiées une à une. Quand l'information manque, SikaGlé le dit au lieu de deviner." data-en="Every answer relies on dozens of scientific sources and practical guides, checked one by one. When information is missing, SikaGlé says so instead of guessing.">Chaque réponse s'appuie sur des dizaines de sources scientifiques et de fiches pratiques, vérifiées une à une. Quand l'information manque, SikaGlé le dit au lieu de deviner.</p>
+    <ul class="source-list">
+      <li data-fr="Instituts de recherche agricole internationaux" data-en="International agricultural research institutes">Instituts de recherche agricole internationaux</li>
+      <li data-fr="Centres de recherche spécialisés par culture" data-en="Crop-specific research centers">Centres de recherche spécialisés par culture</li>
+      <li data-fr="Fiches pratiques pour les producteurs" data-en="Practical guides for farmers">Fiches pratiques pour les producteurs</li>
+      <li data-fr="Recherche agronomique béninoise" data-en="Beninese agronomic research">Recherche agronomique béninoise</li>
+      <li data-fr="Bases de diagnostic visuel des maladies" data-en="Visual disease diagnosis databases">Bases de diagnostic visuel des maladies</li>
+      <li data-fr="Programmes régionaux ouest-africains" data-en="West African regional programs">Programmes régionaux ouest-africains</li>
+    </ul>
+  </div>
+</section>
+
+<section class="q agro" aria-labelledby="titre-agro">
   <div class="wrap">
-    <div class="section-head reveal">
-      <h2 data-fr="Une base documentaire construite avec rigueur" data-en="A knowledge base built with rigor">Une base documentaire construite avec rigueur</h2>
-      <p data-fr="Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs." data-en="Dozens of scientific sources and practical guides, each individually verified and cleared for use, covering African agricultural research and leading international institutes — from crop genetics to pest management.">Des dizaines de sources scientifiques et de fiches pratiques, chacune vérifiée et autorisée une à une, couvrant la recherche agricole africaine et les instituts internationaux de référence — de la génétique des cultures à la gestion des ravageurs.</p>
+    <div class="answer">
+      <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Et si mon problème est plus grave ?" data-en="And if my problem is more serious?">Et si mon problème est plus grave ?</span></div>
+      <h2 id="titre-agro" data-fr="Un vrai agronome vous rappelle." data-en="A real agronomist calls you back.">Un vrai agronome vous rappelle.</h2>
+      <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives." data-en="When a situation goes beyond what SikaGlé can say with certainty, it connects you with an agronomist from your region. On demand for everyone, with consultations included for Premium subscribers and cooperative members.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives.</p>
     </div>
-    <div class="source-grid reveal">
-      <div data-fr="Instituts de recherche agricole internationaux" data-en="International agricultural research institutes">Instituts de recherche agricole internationaux</div>
-      <div data-fr="Centres de recherche spécialisés par culture" data-en="Crop-specific research centers">Centres de recherche spécialisés par culture</div>
-      <div data-fr="Fiches pratiques pour petits producteurs" data-en="Practical guides for smallholder farmers">Fiches pratiques pour petits producteurs</div>
-      <div data-fr="Recherche agronomique béninoise" data-en="Beninese agronomic research">Recherche agronomique béninoise</div>
-      <div data-fr="Bases de diagnostic visuel des maladies" data-en="Visual disease diagnosis databases">Bases de diagnostic visuel des maladies</div>
-      <div data-fr="Programmes régionaux ouest-africains" data-en="West African regional programs">Programmes régionaux ouest-africains</div>
-    </div>
+    <ol class="agro-steps">
+      <li data-fr="Vous écrivez « je veux parler à un agronome »." data-en="You write “I want to talk to an agronomist”.">Vous écrivez « je veux parler à un agronome ».</li>
+      <li data-fr="SikaGlé choisit un agronome qui parle votre langue et connaît votre région." data-en="SikaGlé picks an agronomist who speaks your language and knows your region.">SikaGlé choisit un agronome qui parle votre langue et connaît votre région.</li>
+      <li data-fr="Il lui envoie le résumé de votre conversation : vous n'avez pas à tout réexpliquer." data-en="It sends them a summary of your conversation: you don't have to explain everything again.">Il lui envoie le résumé de votre conversation : vous n'avez pas à tout réexpliquer.</li>
+      <li data-fr="L'agronome vous rappelle directement." data-en="The agronomist calls you back directly.">L'agronome vous rappelle directement.</li>
+    </ol>
   </div>
 </section>
 
-<section>
-  <div class="wrap reveal">
-    <div class="section-head">
-      <h2 data-fr="Parlé dans les langues du terrain" data-en="Spoken in the languages of the field">Parlé dans les langues du terrain</h2>
-      <p data-fr="Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend huit langues parlées au Bénin." data-en="Advice only helps if it's understood in the right language. SikaGlé understands eight languages spoken in Benin.">Un conseil compris n'est utile que s'il est compris dans la bonne langue. SikaGlé comprend huit langues parlées au Bénin.</p>
-    </div>
-    <div class="langs">
-      <span class="lang-pill" data-fr="Français — texte et voix" data-en="French — text and voice">Français — texte et voix</span>
-      <span class="lang-pill" data-fr="Anglais — texte et voix" data-en="English — text and voice">Anglais — texte et voix</span>
-      <span class="lang-pill" data-fr="Yoruba — texte et voix" data-en="Yoruba — text and voice">Yoruba — texte et voix</span>
-      <span class="lang-pill" data-fr="Fon — texte, voix en développement" data-en="Fon — text, voice in development">Fon — texte, voix en développement</span>
-      <span class="lang-pill pending" data-fr="Bariba — compris" data-en="Bariba — understood">Bariba — compris</span>
-      <span class="lang-pill pending" data-fr="Adja — compris" data-en="Adja — understood">Adja — compris</span>
-      <span class="lang-pill pending" data-fr="Goun — compris" data-en="Goun — understood">Goun — compris</span>
-      <span class="lang-pill pending" data-fr="Dendi — compris" data-en="Dendi — understood">Dendi — compris</span>
-      <span class="lang-pill pending" data-fr="Fulfuldé — compris" data-en="Fulfulde — understood">Fulfuldé — compris</span>
-    </div>
+<section class="q start" aria-labelledby="titre-start">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Comment je commence ?" data-en="How do I start?">Comment je commence ?</span></div>
+    <h2 id="titre-start" data-fr="Trois messages, et c'est parti." data-en="Three messages, and you're set.">Trois messages, et c'est parti.</h2>
+    <p data-fr="Aucune application à installer, aucune formation." data-en="No app to install, no training.">Aucune application à installer, aucune formation.</p>
+    <ol class="steps">
+      <li>
+        <h3 data-fr="Choisissez votre langue" data-en="Choose your language">Choisissez votre langue</h3>
+        <p data-fr="Français, anglais ou fon : SikaGlé vous demande dans quelle langue échanger." data-en="French, English or Fon: SikaGlé asks which language you'd like to use.">Français, anglais ou fon : SikaGlé vous demande dans quelle langue échanger.</p>
+      </li>
+      <li>
+        <h3 data-fr="Dites ce que vous cultivez" data-en="Say what you grow">Dites ce que vous cultivez</h3>
+        <p data-fr="Une phrase suffit. Les réponses s'adaptent ensuite à vos cultures." data-en="One sentence is enough. Answers then adapt to your crops.">Une phrase suffit. Les réponses s'adaptent ensuite à vos cultures.</p>
+      </li>
+      <li>
+        <h3 data-fr="Posez votre question" data-en="Ask your question">Posez votre question</h3>
+        <p data-fr="Par écrit, en vocal ou avec une photo. La réponse arrive dans la conversation." data-en="In writing, by voice or with a photo. The answer arrives in the conversation.">Par écrit, en vocal ou avec une photo. La réponse arrive dans la conversation.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section>
-  <div class="wrap reveal">
-    <div class="section-head">
-      <h2 data-fr="Commencer prend trois messages" data-en="Getting started takes three messages">Commencer prend trois messages</h2>
-      <p data-fr="Aucune formation, aucune application à installer." data-en="No training needed, no app to install.">Aucune formation, aucune application à installer.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3 data-fr="Choisir sa langue" data-en="Choose a language">Choisir sa langue</h3>
-        <p data-fr="SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger." data-en="SikaGlé simply asks which language the farmer prefers to use.">SikaGlé demande simplement dans quelle langue l'agriculteur préfère échanger.</p>
+<section class="q" id="pour-qui" aria-labelledby="titre-pour-qui">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Une organisation demande" data-en="An organisation asks">Une organisation demande</small><span data-fr="SikaGlé, c'est pour qui ?" data-en="Who is SikaGlé for?">SikaGlé, c'est pour qui ?</span></div>
+    <h2 id="titre-pour-qui" data-fr="Pour ceux qui travaillent la terre, et ceux qui les accompagnent." data-en="For those who work the land, and those who support them.">Pour ceux qui travaillent la terre, et ceux qui les accompagnent.</h2>
+    <div class="audience">
+      <div>
+        <h3 data-fr="Agriculteurs" data-en="Farmers">Agriculteurs</h3>
+        <p data-fr="Des réponses immédiates sur vos cultures, les maladies de vos plantes et la météo de votre zone, sur le téléphone que vous utilisez déjà." data-en="Immediate answers about your crops, plant diseases and the weather in your area, on the phone you already use.">Des réponses immédiates sur vos cultures, les maladies de vos plantes et la météo de votre zone, sur le téléphone que vous utilisez déjà.</p>
       </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3 data-fr="Indiquer ses cultures" data-en="Share their crops">Indiquer ses cultures</h3>
-        <p data-fr="Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé." data-en="One sentence is enough — SikaGlé then tailors its answers to what's actually being grown.">Une phrase suffit — SikaGlé adapte ensuite ses réponses à ce qui est réellement cultivé.</p>
+      <div>
+        <h3 data-fr="Coopératives" data-en="Cooperatives">Coopératives</h3>
+        <p data-fr="Un premier niveau de conseil disponible à toute heure pour vos membres, et l'accès gratuit aux agronomes de votre coopérative." data-en="A first level of advice available at any hour for your members, plus free access to your cooperative's agronomists.">Un premier niveau de conseil disponible à toute heure pour vos membres, et l'accès gratuit aux agronomes de votre coopérative.</p>
       </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3 data-fr="Poser sa première question" data-en="Ask their first question">Poser sa première question</h3>
-        <p data-fr="Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation." data-en="By text, voice, or photo. SikaGlé replies right in the conversation.">Par texte, par vocal, ou avec une photo. SikaGlé répond directement dans la conversation.</p>
+      <div>
+        <h3 data-fr="ONG et programmes agricoles" data-en="NGOs and agricultural programs">ONG et programmes agricoles</h3>
+        <p data-fr="Un outil qui complète vos équipes de terrain et touche plus de producteurs avec les mêmes moyens." data-en="A tool that complements your field teams and reaches more farmers with the same resources.">Un outil qui complète vos équipes de terrain et touche plus de producteurs avec les mêmes moyens.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pour-qui">
-  <div class="wrap reveal">
-    <div class="section-head">
-      <h2 data-fr="Pour qui" data-en="Who it's for">Pour qui</h2>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-item">
-        <h3 data-fr="Agriculteur" data-en="Farmer">Agriculteur</h3>
-        <p data-fr="Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà." data-en="Immediate answers about your crops, plant diseases, and local weather — right on the phone you already use.">Des réponses immédiates sur vos cultures, vos maladies de plantes et la météo de votre zone — directement sur le téléphone que vous utilisez déjà.</p>
-      </div>
-      <div class="audience-item">
-        <h3 data-fr="Coopérative" data-en="Cooperative">Coopérative</h3>
-        <p data-fr="Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu." data-en="Make SikaGlé available to your members for a consistent, always-on first level of advice.">Mettez SikaGlé à disposition de vos membres pour un premier niveau de conseil, cohérent et disponible en continu.</p>
-      </div>
-      <div class="audience-item">
-        <h3 data-fr="ONG &amp; programmes de développement" data-en="NGOs &amp; development programs">ONG &amp; programmes de développement</h3>
-        <p data-fr="Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain." data-en="Integrate SikaGlé into your agricultural programs to multiply the reach of your field teams.">Intégrez SikaGlé dans vos programmes agricoles pour démultiplier la portée de vos équipes de terrain.</p>
-      </div>
+<section class="q" id="faq" aria-labelledby="titre-faq">
+  <div class="wrap answer">
+    <div class="ask"><small data-fr="Les questions qu'on nous pose" data-en="Questions we often get">Les questions qu'on nous pose</small><span data-fr="Et le reste ?" data-en="What else?">Et le reste ?</span></div>
+    <h2 id="titre-faq" data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</h2>
+    <div class="faq-list">
+      <details>
+        <summary><span data-fr="Est-ce que SikaGlé est gratuit ?" data-en="Is SikaGlé free?">Est-ce que SikaGlé est gratuit ?</span></summary>
+        <p data-fr="Oui. Les questions de tous les jours sont gratuites, avec un nombre de messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, des consultations d'agronome incluses, ou pour les coopératives." data-en="Yes. Everyday questions are free, within a daily number of messages. Paid plans exist for those who want more messages, included agronomist consultations, or for cooperatives.">Oui. Les questions de tous les jours sont gratuites, avec un nombre de messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, des consultations d'agronome incluses, ou pour les coopératives.</p>
+      </details>
+      <details>
+        <summary><span data-fr="Sur quelles cultures peut-il m'aider ?" data-en="Which crops can it help with?">Sur quelles cultures peut-il m'aider ?</span></summary>
+        <p data-fr="Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le poivron ou la pomme de terre." data-en="The common crops of Benin and West Africa: maize, cassava, cowpea, rice, tomato, chilli, pineapple and many more. Photo comparison is most precise for the best-documented crops, such as tomato, maize, pepper and potato.">Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le poivron ou la pomme de terre.</p>
+      </details>
+      <details>
+        <summary><span data-fr="Est-ce que SikaGlé remplace un agronome ?" data-en="Does SikaGlé replace an agronomist?">Est-ce que SikaGlé remplace un agronome ?</span></summary>
+        <p data-fr="Non. SikaGlé est un premier niveau de conseil, disponible à toute heure. Quand une situation est sérieuse ou incertaine, il vous le dit et vous met en relation avec un vrai agronome." data-en="No. SikaGlé is a first level of advice, available at any hour. When a situation is serious or uncertain, it tells you so and connects you with a real agronomist.">Non. SikaGlé est un premier niveau de conseil, disponible à toute heure. Quand une situation est sérieuse ou incertaine, il vous le dit et vous met en relation avec un vrai agronome.</p>
+      </details>
+      <details>
+        <summary><span data-fr="Faut-il beaucoup de connexion ?" data-en="Do I need a strong connection?">Faut-il beaucoup de connexion ?</span></summary>
+        <p data-fr="Non. Il suffit que WhatsApp fonctionne sur votre téléphone. Les messages écrits consomment très peu de données ; les vocaux et les photos un peu plus." data-en="No. WhatsApp just needs to work on your phone. Text messages use very little data; voice notes and photos a bit more.">Non. Il suffit que WhatsApp fonctionne sur votre téléphone. Les messages écrits consomment très peu de données ; les vocaux et les photos un peu plus.</p>
+      </details>
+      <details>
+        <summary><span data-fr="Que deviennent mes informations ?" data-en="What happens to my information?">Que deviennent mes informations ?</span></summary>
+        <p><span data-fr="Elles servent à vous répondre et à adapter les conseils à vos cultures. Votre position n'est utilisée que si vous choisissez de la partager. Tout est expliqué dans notre " data-en="It is used to answer you and to tailor advice to your crops. Your location is only used if you choose to share it. Everything is explained in our ">Elles servent à vous répondre et à adapter les conseils à vos cultures. Votre position n'est utilisée que si vous choisissez de la partager. Tout est expliqué dans notre </span><a href="/confidentialite" data-fr="politique de confidentialité" data-en="privacy policy">politique de confidentialité</a>.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="final-cta" id="contact">
-  <div class="wrap reveal">
-    <h2 data-fr="Vous représentez une organisation agricole ?" data-en="Do you represent an agricultural organization?">Vous représentez une organisation agricole ?</h2>
-    <p data-fr="Fournisseur de semences, coopérative, ONG ou institution — discutons de la manière dont SikaGlé peut s'intégrer à vos programmes ou enrichir votre offre auprès des producteurs." data-en="Seed supplier, cooperative, NGO, or institution — let's discuss how SikaGlé can fit into your programs or enhance your offering for farmers.">Fournisseur de semences, coopérative, ONG ou institution — discutons de la manière dont SikaGlé peut s'intégrer à vos programmes ou enrichir votre offre auprès des producteurs.</p>
-    <a class="btn" href="https://wa.me/22996118335" target="_blank" rel="noopener" data-fr="Nous contacter pour un partenariat" data-en="Contact us about a partnership">Nous contacter pour un partenariat</a>
-    <p class="contact-mail"><span data-fr="Ou par e-mail :" data-en="Or by email:">Ou par e-mail :</span> <a href="mailto:contact@sikagle.com">contact@sikagle.com</a></p>
+<section class="partner" id="contact" aria-labelledby="titre-contact">
+  <div class="wrap">
+    <div>
+      <h2 id="titre-contact" data-fr="Vous représentez une organisation agricole ?" data-en="Do you represent an agricultural organization?">Vous représentez une organisation agricole ?</h2>
+      <p data-fr="Fournisseur de semences, coopérative, ONG ou institution : parlons de la façon dont SikaGlé peut s'intégrer à vos programmes ou compléter votre offre auprès des producteurs." data-en="Seed supplier, cooperative, NGO or institution: let's talk about how SikaGlé can fit into your programs or complement what you offer farmers.">Fournisseur de semences, coopérative, ONG ou institution : parlons de la façon dont SikaGlé peut s'intégrer à vos programmes ou compléter votre offre auprès des producteurs.</p>
+    </div>
+    <div class="partner-actions">
+      <a class="btn" href="https://wa.me/22996118335" target="_blank" rel="noopener" data-fr="Nous contacter pour un partenariat" data-en="Contact us about a partnership">Nous contacter pour un partenariat</a>
+      <p class="mail"><span data-fr="Ou par e-mail :" data-en="Or by email:">Ou par e-mail :</span> <a href="mailto:contact@sikagle.com">contact@sikagle.com</a></p>
+    </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <div data-fr="SikaGlé — assistant agricole, Bénin" data-en="SikaGlé — agricultural assistant, Benin">SikaGlé — assistant agricole, Bénin</div>
-    <div><a href="/confidentialite" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a> · <a href="/conditions" data-fr="Conditions d'utilisation" data-en="Terms of use">Conditions d'utilisation</a> · © 2026 SikaGlé</div>
+    <div data-fr="© 2026 SikaGlé, assistant agricole, Bénin" data-en="© 2026 SikaGlé, agricultural assistant, Benin">© 2026 SikaGlé, assistant agricole, Bénin</div>
+    <div class="links">
+      <a href="/confidentialite" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a>
+      <a href="/conditions" data-fr="Conditions d'utilisation" data-en="Terms of use">Conditions d'utilisation</a>
+      <a href="mailto:contact@sikagle.com">contact@sikagle.com</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach((el) => observer.observe(el));
-
+  /* ----- Langue FR / EN ----- */
   function setLang(lang) {
     document.documentElement.lang = lang;
-
     document.querySelectorAll('[data-fr]').forEach((el) => {
       const text = el.getAttribute('data-' + lang);
-      if (text !== null) {
-        if (el.tagName === 'IMG') {
-          el.setAttribute('alt', text);
-        } else {
-          el.textContent = text;
-        }
+      if (text === null) return;
+      if (el.tagName === 'IMG') {
+        el.setAttribute('alt', text);
+      } else if (el.getAttribute('role') === 'img') {
+        el.setAttribute('aria-label', text);
+      } else {
+        el.textContent = text;
       }
     });
-
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   }
+
+  /* ----- Démo de conversation ----- */
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+
+  function selectTab(tab, focus) {
+    tabs.forEach((t) => {
+      const selected = t === tab;
+      t.setAttribute('aria-selected', selected);
+      t.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      panel.hidden = !selected;
+      panel.classList.remove('play');
+      if (selected) {
+        void panel.offsetWidth;   /* relance l'animation des bulles */
+        panel.classList.add('play');
+      }
+    });
+    if (focus) tab.focus();
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectTab(tab, false));
+    tab.addEventListener('keydown', (e) => {
+      const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+      if (keys[e.key]) {
+        e.preventDefault();
+        selectTab(tabs[(i + keys[e.key] + tabs.length) % tabs.length], true);
+      }
+    });
+  });
 </script>
 
 </body>
