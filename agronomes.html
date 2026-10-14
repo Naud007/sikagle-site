@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devenir agronome partenaire — SikaGlé</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' rx='44' fill='%23123528'/><g transform='translate(58.9,154)'><path d='M44.1 1.65Q32.25 1.65 23.02 -3.22Q13.79 -8.1 8.54 -16.8Q3.3 -25.5 3.3 -36.45Q3.3 -47.4 8.47 -56.02Q13.65 -64.64 22.5 -69.6Q31.34 -74.55 42.44 -74.55Q53.25 -74.55 61.5 -69.9Q69.75 -65.25 74.47 -57.0Q79.2 -48.75 79.2 -38.1Q79.2 -36.15 78.97 -33.97Q78.75 -31.79 78.14 -28.95L25.95 -28.79Q26.4 -27.15 27.3 -25.65Q29.54 -21.0 33.82 -18.52Q38.1 -16.05 43.94 -16.05Q49.35 -16.05 53.7 -17.92Q58.05 -19.8 61.34 -23.55L73.95 -10.95Q68.55 -4.64 60.9 -1.49Q53.25 1.65 44.1 1.65ZM25.95 -44.55 57.75 -44.69Q57.3 -46.8 56.55 -48.6Q54.75 -52.65 51.22 -54.82Q47.69 -57.0 42.6 -57.0Q37.19 -57.0 33.22 -54.52Q29.25 -52.05 27.15 -47.55Q26.4 -46.19 25.95 -44.55Z' fill='%23F5F1E6'></path></g><path d='M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z' fill='%23E3A93B' transform='translate(119.7,40.0) rotate(52) scale(0.34)'></path></svg>">
+<meta name="theme-color" content="#123528">
+<meta name="description" content="Agronomes du Bénin : rejoignez SikaGlé et conseillez les producteurs par téléphone. Envoyez votre candidature en quelques minutes.">
+<link rel="canonical" href="https://sikagle.com/agronomes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SikaGlé">
+<meta property="og:url" content="https://sikagle.com/agronomes">
+<meta property="og:title" content="Devenir agronome partenaire de SikaGlé">
+<meta property="og:description" content="Conseillez les producteurs du Bénin par téléphone, à vos heures. Envoyez votre candidature en quelques minutes.">
+<meta property="og:image" content="https://sikagle.com/images/partage-sikagle.jpg">
+<meta property="og:locale" content="fr_FR">
+<style>
+  :root{
+    --forest:#123528; --forest-deep:#0C271D; --forest-mid:#1E4A39;
+    --gold:#E3A93B; --gold-soft:#F0C273;
+    --paper:#F7F4EC; --cream:#F5F1E6; --ink:#17231C; --muted:#4F5D54;
+    --rule:rgba(18,53,40,0.14); --error:#A3361F; --ok:#1E6B45;
+    --font-display:Georgia,'Times New Roman','Noto Serif',serif;
+    --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:var(--font-display); font-weight:700; line-height:1.15; margin:0;}
+  p{margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:4px;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
+
+  header{background:rgba(247,244,236,0.94); border-bottom:1px solid var(--rule);}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1040px; margin:0 auto;}
+  a.wordmark{display:block; text-decoration:none;}
+  .back{font-size:15px; color:var(--muted); text-decoration:none; border-bottom:2px solid transparent;}
+  .back:hover{color:var(--forest); border-bottom-color:var(--gold);}
+
+  .hero{background:var(--forest-deep); color:var(--cream); padding:64px 0 72px;}
+  .eyebrow{font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);}
+  .hero h1{margin-top:14px; font-size:clamp(32px,5vw,54px); letter-spacing:-0.02em; max-width:22ch; text-wrap:balance;}
+  .hero .lead{margin-top:20px; font-size:19px; color:rgba(245,241,230,0.82); max-width:56ch;}
+
+  .steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; padding:56px 0 8px;}
+  .step .n{font-family:var(--font-display); font-size:30px; color:var(--gold); line-height:1;}
+  .step h3{margin-top:10px; font-size:20px; color:var(--forest);}
+  .step p{margin-top:6px; color:var(--muted); font-size:15.5px;}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .steps{grid-template-columns:1fr; gap:22px;} }
+
+  .pay{margin-top:36px; padding:18px 22px; border-left:4px solid var(--gold); background:#fff; border-radius:0 12px 12px 0; color:var(--ink); font-size:16px;}
+
+  .form-zone{padding:48px 0 80px;}
+  form{background:#fff; border:1px solid var(--rule); border-radius:20px; padding:36px; max-width:760px;}
+  @media (max-width:560px){ form{padding:24px 18px; border-radius:16px;} }
+  form h2{font-size:28px; color:var(--forest);}
+  .intro{margin-top:8px; color:var(--muted); font-size:15.5px;}
+  fieldset{border:none; margin:28px 0 0; padding:0; min-width:0;}
+  legend, .label{display:block; font-weight:700; font-size:15.5px; color:var(--forest); margin-bottom:8px; padding:0;}
+  .hint{font-weight:400; color:var(--muted); font-size:14px;}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:28px;}
+  .row > div{min-width:0;}
+  @media (max-width:560px){ .row{grid-template-columns:1fr;} }
+  input[type=text], input[type=tel], input[type=email], input[type=number], textarea{
+    width:100%; font:inherit; font-size:16px; color:var(--ink);
+    padding:12px 14px; border:1.5px solid var(--rule); border-radius:12px; background:var(--paper);
+  }
+  input:focus, textarea:focus{outline:none; border-color:var(--forest); background:#fff;}
+  textarea{min-height:110px; resize:vertical;}
+  .cases{display:flex; flex-wrap:wrap; gap:10px;}
+  .case{position:relative; cursor:pointer;}
+  .case input{position:absolute; opacity:0; width:1px; height:1px;}
+  .case span{display:inline-block; padding:8px 14px; border:1.5px solid var(--rule); border-radius:999px; font-size:15px; background:var(--paper); user-select:none;}
+  .case input:checked + span{background:var(--forest); border-color:var(--forest); color:var(--cream);}
+  .case input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px;}
+  .consent{display:flex; gap:12px; align-items:flex-start; margin-top:30px; font-size:15px; color:var(--ink);}
+  .consent input{margin-top:4px; width:20px; height:20px; flex-shrink:0; accent-color:var(--forest);}
+  .piege{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+  .actions{margin-top:28px; display:flex; flex-wrap:wrap; align-items:center; gap:16px;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; padding:14px 28px; font:700 16px var(--font-body); cursor:pointer; background:var(--gold); color:var(--forest-deep);}
+  .btn:hover{background:var(--gold-soft);}
+  .btn:disabled{opacity:0.6; cursor:wait;}
+  .message{margin-top:22px; padding:14px 18px; border-radius:12px; font-size:15.5px; display:none;}
+  .message.ok{display:block; background:#E6F2EA; color:var(--ok);}
+  .message.erreur{display:block; background:#F8E7E2; color:var(--error);}
+
+  footer{background:var(--forest-deep); color:rgba(245,241,230,0.7); font-size:14px; padding:32px 0;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 24px;}
+  footer a{text-decoration:none;}
+  footer a:hover{color:var(--cream); text-decoration:underline;}
+  footer .links{display:flex; flex-wrap:wrap; gap:8px 20px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="SikaGlé — retour à l'accueil"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a>
+    <a class="back" href="/">← Retour à l'accueil</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Agronomes partenaires</p>
+      <h1>Conseillez les producteurs du Bénin, depuis votre téléphone</h1>
+      <p class="lead">SikaGlé répond chaque jour aux questions des producteurs sur WhatsApp. Pour les cas qui demandent un professionnel, nous les mettons en relation avec des agronomes de terrain. Rejoignez-nous.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="steps">
+      <div class="step"><p class="n">1</p><h3>Candidature</h3><p>Vous remplissez le formulaire ci-dessous. Cela prend environ 3 minutes.</p></div>
+      <div class="step"><p class="n">2</p><h3>Entretien</h3><p>Nous vous appelons sur WhatsApp pour faire connaissance et parler de votre expérience.</p></div>
+      <div class="step"><p class="n">3</p><h3>Contrat</h3><p>Si votre profil est retenu, nous vous envoyons un contrat de partenariat à signer.</p></div>
+      <div class="step"><p class="n">4</p><h3>Consultations</h3><p>Vous recevez un résumé du problème du producteur et vous le rappelez, à vos heures.</p></div>
+    </div>
+    <p class="pay"><strong>Rémunération par consultation</strong>, précisée lors de l'entretien. Le producteur paie avant la consultation : vous n'avez jamais d'argent à réclamer.</p>
+  </section>
+
+  <section class="form-zone">
+    <div class="wrap">
+      <form id="candidature" novalidate>
+        <h2>Votre candidature</h2>
+        <p class="intro">Les champs marqués d'un * sont obligatoires.</p>
+
+        <div class="row">
+          <div>
+            <label class="label" for="nom">Nom et prénom *</label>
+            <input type="text" id="nom" name="nom" maxlength="100" autocomplete="name" required>
+          </div>
+          <div>
+            <label class="label" for="telephone">Numéro WhatsApp * <span class="hint">(ex. +229 01 97 00 00 00)</span></label>
+            <input type="tel" id="telephone" name="telephone" maxlength="20" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label class="label" for="email">E-mail <span class="hint">(facultatif)</span></label>
+            <input type="email" id="email" name="email" maxlength="200" autocomplete="email">
+          </div>
+          <div>
+            <label class="label" for="experience">Années d'expérience *</label>
+            <input type="number" id="experience" name="experience" min="0" max="60" step="1" inputmode="numeric" required>
+          </div>
+        </div>
+
+        <div class="row" style="grid-template-columns:1fr;">
+          <div>
+            <label class="label" for="diplome">Diplôme ou formation *</label>
+            <input type="text" id="diplome" name="diplome" maxlength="200" placeholder="Ex. Ingénieur agronome, Technicien supérieur en production végétale…" required>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Langues parlées * <span class="hint">(plusieurs choix possibles)</span></legend>
+          <div class="cases">
+          <label class="case"><input type="checkbox" name="langues" value="fon"><span>Fon</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="français"><span>Français</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="yoruba"><span>Yoruba</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="goun"><span>Goun</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="adja"><span>Adja</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="mina"><span>Mina</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="dendi"><span>Dendi</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="bariba"><span>Bariba</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="ditammari"><span>Ditammari</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="peulh"><span>Peulh (fulfuldé)</span></label>
+          <label class="case"><input type="checkbox" name="langues" value="anglais"><span>Anglais</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Départements où vous intervenez *</legend>
+          <div class="cases">
+          <label class="case"><input type="checkbox" name="departements" value="Alibori"><span>Alibori</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Atacora"><span>Atacora</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Atlantique"><span>Atlantique</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Borgou"><span>Borgou</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Collines"><span>Collines</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Couffo"><span>Couffo</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Donga"><span>Donga</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Littoral"><span>Littoral</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Mono"><span>Mono</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Ouémé"><span>Ouémé</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Plateau"><span>Plateau</span></label>
+          <label class="case"><input type="checkbox" name="departements" value="Zou"><span>Zou</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Spécialités *</legend>
+          <div class="cases">
+          <label class="case"><input type="checkbox" name="specialites" value="maraîchage"><span>Maraîchage</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="céréales"><span>Céréales</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="légumineuses"><span>Légumineuses</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="tubercules"><span>Tubercules</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="cultures de rente"><span>Cultures de rente</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="arboriculture fruitière"><span>Arboriculture fruitière</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="élevage"><span>Élevage</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="aquaculture"><span>Aquaculture</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="protection des cultures"><span>Protection des cultures</span></label>
+          <label class="case"><input type="checkbox" name="specialites" value="fertilité des sols"><span>Fertilité des sols</span></label>
+          </div>
+        </fieldset>
+
+        <div class="row" style="grid-template-columns:1fr;">
+          <div>
+            <label class="label" for="motivation">Pourquoi souhaitez-vous rejoindre SikaGlé ? *</label>
+            <textarea id="motivation" name="motivation" minlength="20" maxlength="1000" required placeholder="Quelques phrases sur votre parcours et votre motivation (20 caractères minimum)."></textarea>
+          </div>
+        </div>
+
+        <div class="piege" aria-hidden="true">
+          <label for="site_web">Ne pas remplir ce champ</label>
+          <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consentement" name="consentement" required>
+          <span>J'accepte que SikaGlé utilise ces informations pour étudier ma candidature et me contacter. Si je suis retenu(e), je m'engage à garder confidentielles les informations des producteurs. Voir notre <a href="/confidentialite">politique de confidentialité</a>. *</span>
+        </label>
+
+        <div class="actions">
+          <button class="btn" type="submit" id="envoyer">Envoyer ma candidature</button>
+        </div>
+
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="SikaGlé — accueil"><svg aria-hidden="true" focusable="false" style="height:24px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#F5F1E6"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#F5F1E6"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#F5F1E6"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#F5F1E6"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#F5F1E6"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#F5F1E6"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#F5F1E6"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a>
+    <div class="links">
+      <a href="/confidentialite">Politique de confidentialité</a>
+      <a href="/conditions">Conditions d'utilisation</a>
+      <a href="mailto:contact@sikagle.com">contact@sikagle.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var ADRESSE = "https://api.sikagle.com/agronomes/candidature";
+  var formulaire = document.getElementById("candidature");
+  var bouton = document.getElementById("envoyer");
+  var zone = document.getElementById("message");
+
+  function afficher(texte, ok) {
+    zone.textContent = texte;
+    zone.className = "message " + (ok ? "ok" : "erreur");
+    zone.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function coches(nom) {
+    return Array.prototype.map.call(
+      formulaire.querySelectorAll('input[name="' + nom + '"]:checked'),
+      function (c) { return c.value; }
+    );
+  }
+
+  formulaire.addEventListener("submit", function (evenement) {
+    evenement.preventDefault();
+
+    var donnees = {
+      nom: formulaire.nom.value.trim(),
+      telephone: formulaire.telephone.value.trim(),
+      email: formulaire.email.value.trim(),
+      experience: formulaire.experience.value === "" ? null : Number(formulaire.experience.value),
+      diplome: formulaire.diplome.value.trim(),
+      langues: coches("langues"),
+      departements: coches("departements"),
+      specialites: coches("specialites"),
+      motivation: formulaire.motivation.value.trim(),
+      consentement: formulaire.consentement.checked,
+      site_web: formulaire.site_web.value
+    };
+
+    if (!donnees.nom || !donnees.telephone || !donnees.diplome || donnees.experience === null) {
+      afficher("Merci de remplir tous les champs marqués d'un *.", false); return;
+    }
+    if (donnees.motivation.length < 20) {
+      afficher("Expliquez en quelques phrases pourquoi vous souhaitez rejoindre SikaGlé (20 caractères minimum).", false); return;
+    }
+    if (!donnees.langues.length || !donnees.departements.length || !donnees.specialites.length) {
+      afficher("Choisissez au moins une langue, un département et une spécialité.", false); return;
+    }
+    if (!donnees.consentement) {
+      afficher("Cochez la case d'accord avant d'envoyer.", false); return;
+    }
+
+    bouton.disabled = true;
+    bouton.textContent = "Envoi en cours…";
+
+    fetch(ADRESSE, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(donnees)
+    })
+      .then(function (reponse) { return reponse.json(); })
+      .then(function (resultat) {
+        afficher(resultat.message || "Réponse inattendue.", resultat.ok === true);
+        if (resultat.ok) { formulaire.reset(); }
+      })
+      .catch(function () {
+        afficher("Impossible d'envoyer pour le moment. Vérifiez votre connexion et réessayez.", false);
+      })
+      .finally(function () {
+        bouton.disabled = false;
+        bouton.textContent = "Envoyer ma candidature";
+      });
+  });
+})();
+</script>
+</body>
+</html>
