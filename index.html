@@ -219,6 +219,8 @@
   .agro-steps li:last-child{border-bottom:1px solid var(--rule);}
   .agro-steps li::before{content:counter(a); font:700 18px var(--font-display); color:var(--gold); background:var(--forest); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
   @media (max-width:860px){ .agro .wrap{grid-template-columns:1fr; gap:36px;} }
+  .agro .join{display:inline-block; margin-top:22px; font-weight:700; color:var(--forest); text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:5px;}
+  .agro .join:hover{color:var(--forest-deep);}
 
   /* Démarrer */
   .start{background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
@@ -307,6 +309,7 @@
       <a href="#pour-qui" data-fr="Pour qui" data-en="Who it's for">Pour qui</a>
       <a href="#faq" data-fr="Questions" data-en="FAQ">Questions</a>
       <a href="#contact" data-fr="Partenariats" data-en="Partnerships">Partenariats</a>
+      <a href="/agronomes" data-fr="Agronomes" data-en="Agronomists">Agronomes</a>
     </nav>
     <div class="nav-right">
       <div class="lang-toggle" role="group" aria-label="Langue">
@@ -490,6 +493,7 @@
       <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Et si mon problème est plus grave ?" data-en="And if my problem is more serious?">Et si mon problème est plus grave ?</span></div>
       <h2 id="titre-agro" data-fr="Un vrai agronome vous rappelle." data-en="A real agronomist calls you back.">Un vrai agronome vous rappelle.</h2>
       <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives." data-en="When a situation goes beyond what SikaGlé can say with certainty, it connects you with an agronomist from your region. On demand for everyone, with consultations included for Premium subscribers and cooperative members.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives.</p>
+      <a class="join" href="/agronomes" data-fr="Vous êtes agronome ? Rejoignez SikaGlé →" data-en="Are you an agronomist? Join SikaGlé →">Vous êtes agronome ? Rejoignez SikaGlé →</a>
     </div>
     <ol class="agro-steps">
       <li data-fr="Vous écrivez « je veux parler à un agronome »." data-en="You write “I want to talk to an agronomist”.">Vous écrivez « je veux parler à un agronome ».</li>
@@ -593,6 +597,7 @@
     <div class="links">
       <a href="/confidentialite" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a>
       <a href="/conditions" data-fr="Conditions d'utilisation" data-en="Terms of use">Conditions d'utilisation</a>
+      <a href="/agronomes" data-fr="Devenir agronome partenaire" data-en="Become a partner agronomist">Devenir agronome partenaire</a>
       <a href="mailto:contact@sikagle.com">contact@sikagle.com</a>
     </div>
   </div>
