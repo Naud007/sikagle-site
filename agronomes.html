@@ -77,6 +77,8 @@
   .case input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px;}
   .consent{display:flex; gap:12px; align-items:flex-start; margin-top:30px; font-size:15px; color:var(--ink);}
   .consent input{margin-top:4px; width:20px; height:20px; flex-shrink:0; accent-color:var(--forest);}
+  .aide{margin-top:10px; font-size:14px; color:var(--muted);}
+  [hidden]{display:none !important;}
   .piege{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
   .actions{margin-top:28px; display:flex; flex-wrap:wrap; align-items:center; gap:16px;}
   .btn{display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; padding:14px 28px; font:700 16px var(--font-body); cursor:pointer; background:var(--gold); color:var(--forest-deep);}
@@ -153,6 +155,23 @@
           <div>
             <label class="label" for="diplome">Diplôme ou formation *</label>
             <input type="text" id="diplome" name="diplome" maxlength="200" placeholder="Ex. Ingénieur agronome, Technicien supérieur en production végétale…" required>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Dans quel cadre souhaitez-vous intervenir ? *</legend>
+          <div class="cases">
+            <label class="case"><input type="radio" name="cadre" value="generaliste"><span>Agronome généraliste SikaGlé</span></label>
+            <label class="case"><input type="radio" name="cadre" value="cooperative"><span>Agronome d'une coopérative ou association</span></label>
+            <label class="case"><input type="radio" name="cadre" value="les_deux"><span>Les deux</span></label>
+          </div>
+          <p class="aide">Généraliste : vous conseillez tous les producteurs qui utilisent SikaGlé. Coopérative : vous conseillez les membres de votre coopérative ou association.</p>
+        </fieldset>
+
+        <div class="row" id="zone-organisation" style="grid-template-columns:1fr;" hidden>
+          <div>
+            <label class="label" for="organisation">Nom de la coopérative ou de l'association *</label>
+            <input type="text" id="organisation" name="organisation" maxlength="150" placeholder="Ex. Coopérative des producteurs d'ananas d'Allada">
           </div>
         </div>
 
@@ -252,6 +271,22 @@
   var bouton = document.getElementById("envoyer");
   var zone = document.getElementById("message");
 
+  var zoneOrganisation = document.getElementById("zone-organisation");
+
+  function cadreChoisi() {
+    var choix = formulaire.querySelector('input[name="cadre"]:checked');
+    return choix ? choix.value : "";
+  }
+
+  Array.prototype.forEach.call(
+    formulaire.querySelectorAll('input[name="cadre"]'),
+    function (bouton) {
+      bouton.addEventListener("change", function () {
+        zoneOrganisation.hidden = cadreChoisi() === "generaliste";
+      });
+    }
+  );
+
   function afficher(texte, ok) {
     zone.textContent = texte;
     zone.className = "message " + (ok ? "ok" : "erreur");
@@ -278,12 +313,20 @@
       departements: coches("departements"),
       specialites: coches("specialites"),
       motivation: formulaire.motivation.value.trim(),
+      cadre: cadreChoisi(),
+      organisation: formulaire.organisation.value.trim(),
       consentement: formulaire.consentement.checked,
       site_web: formulaire.site_web.value
     };
 
     if (!donnees.nom || !donnees.telephone || !donnees.diplome || donnees.experience === null) {
       afficher("Merci de remplir tous les champs marqués d'un *.", false); return;
+    }
+    if (!donnees.cadre) {
+      afficher("Choisissez le cadre dans lequel vous souhaitez intervenir.", false); return;
+    }
+    if (donnees.cadre !== "generaliste" && donnees.organisation.length < 2) {
+      afficher("Indiquez le nom de votre coopérative ou de votre association.", false); return;
     }
     if (donnees.motivation.length < 20) {
       afficher("Expliquez en quelques phrases pourquoi vous souhaitez rejoindre SikaGlé (20 caractères minimum).", false); return;
@@ -306,7 +349,7 @@
       .then(function (reponse) { return reponse.json(); })
       .then(function (resultat) {
         afficher(resultat.message || "Réponse inattendue.", resultat.ok === true);
-        if (resultat.ok) { formulaire.reset(); }
+        if (resultat.ok) { formulaire.reset(); zoneOrganisation.hidden = true; }
       })
       .catch(function () {
         afficher("Impossible d'envoyer pour le moment. Vérifiez votre connexion et réessayez.", false);
