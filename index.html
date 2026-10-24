@@ -6,8 +6,8 @@
 <title>SikaGlé — l'assistant agricole du Bénin, sur WhatsApp</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' rx='44' fill='%23123528'/><g transform='translate(58.9,154)'><path d='M44.1 1.65Q32.25 1.65 23.02 -3.22Q13.79 -8.1 8.54 -16.8Q3.3 -25.5 3.3 -36.45Q3.3 -47.4 8.47 -56.02Q13.65 -64.64 22.5 -69.6Q31.34 -74.55 42.44 -74.55Q53.25 -74.55 61.5 -69.9Q69.75 -65.25 74.47 -57.0Q79.2 -48.75 79.2 -38.1Q79.2 -36.15 78.97 -33.97Q78.75 -31.79 78.14 -28.95L25.95 -28.79Q26.4 -27.15 27.3 -25.65Q29.54 -21.0 33.82 -18.52Q38.1 -16.05 43.94 -16.05Q49.35 -16.05 53.7 -17.92Q58.05 -19.8 61.34 -23.55L73.95 -10.95Q68.55 -4.64 60.9 -1.49Q53.25 1.65 44.1 1.65ZM25.95 -44.55 57.75 -44.69Q57.3 -46.8 56.55 -48.6Q54.75 -52.65 51.22 -54.82Q47.69 -57.0 42.6 -57.0Q37.19 -57.0 33.22 -54.52Q29.25 -52.05 27.15 -47.55Q26.4 -46.19 25.95 -44.55Z' fill='%23F5F1E6'></path></g><path d='M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z' fill='%23E3A93B' transform='translate(119.7,40.0) rotate(52) scale(0.34)'></path></svg>">
 <meta name="theme-color" content="#0F3B2A">
-<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/instrument-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/instrument-400.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.">
 <link rel="canonical" href="https://sikagle.com/">
 <meta property="og:type" content="website">
@@ -29,9 +29,9 @@
   /* SikaGlé — feuille de style (refonte du 24/10/2026)
      Polices auto-hébergées (dossier fonts/, licence SIL OFL) :
      Bricolage Grotesque pour les titres, Instrument Sans pour le texte. */
-  @font-face{font-family:'Bricolage'; src:url('fonts/bricolage.woff2') format('woff2'); font-weight:200 800; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('fonts/instrument-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('fonts/instrument-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
+  @font-face{font-family:'Bricolage'; src:url('/bricolage.woff2') format('woff2'); font-weight:200 800; font-display:swap;}
+  @font-face{font-family:'Instrument'; src:url('/instrument-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
+  @font-face{font-family:'Instrument'; src:url('/instrument-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
 
   :root{
     --forest:#0F3B2A;
@@ -488,7 +488,7 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-photo"><img src="images/producteur.jpg" width="920" height="688" fetchpriority="high" data-fr="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ" data-en="A Beninese farmer consulting SikaGlé on WhatsApp in his field" alt="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ"></div>
+      <div class="hero-photo"><img src="/producteur.jpg" width="920" height="688" fetchpriority="high" data-fr="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ" data-en="A Beninese farmer consulting SikaGlé on WhatsApp in his field" alt="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ"></div>
       <div class="demo">
         <div class="phone" role="region" aria-label="Exemple de conversation">
           <div class="screen">
