@@ -630,7 +630,7 @@
           <div class="chat" id="menu-chat" aria-live="polite">
             <div class="bubble me"><span>Bonjour</span><span class="time">08:30</span></div>
             <div class="bubble bot listmsg">
-              <span data-fr="Bonjour 👋 Je suis SikaGlé, ton conseiller agricole. Pose-moi ta question par écrit ou en vocal 🎙️, ou choisis dans le menu ci-dessous." data-en="Hello 👋 I'm SikaGlé, your farming adviser. Ask me your question in writing or by voice note 🎙️, or choose from the menu below.">Bonjour 👋 Je suis SikaGlé, ton conseiller agricole. Pose-moi ta question par écrit ou en vocal 🎙️, ou choisis dans le menu ci-dessous.</span>
+              <span data-fr="Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous." data-en="Hello, I'm SikaGlé, your farming adviser. Ask me your question in writing or by voice note, or choose from the menu below.">Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous.</span>
               <span class="time">08:30</span>
               <button class="listbtn" type="button" id="open-sheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg><span data-fr="Voir le menu" data-en="See the menu">Voir le menu</span></button>
             </div>
@@ -950,31 +950,31 @@
 
   /* ----- Démonstration du menu WhatsApp ----- */
   const MENU = [
-    { fr: '🌱 Mes conseils', en: '🌱 My advice', rows: [
+    { fr: 'Mes conseils', en: 'My advice', rows: [
       { id: 'question', fr: ['💬 Poser une question', 'Cultures, élevage, sol, ravageurs… par écrit ou en vocal'], en: ['💬 Ask a question', 'Crops, animals, soil, pests… in writing or by voice'],
-        rep: { fr: '💬 Je t\'écoute ! Pose ta question par écrit ou envoie un message vocal 🎙️. Par exemple : « Mes feuilles de maïs jaunissent, que faire ? »', en: '💬 I\'m listening! Ask your question in writing or send a voice note 🎙️. For example: “My maize leaves are turning yellow, what should I do?”' } },
-      { id: 'photo', fr: ['📸 Diagnostic photo', 'Envoie la photo d\'une plante malade'], en: ['📸 Photo diagnosis', 'Send a photo of a sick plant'],
-        rep: { fr: '📸 Envoie-moi une photo de la plante malade, en plein jour et de près, avec les feuilles bien visibles.', en: '📸 Send me a photo of the sick plant, in daylight and up close, with the leaves clearly visible.' } },
-      { id: 'meteo', fr: ['🌦️ Météo de mon champ', 'La météo du jour là où se trouve ton champ'], en: ['🌦️ Weather on my farm', 'Today\'s weather where your field is'],
-        rep: { fr: '🌦️ Météo de ton champ aujourd\'hui : 31 °C, ciel nuageux, pluie possible en fin d\'après-midi. Si tu veux traiter, fais-le ce matin.', en: '🌦️ Your field\'s weather today: 31 °C, cloudy, rain possible late afternoon. If you want to spray, do it this morning.' } },
-      { id: 'position', fr: ['📍 Ma géolocalisation', 'Partage la position exacte de ton champ'], en: ['📍 My location', 'Share your field\'s exact position'],
-        rep: { fr: '📍 Touche le bouton « Envoyer ma position » quand tu es dans ton champ : la météo et les conseils seront plus précis.', en: '📍 Tap “Send my location” while you are in your field: weather and advice will be more precise.' } },
+        rep: { fr: '💬 Je vous écoute ! Posez votre question par écrit ou envoyez un message vocal. Par exemple : « Mes feuilles de maïs jaunissent, que faire ? »', en: '💬 I\'m listening! Ask your question in writing or send a voice note. For example: “My maize leaves are turning yellow, what should I do?”' } },
+      { id: 'photo', fr: ['📸 Diagnostic photo', 'Envoyez la photo d\'une plante malade'], en: ['📸 Photo diagnosis', 'Send a photo of a sick plant'],
+        rep: { fr: '📸 Envoyez-moi une photo de la plante malade, en plein jour et de près, avec les feuilles bien visibles.', en: '📸 Send me a photo of the sick plant, in daylight and up close, with the leaves clearly visible.' } },
+      { id: 'meteo', fr: ['🌦️ Météo de mon champ', 'La météo du jour là où se trouve votre champ'], en: ['🌦️ Weather on my farm', 'Today\'s weather where your field is'],
+        rep: { fr: '🌦️ Météo de votre champ aujourd\'hui : 31 °C, ciel nuageux, pluie possible en fin d\'après-midi. Si vous voulez traiter, faites-le ce matin.', en: '🌦️ Your field\'s weather today: 31 °C, cloudy, rain possible late afternoon. If you want to spray, do it this morning.' } },
+      { id: 'position', fr: ['📍 Ma géolocalisation', 'Partagez la position exacte de votre champ'], en: ['📍 My location', 'Share your field\'s exact position'],
+        rep: { fr: '📍 Touchez le bouton « Envoyer ma position » quand vous êtes dans votre champ : la météo et les conseils seront plus précis.', en: '📍 Tap “Send my location” while you are in your field: weather and advice will be more precise.' } },
     ]},
-    { fr: '🩺 Parler à quelqu\'un', en: '🩺 Talk to someone', rows: [
-      { id: 'agronome', fr: ['🩺 Parler à un agronome', 'Un vrai agronome te rappelle'], en: ['🩺 Talk to an agronomist', 'A real agronomist calls you back'],
-        rep: { fr: '🩺 D\'accord. Je transmets le résumé de ton problème à un agronome de ta région. Il te rappelle directement sur ce numéro.', en: '🩺 Sure. I\'m sending a summary of your problem to an agronomist from your region. They will call you back on this number.' } },
+    { fr: 'Parler à quelqu\'un', en: 'Talk to someone', rows: [
+      { id: 'agronome', fr: ['🩺 Parler à un agronome', 'Un vrai agronome vous rappelle'], en: ['🩺 Talk to an agronomist', 'A real agronomist calls you back'],
+        rep: { fr: '🩺 D\'accord. Je transmets le résumé de votre problème à un agronome de votre région. Il vous rappelle directement sur ce numéro.', en: '🩺 Sure. I\'m sending a summary of your problem to an agronomist from your region. They will call you back on this number.' } },
       { id: 'equipe', fr: ['📞 Contacter l\'équipe', 'Réclamation, avis ou demande pour l\'équipe SikaGlé'], en: ['📞 Contact the team', 'Complaint, feedback or request for the SikaGlé team'],
-        rep: { fr: '📞 L\'équipe SikaGlé : pour une réclamation, ton avis ou une demande, de vraies personnes te répondent. Touche « Envoyer un message » sur le contact SikaGlé Équipe que je t\'envoie.', en: '📞 The SikaGlé team: for a complaint, your feedback or a request, real people answer you. Tap “Message” on the SikaGlé Équipe contact I\'m sending you.' } },
+        rep: { fr: '📞 L\'équipe SikaGlé : pour une réclamation, votre avis ou une demande, de vraies personnes vous répondent. Touchez « Envoyer un message » sur le contact SikaGlé Équipe que je vous envoie.', en: '📞 The SikaGlé team: for a complaint, your feedback or a request, real people answer you. Tap “Message” on the SikaGlé Équipe contact I\'m sending you.' } },
     ]},
-    { fr: '👤 Mon compte', en: '👤 My account', rows: [
+    { fr: 'Mon compte', en: 'My account', rows: [
       { id: 'premium', fr: ['⭐ Passer en Premium', '500 F la semaine ou 1500 F le mois'], en: ['⭐ Go Premium', '500 F a week or 1500 F a month'],
-        rep: { fr: '⭐ Choisissez votre formule :\n📅 Semaine : 500 F pour 7 jours, 25 messages par jour.\n🗓️ Mois : 1500 F pour 30 jours, 40 messages par jour + 1 consultation d\'agronome.', en: '⭐ Choose your plan:\n📅 Week: 500 F for 7 days, 25 messages a day.\n🗓️ Month: 1500 F for 30 days, 40 messages a day + 1 agronomist consultation.' } },
+        rep: { fr: '⭐ Choisissez votre formule :\nSemaine : 500 F pour 7 jours, 25 messages par jour.\nMois : 1500 F pour 30 jours, 40 messages par jour + 1 consultation d\'agronome.', en: '⭐ Choose your plan:\nWeek: 500 F for 7 days, 25 messages a day.\nMonth: 1500 F for 30 days, 40 messages a day + 1 agronomist consultation.' } },
       { id: 'coop', fr: ['🤝 Ma coopérative', 'La rejoindre avec un code, ou l\'inscrire'], en: ['🤝 My cooperative', 'Join with a code, or register your cooperative'],
-        rep: { fr: '🤝 Tu veux rejoindre ta coopérative avec son code, ou inscrire une nouvelle coopérative ?', en: '🤝 Do you want to join your cooperative with its code, or register a new cooperative?' } },
+        rep: { fr: '🤝 Voulez-vous rejoindre votre coopérative avec son code, ou inscrire une nouvelle coopérative ?', en: '🤝 Do you want to join your cooperative with its code, or register a new cooperative?' } },
       { id: 'compte', fr: ['📊 Mon compte', 'Ma formule et mes messages restants aujourd\'hui'], en: ['📊 My account', 'My plan and messages left today'],
-        rep: { fr: '📊 Formule : Gratuit\n💬 Messages restants aujourd\'hui : 8 sur 10', en: '📊 Plan: Free\n💬 Messages left today: 8 of 10' } },
+        rep: { fr: '📊 Formule : Gratuit\nMessages restants aujourd\'hui : 8 sur 10', en: '📊 Plan: Free\nMessages left today: 8 of 10' } },
       { id: 'profil', fr: ['⚙️ Mon profil', 'Mes cultures et ma langue'], en: ['⚙️ My profile', 'My crops and my language'],
-        rep: { fr: '⚙️ Mon profil : que veux-tu changer ? Tes cultures (maïs, tomate, piment) ou ta langue (français, anglais ou fon) ?', en: '⚙️ My profile: what do you want to change? Your crops (maize, tomato, chilli) or your language (French, English or Fon)?' } },
+        rep: { fr: '⚙️ Mon profil : que voulez-vous changer ? Vos cultures (maïs, tomate, piment) ou votre langue (français, anglais ou fon) ?', en: '⚙️ My profile: what do you want to change? Your crops (maize, tomato, chilli) or your language (French, English or Fon)?' } },
     ]},
   ];
 
