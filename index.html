@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SikaGlé — l'assistant agricole du Bénin, sur WhatsApp</title>
+<title>SikaGlé : l'assistant agricole du Bénin, sur WhatsApp</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' rx='44' fill='%23123528'/><g transform='translate(58.9,154)'><path d='M44.1 1.65Q32.25 1.65 23.02 -3.22Q13.79 -8.1 8.54 -16.8Q3.3 -25.5 3.3 -36.45Q3.3 -47.4 8.47 -56.02Q13.65 -64.64 22.5 -69.6Q31.34 -74.55 42.44 -74.55Q53.25 -74.55 61.5 -69.9Q69.75 -65.25 74.47 -57.0Q79.2 -48.75 79.2 -38.1Q79.2 -36.15 78.97 -33.97Q78.75 -31.79 78.14 -28.95L25.95 -28.79Q26.4 -27.15 27.3 -25.65Q29.54 -21.0 33.82 -18.52Q38.1 -16.05 43.94 -16.05Q49.35 -16.05 53.7 -17.92Q58.05 -19.8 61.34 -23.55L73.95 -10.95Q68.55 -4.64 60.9 -1.49Q53.25 1.65 44.1 1.65ZM25.95 -44.55 57.75 -44.69Q57.3 -46.8 56.55 -48.6Q54.75 -52.65 51.22 -54.82Q47.69 -57.0 42.6 -57.0Q37.19 -57.0 33.22 -54.52Q29.25 -52.05 27.15 -47.55Q26.4 -46.19 25.95 -44.55Z' fill='%23F5F1E6'></path></g><path d='M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z' fill='%23E3A93B' transform='translate(119.7,40.0) rotate(52) scale(0.34)'></path></svg>">
 <meta name="theme-color" content="#0F3B2A">
 <link rel="preload" href="/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/instrument-400.woff2" as="font" type="font/woff2" crossorigin>
-<meta name="description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.">
+<link rel="preload" href="/lexend-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon. Une offre pour les coopératives, ONG et programmes agricoles.">
 <link rel="canonical" href="https://sikagle.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SikaGlé">
 <meta property="og:url" content="https://sikagle.com/">
-<meta property="og:title" content="SikaGlé — l'assistant agricole du Bénin, sur WhatsApp">
-<meta property="og:description" content="SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.">
+<meta property="og:title" content="SikaGlé : l'assistant agricole du Bénin, sur WhatsApp">
+<meta property="og:description" content="Conseils agricoles sur WhatsApp, par écrit, en vocal ou en photo, en français, en anglais et en fon.">
 <meta property="og:image" content="https://sikagle.com/images/partage-sikagle.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -26,599 +26,358 @@
 {"@context":"https://schema.org","@type":"Organization","name":"SikaGlé","url":"https://sikagle.com/","email":"contact@sikagle.com","description":"SikaGlé est un assistant agricole sur WhatsApp pour les producteurs du Bénin : conseils par écrit, en vocal ou en photo, en français, en anglais et en fon.","areaServed":"Bénin"}
 </script>
 <style>
-  /* SikaGlé — feuille de style (refonte du 24/10/2026)
-     Polices auto-hébergées (dossier fonts/, licence SIL OFL) :
-     Bricolage Grotesque pour les titres, Instrument Sans pour le texte. */
+  /* SikaGlé : feuille de style (refonte du 07/11/2026)
+     Polices auto-hébergées, licence SIL OFL :
+     Bricolage Grotesque pour les titres,
+     Lexend pour le texte (dessinée pour faciliter la lecture,
+     y compris pour les lecteurs peu habitués, au soleil et sur petit écran). */
   @font-face{font-family:'Bricolage'; src:url('/bricolage.woff2') format('woff2'); font-weight:200 800; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('/instrument-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('/instrument-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
+  @font-face{font-family:'Lexend'; src:url('/lexend-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
+  @font-face{font-family:'Lexend'; src:url('/lexend-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
 
   :root{
-    --forest:#0F3B2A;
-    --forest-deep:#0A2A1E;
-    --forest-mid:#1D4D3A;
-    --gold:#F0B23A;
-    --gold-soft:#F7CD72;
-    --terre:#C2502E;
-    --paper:#F6F1E6;
-    --cream:#FBF8F1;
-    --sand:#ECE3CF;
-    --ink:#14211A;
-    --muted:#55625A;
-    --rule:rgba(15,59,42,0.14);
-    --rule-light:rgba(251,248,241,0.16);
+    --vert:#0F3B2A;
+    --vert-nuit:#0A2A1E;
+    --vert-moyen:#1F5A42;
+    --vert-pale:#E8F0EA;
+    --mais:#F0B23A;
+    --mais-pale:#FCEFD2;
+    --terre:#A63D1C;
+    --papier:#FFFFFF;
+    --fond:#F4F6F1;
+    --encre:#13201A;
+    --texte2:#3D4B43;
+    --trait:rgba(15,59,42,0.18);
+    --trait-clair:rgba(255,255,255,0.22);
     --wa-bg:#EFE7DD;
     --wa-out:#D9FDD3;
     --wa-in:#FFFFFF;
-    --wa-link:#008069;
-    --font-display:'Bricolage','Arial Narrow',system-ui,sans-serif;
-    --font-body:'Instrument',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --wa-vert:#006B58;
+    --titre:'Bricolage','Arial Narrow',system-ui,sans-serif;
+    --texte:'Lexend',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --rythme:clamp(56px,10vw,120px);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top:76px;}
+  html{scroll-behavior:smooth; scroll-padding-top:80px; accent-color:var(--vert);}
   body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:var(--font-body); font-size:17px; line-height:1.6;
+    margin:0; background:var(--papier); color:var(--encre);
+    font-family:var(--texte); font-size:17px; line-height:1.6;
     -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  h1,h2,h3{font-family:var(--font-display); font-weight:720; line-height:1.04; margin:0; letter-spacing:-0.025em;}
-  p{margin:0;}
-  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--titre); font-weight:700; line-height:1.05; margin:0; letter-spacing:-0.02em; text-wrap:balance;}
+  p{margin:0; text-wrap:pretty;}
+  a{color:inherit; text-underline-offset:0.2em; text-decoration-thickness:1.5px;}
+  ul,ol{margin:0; padding:0;}
   img{max-width:100%; display:block;}
-  ::selection{background:var(--gold); color:var(--forest-deep);}
-  :focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:6px;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
-  @media (max-width:560px){ .wrap{padding:0 16px;} }
-  .skip{position:absolute; left:16px; top:-60px; background:var(--gold); color:var(--forest-deep); padding:8px 14px; border-radius:8px; font-weight:700; z-index:50;}
+  ::selection{background:var(--mais); color:var(--vert-nuit);}
+  :focus-visible{outline:3px solid var(--mais); outline-offset:3px; border-radius:6px;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 32px;}
+  @media (max-width:600px){ .wrap{padding:0 16px;} body{font-size:16px;} }
+  .ico{width:24px; height:24px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round;}
+  .skip{position:absolute; left:16px; top:-80px; background:var(--mais); color:var(--vert-nuit); padding:12px 16px; border-radius:10px; font-weight:700; z-index:60;}
   .skip:focus{top:12px;}
-
-  /* ---------- En-tête ---------- */
-  header{
-    position:sticky; top:0; z-index:30;
-    background:rgba(246,241,230,0.92);
-    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--rule);
-  }
-  .nav{display:flex; align-items:center; gap:24px; padding:14px 28px; max-width:1180px; margin:0 auto;}
-  a.wordmark{display:block; text-decoration:none; flex-shrink:0;}
-  .navlinks{display:flex; gap:24px; font-size:15px; margin-left:auto;}
-  .navlinks a{text-decoration:none; color:var(--muted); padding:4px 0; border-bottom:2px solid transparent; transition:color .15s ease;}
-  .navlinks a:hover{color:var(--forest); border-bottom-color:var(--gold);}
-  .nav-right{display:flex; align-items:center; gap:12px;}
-  .lang-toggle{display:flex; border:1.5px solid var(--rule); border-radius:999px; overflow:hidden;}
-  .lang-toggle button{border:none; background:transparent; padding:6px 12px; cursor:pointer; color:var(--muted); font:600 13px var(--font-body);}
-  .lang-toggle button.active{background:var(--forest); color:var(--cream);}
-  @media (max-width:1040px){ .navlinks{display:none;} .nav-right{margin-left:auto;} }
-
-  /* ---------- Menu mobile ---------- */
-  .menu-btn{display:none; width:42px; height:42px; border:1.5px solid var(--rule); border-radius:12px; background:transparent; cursor:pointer; padding:0; align-items:center; justify-content:center; flex-shrink:0;}
-  .menu-btn .barres, .menu-btn .barres span, .menu-btn .barres::before, .menu-btn .barres::after{display:block; width:18px; height:2px; background:var(--forest); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;}
-  .menu-btn .barres{position:relative; background:transparent;}
-  .menu-btn .barres::before, .menu-btn .barres::after{content:""; position:absolute; left:0;}
-  .menu-btn .barres::before{top:-6px;}
-  .menu-btn .barres::after{top:6px;}
-  .menu-btn[aria-expanded="true"] .barres span{opacity:0;}
-  .menu-btn[aria-expanded="true"] .barres::before{transform:translateY(6px) rotate(45deg);}
-  .menu-btn[aria-expanded="true"] .barres::after{transform:translateY(-6px) rotate(-45deg);}
-  .menu-mobile{position:absolute; left:0; right:0; top:100%; background:var(--paper); border-bottom:1px solid var(--rule); box-shadow:0 16px 30px rgba(10,42,30,0.14); padding:8px 16px 18px;}
-  .menu-mobile[hidden]{display:none;}
-  .menu-mobile a{display:block; padding:14px 8px; font-size:17px; color:var(--forest); text-decoration:none; border-bottom:1px solid var(--rule);}
-  .menu-mobile a.menu-agro{margin-top:14px; border:none; border-radius:999px; background:var(--gold); color:var(--forest-deep); font-weight:700; text-align:center;}
-  @media (max-width:1040px){ .menu-btn{display:inline-flex;} }
-  @media (min-width:1041px){ .menu-mobile{display:none !important;} }
-  @media (max-width:420px){
-    .nav{padding:12px 16px; gap:10px;}
-    .nav-right{gap:8px;}
-    .lang-toggle button{padding:6px 10px;}
-    .nav .btn.small{padding:9px 13px;}
-  }
 
   /* ---------- Boutons ---------- */
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    white-space:nowrap; border:none; border-radius:999px;
-    padding:14px 24px; font:600 16px var(--font-body);
-    text-decoration:none; cursor:pointer;
-    background:var(--forest); color:var(--cream);
-    transition:background 0.2s ease, transform 0.2s ease;
+    min-height:52px; padding:0 24px; border-radius:14px; border:2px solid transparent;
+    font:600 17px/1.1 var(--texte); text-decoration:none; cursor:pointer;
+    transition:background-color .15s ease, transform .15s ease;
   }
-  .btn:hover{background:var(--forest-deep); transform:translateY(-1px);}
-  .btn svg{width:19px; height:19px; flex-shrink:0;}
-  .btn.gold{background:var(--gold); color:var(--forest-deep);}
-  .btn.gold:hover{background:var(--gold-soft);}
-  .btn.small{padding:9px 16px; font-size:14px;}
+  .btn:active{transform:translateY(1px);}
+  .btn.mais{background:var(--mais); color:var(--vert-nuit);}
+  .btn.mais:hover{background:#F5C25B;}
+  .btn.contour{border-color:currentColor; color:inherit; background:transparent;}
+  .btn.contour:hover{background:rgba(255,255,255,0.08);}
+  .btn.vert{background:var(--vert); color:#fff;}
+  .btn.vert:hover{background:var(--vert-moyen);}
+  .btn.petit{min-height:44px; padding:0 16px; font-size:16px; border-radius:12px;}
 
-  /* ---------- Hero ---------- */
-  .hero{padding:64px 0 88px; position:relative;}
-  .hero .wrap{display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,0.98fr); gap:56px; align-items:center;}
-  .live{display:inline-flex; align-items:center; gap:9px; font-size:14px; font-weight:600; color:var(--forest); background:var(--cream); border:1px solid var(--rule); padding:6px 14px 6px 10px; border-radius:999px;}
-  .live i{width:9px; height:9px; border-radius:50%; background:#25A55F; box-shadow:0 0 0 4px rgba(37,165,95,0.18);}
-  .hero h1{margin-top:22px; font-size:clamp(40px,5.1vw,68px); line-height:0.98; letter-spacing:-0.035em; color:var(--forest-deep); text-wrap:balance;}
-  .mark{
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M3 15c40-8 92-11 150-8 52 3 97 5 144-3' fill='none' stroke='%23F0B23A' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat; background-position:0 92%; background-size:100% 0.32em;
-    padding-bottom:0.04em; -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  /* ---------- En-tête ---------- */
+  header{position:sticky; top:0; z-index:40; background:rgba(255,255,255,0.96); border-bottom:1px solid var(--trait);}
+  .nav{display:flex; align-items:center; gap:28px; min-height:68px; max-width:1160px; margin:0 auto; padding:0 32px;}
+  a.wordmark{display:flex; align-items:center; min-height:44px; text-decoration:none; flex-shrink:0;}
+  .navlinks{display:flex; gap:4px; margin-left:auto;}
+  .navlinks a{display:inline-flex; align-items:center; min-height:44px; padding:0 12px; font-size:16px; text-decoration:none; color:var(--texte2); border-radius:10px;}
+  .navlinks a:hover{color:var(--vert); background:var(--vert-pale);}
+  .nav-right{display:flex; align-items:center; gap:10px;}
+  .lang{display:flex; border:1.5px solid var(--trait); border-radius:12px; overflow:hidden;}
+  .lang button{min-width:44px; min-height:44px; border:none; background:transparent; cursor:pointer; color:var(--texte2); font:600 15px var(--texte);}
+  .lang button[aria-pressed="true"]{background:var(--vert); color:#fff;}
+  .menu-btn{display:none; width:44px; height:44px; border:1.5px solid var(--trait); border-radius:12px; background:transparent; cursor:pointer; padding:0; align-items:center; justify-content:center; color:var(--vert);}
+  .menu-mobile{position:absolute; left:0; right:0; top:100%; background:#fff; border-bottom:1px solid var(--trait); box-shadow:0 18px 30px rgba(10,42,30,0.12); padding:8px 16px 20px;}
+  .menu-mobile[hidden]{display:none;}
+  .menu-mobile a{display:flex; align-items:center; min-height:52px; padding:0 8px; font-size:18px; color:var(--vert); text-decoration:none; border-bottom:1px solid var(--trait);}
+  .menu-mobile .btn{margin-top:16px; width:100%; border-bottom:none;}
+  @media (max-width:960px){
+    .navlinks, .nav-right .btn{display:none;}
+    .nav-right{margin-left:auto;}
+    .menu-btn{display:inline-flex;}
   }
-  .hero .lead{margin-top:26px; font-size:19.5px; line-height:1.55; color:var(--muted); max-width:44ch;}
-  .reach{
-    margin-top:34px; display:flex; flex-wrap:wrap; align-items:center; gap:18px 26px;
-    padding:20px 22px; background:var(--cream); border:1px solid var(--rule); border-radius:22px; width:fit-content; max-width:100%;
-  }
-  .reach small{display:block; font-size:13.5px; color:var(--muted); margin-bottom:2px;}
-  .reach .number{font-family:var(--font-display); font-weight:650; font-size:clamp(23px,2.4vw,29px); color:var(--forest-deep); text-decoration:none; letter-spacing:-0.01em; white-space:nowrap;}
-  .reach .number:hover{text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:5px;}
-  .org-links{margin-top:24px; display:flex; flex-direction:column; gap:8px; font-size:15px;}
-  .org-link{color:var(--muted); text-underline-offset:4px; width:fit-content;}
-  .org-link:hover{color:var(--forest);}
-  .org-link.agro-link{color:var(--forest); font-weight:600; text-decoration-color:var(--gold); text-decoration-thickness:2px;}
+  @media (max-width:600px){ .nav{padding:0 16px; gap:12px;} }
 
-  .hero-visual{position:relative; padding:0 0 0 0;}
-  .hero-photo{position:absolute; top:0; right:0; bottom:118px; width:80%; border-radius:30px; overflow:hidden; background:var(--forest);}
-  .hero-photo img{width:100%; height:100%; object-fit:cover; object-position:62% 30%;}
-  .hero-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,42,30,0) 55%, rgba(10,42,30,0.35));}
-  .demo{position:relative; z-index:2; width:340px; max-width:100%; margin-top:72px;}
-  @media (max-width:980px){
-    .hero{padding:44px 0 64px;}
-    .hero .wrap{grid-template-columns:minmax(0,1fr); gap:44px;}
-    .hero-photo{position:relative; bottom:auto; width:100%; height:auto; aspect-ratio:4/3;}
-    .demo{margin:-140px auto 0; width:340px;}
-  }
-  @media (max-width:420px){
-    .demo{margin-top:-90px;}
-    .reach{padding:16px; border-radius:18px;}
-  }
+  /* ---------- Ouverture (fond vert) ---------- */
+  .ouverture{background:var(--vert); color:#fff; padding:clamp(40px,7vw,88px) 0 clamp(48px,7vw,96px);}
+  .ouverture .wrap{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); gap:clamp(32px,6vw,80px); align-items:center;}
+  .ouverture h1{font-size:clamp(2.4rem,5.4vw,4.1rem); letter-spacing:-0.03em; color:#fff;}
+  .ouverture h1 em{font-style:normal; color:var(--mais);}
+  .ouverture .chapeau{margin-top:24px; font-size:clamp(18px,2vw,21px); line-height:1.55; color:rgba(255,255,255,0.88); max-width:34em;}
+  .numero{margin-top:36px; display:grid; gap:14px; max-width:520px;}
+  .numero small{font-size:15px; color:rgba(255,255,255,0.75);}
+  .numero .tel{display:inline-block; padding:8px 0; font:700 clamp(28px,4vw,40px)/1 var(--titre); letter-spacing:-0.01em; color:#fff; text-decoration:none; justify-self:start;}
+  .numero .tel:hover{text-decoration:underline;}
+  .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;}
+  .actions .btn.contour{color:#fff;}
+  @media (max-width:900px){ .ouverture .wrap{grid-template-columns:1fr;} }
 
-  /* ---------- Téléphone (style WhatsApp) ---------- */
-  .phone{background:#0B1E16; border-radius:40px; padding:10px; box-shadow:0 0 0 1px rgba(0,0,0,0.06), 0 36px 60px -26px rgba(10,42,30,0.55), 0 12px 24px -12px rgba(10,42,30,0.35);}
-  .screen{background:var(--wa-bg); border-radius:31px; overflow:hidden; position:relative;
-    background-image:radial-gradient(rgba(15,59,42,0.05) 1.2px, transparent 1.3px); background-size:18px 18px;}
-  .chat-head{display:flex; align-items:center; gap:11px; padding:16px 16px 13px; background:var(--forest);}
-  .avatar{
-    width:38px; height:38px; border-radius:50%; background:var(--forest-deep);
-    display:flex; align-items:center; justify-content:center;
-    font:700 22px var(--font-display); color:var(--cream); position:relative; flex-shrink:0;
-  }
-  .avatar::after{
-    content:""; position:absolute; top:6px; right:10px; width:6px; height:9px;
-    background:var(--gold); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; transform:rotate(40deg);
-  }
-  .chat-name{color:var(--cream); font-weight:600; font-size:15.5px; line-height:1.2; display:flex; align-items:center; gap:5px;}
-  .chat-name svg{width:15px; height:15px;}
-  .chat-status{color:rgba(251,248,241,0.68); font-size:12.5px;}
-  .chat{min-height:452px; padding:16px 12px 20px; display:flex; flex-direction:column; gap:8px;}
+  /* ---------- Téléphone de démonstration ---------- */
+  .demo{display:grid; gap:16px; justify-items:center;}
+  .phone{width:min(100%,370px); background:var(--vert-nuit); border-radius:38px; padding:10px; box-shadow:0 30px 60px rgba(0,0,0,0.35), 0 2px 0 rgba(255,255,255,0.08) inset;}
+  .screen{position:relative; border-radius:30px; overflow:hidden; background:var(--wa-bg); height:520px; display:flex; flex-direction:column;}
+  .chat-head{display:flex; align-items:center; gap:10px; padding:14px 16px; background:var(--wa-vert); color:#fff;}
+  .avatar{width:36px; height:36px; border-radius:50%; background:#fff; color:var(--vert); display:grid; place-items:center; font:800 20px var(--titre);}
+  .chat-name{font-weight:700; font-size:16px; line-height:1.2;}
+  .chat-status{font-size:13px; opacity:0.85;}
+  .chat{flex:1; overflow-y:auto; padding:14px 12px 16px; display:flex; flex-direction:column; gap:8px; color:var(--encre);}
   .chat[hidden]{display:none;}
-  .bubble{max-width:86%; padding:8px 11px 5px; border-radius:12px; font-size:14.5px; line-height:1.42; box-shadow:0 1px 0.5px rgba(11,30,22,0.13); position:relative;}
-  .bubble .time{display:block; text-align:right; font-size:11px; color:rgba(20,33,26,0.5); margin-top:2px;}
-  .bubble.me{align-self:flex-end; background:var(--wa-out); color:var(--ink); border-top-right-radius:3px;}
-  .bubble.me .time::after{content:" ✓✓"; color:#53BDEB; letter-spacing:-2px;}
-  .bubble.bot{align-self:flex-start; background:var(--wa-in); color:var(--ink); border-top-left-radius:3px;}
-  .bubble ol{margin:6px 0 2px; padding-left:20px;}
-  .bubble li{margin:2px 0;}
-  .voice{display:flex; align-items:center; gap:10px; min-width:200px; padding:3px 0;}
-  .voice .play{width:30px; height:30px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;}
-  .me .voice .play{background:var(--forest);}
-  .bot .voice .play{background:var(--forest);}
-  .voice .play svg{width:12px; height:12px;}
-  .voice .play svg path{fill:#FBF8F1;}
-  .voice .wave{flex:1; height:24px;}
-  .voice .wave g{fill:var(--forest); opacity:0.55;}
-  .voice .dur{font-size:12px; color:var(--muted);}
-  .photo{border-radius:8px; overflow:hidden; margin-bottom:6px; line-height:0;}
-  .photo svg{width:100%; height:auto; max-height:150px;}
-  .chat.play .bubble{animation:pop 0.45s ease both;}
-  .chat.play .bubble:nth-child(2){animation-delay:0.8s;}
-  .chat.play .bubble:nth-child(3){animation-delay:1.7s;}
-  .chat.play .bubble:nth-child(4){animation-delay:2.6s;}
-  @keyframes pop{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
+  .bubble{max-width:86%; padding:8px 10px 6px; border-radius:10px; font-size:15px; line-height:1.4; box-shadow:0 1px 1px rgba(0,0,0,0.08);}
+  .bubble.me{align-self:flex-end; background:var(--wa-out); border-top-right-radius:3px;}
+  .bubble.bot{align-self:flex-start; background:var(--wa-in); border-top-left-radius:3px;}
+  .bubble ol{margin:6px 0 0; padding-left:20px;}
+  .bubble .heure{display:block; text-align:right; font-size:11px; color:#667781; margin-top:2px;}
+  .voice{display:flex; align-items:center; gap:8px; min-width:200px;}
+  .voice .play{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:var(--wa-vert); color:#fff; flex-shrink:0;}
+  .voice .onde{flex:1; height:22px;}
+  .voice .duree{font-size:12px; color:#667781;}
+  .feuille-photo{border-radius:8px; overflow:hidden; margin-bottom:6px; width:220px; max-width:100%;}
+  .liste-btn{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; min-height:44px; margin-top:6px; border:none; border-top:1px solid #E6E2DC; background:transparent; color:var(--wa-vert); font:600 15px var(--texte); cursor:pointer;}
+  .recommencer{align-self:center; min-height:44px; padding:0 16px; border:none; border-radius:999px; background:rgba(0,0,0,0.06); color:var(--texte2); font:600 14px var(--texte); cursor:pointer;}
+  .play-in .bubble{animation:pop .45s cubic-bezier(.2,.8,.2,1) both;}
+  .play-in .bubble:nth-child(2){animation-delay:.35s;}
+  .play-in .bubble:nth-child(3){animation-delay:.7s;}
+  @keyframes pop{from{opacity:0; transform:translateY(8px) scale(.98);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion:reduce){ .play-in .bubble{animation-duration:.01s; animation-delay:0s !important;} html{scroll-behavior:auto;} }
 
-  .scenes{margin-top:20px;}
-  .scenes p{font-size:13.5px; color:var(--muted); margin-bottom:10px;}
-  .tabs{display:flex; flex-wrap:wrap; gap:8px;}
-  .tab{
-    cursor:pointer; border:1.5px solid var(--rule); background:var(--cream);
-    color:var(--forest); border-radius:999px; padding:7px 14px;
-    font:600 13.5px var(--font-body); transition:background 0.2s ease, border-color 0.2s ease;
-  }
-  .tab:hover{border-color:var(--forest);}
-  .tab[aria-selected="true"]{background:var(--forest); border-color:var(--forest); color:var(--cream);}
-
-  /* ---------- Bande de chiffres ---------- */
-  .proof{background:var(--forest-deep); color:var(--cream);}
-  .proof ul{list-style:none; margin:0; padding:48px 0; display:grid; grid-template-columns:repeat(4,1fr); gap:28px 40px;}
-  .proof li{padding-left:0;}
-  .proof b{display:block; font:700 clamp(34px,3.8vw,50px)/1 var(--font-display); color:var(--gold); letter-spacing:-0.03em;}
-  .proof span{display:block; margin-top:10px; font-size:15px; color:rgba(251,248,241,0.76); line-height:1.45; max-width:24ch;}
-  @media (max-width:860px){ .proof ul{grid-template-columns:1fr 1fr;} }
-  @media (max-width:440px){ .proof ul{gap:26px 20px; padding:40px 0;} .proof span{font-size:14px;} }
-
-  /* ---------- Sections « une question, une réponse » ---------- */
-  section.q{padding:104px 0;}
-  @media (max-width:860px){ section.q{padding:72px 0;} }
-  .ask{
-    display:inline-block; position:relative;
-    background:var(--wa-out); color:var(--ink);
-    padding:9px 14px 10px; border-radius:14px 14px 14px 4px;
-    font-size:16px; margin-bottom:24px; max-width:36ch;
-    box-shadow:0 1px 0.5px rgba(11,30,22,0.13);
-  }
-  .ask small{display:block; font-size:12px; font-weight:600; color:var(--wa-link); margin-bottom:1px;}
-  .answer h2{font-size:clamp(34px,4.4vw,58px); color:var(--forest-deep); max-width:20ch; text-wrap:balance;}
-  .answer > p{margin-top:20px; font-size:18.5px; color:var(--muted); max-width:56ch;}
-
-  /* Façons de demander */
-  .ways{list-style:none; margin:56px 0 0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
-  .ways li{background:var(--cream); border:1px solid var(--rule); border-radius:22px; padding:26px 22px 24px;}
-  .ways .ico{width:48px; height:48px; border-radius:14px; background:var(--forest); color:var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:20px;}
-  .ways li:nth-child(2) .ico{background:var(--gold); color:var(--forest-deep);}
-  .ways li:nth-child(3) .ico{background:var(--terre); color:var(--cream);}
-  .ways li:nth-child(4) .ico{background:var(--forest-mid); color:var(--gold-soft);}
-  .ways svg{width:24px; height:24px;}
-  .ways h3{font-size:22px; color:var(--forest-deep); margin-bottom:8px;}
-  .ways p{font-size:15.5px; color:var(--muted);}
-  @media (max-width:960px){ .ways{grid-template-columns:1fr 1fr;} }
-  @media (max-width:560px){ .ways{gap:10px;} .ways li{padding:18px 16px; border-radius:18px;} .ways .ico{width:40px; height:40px; margin-bottom:14px;} .ways h3{font-size:19px;} .ways p{font-size:14.5px;} }
-  @media (max-width:340px){ .ways{grid-template-columns:1fr;} }
-
-  /* Le menu WhatsApp */
-  .menu-sec{background:var(--sand);}
-  .menu-sec .wrap{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr); gap:64px; align-items:center;}
-  .menu-points{list-style:none; margin:36px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:12px 28px;}
-  .menu-points li{display:flex; gap:12px; align-items:baseline; font-size:16px; padding:12px 0; border-top:1px solid rgba(15,59,42,0.18);}
-  .menu-points li span:first-child{flex-shrink:0;}
-  .answer > p.try{margin-top:28px; font-size:16px; display:inline-flex; align-items:center; gap:10px; font-size:15px; font-weight:600; color:var(--terre);}
-  .try svg{width:18px; height:18px;}
-  .menu-demo{width:340px; max-width:100%; justify-self:center;}
-  .menu-demo .chat{min-height:480px; justify-content:flex-end;}
-  .listmsg{padding:8px 11px 0;}
-  .listmsg .time{margin-bottom:4px;}
-  .listbtn{display:flex; align-items:center; justify-content:center; gap:8px; width:calc(100% + 22px); margin:0 -11px; padding:11px 0; border:none; border-top:1px solid rgba(20,33,26,0.1); background:transparent; color:var(--wa-link); font:600 15px var(--font-body); cursor:pointer; border-radius:0 0 12px 12px;}
-  .listbtn:hover{background:rgba(0,128,105,0.06);}
-  .listbtn svg{width:17px; height:17px;}
-  .sheet-back{position:absolute; inset:0; background:rgba(11,30,22,0.35); z-index:4; display:flex; align-items:flex-end;}
+  /* Feuille « Voir le menu » dans le téléphone */
+  .sheet-back{position:absolute; inset:0; background:rgba(0,0,0,0.35); display:flex; align-items:flex-end;}
   .sheet-back[hidden]{display:none;}
-  .sheet{background:#fff; width:100%; max-height:82%; overflow:auto; border-radius:18px 18px 0 0; padding:8px 0 10px; animation:up .25s ease both;}
-  @keyframes up{from{transform:translateY(30px); opacity:0;} to{transform:none; opacity:1;}}
-  .sheet-head{display:flex; align-items:center; justify-content:center; position:relative; padding:8px 16px 10px; font-weight:600; font-size:15px;}
-  .sheet-head::before{content:""; position:absolute; top:-2px; left:50%; width:36px; height:4px; margin-left:-18px; border-radius:4px; background:#D4D4D4;}
-  .sheet-close{position:absolute; left:10px; top:4px; width:32px; height:32px; border:none; background:transparent; font-size:22px; line-height:1; cursor:pointer; color:var(--muted);}
-  .sheet h4{margin:10px 16px 2px; font:600 12.5px var(--font-body); color:var(--wa-link); text-transform:none;}
-  .sheet button.row{display:block; width:100%; text-align:left; border:none; background:transparent; padding:9px 16px; cursor:pointer; font-family:var(--font-body); border-bottom:1px solid #F0F0F0;}
-  .sheet button.row:hover{background:#F6F6F6;}
-  .sheet .rt{display:block; font-size:14.5px; color:var(--ink);}
-  .sheet .rd{display:block; font-size:12.5px; color:#667781; line-height:1.35;}
-  .reset{align-self:center; margin-top:4px; border:none; background:rgba(255,255,255,0.8); color:var(--muted); font:600 12px var(--font-body); padding:5px 12px; border-radius:999px; cursor:pointer;}
-  .reset[hidden]{display:none;}
-  @media (max-width:900px){ .menu-sec .wrap{grid-template-columns:1fr; gap:48px;} }
-  @media (max-width:520px){ .menu-points{grid-template-columns:1fr; gap:0;} }
+  .sheet{width:100%; max-height:84%; overflow-y:auto; background:#fff; border-radius:18px 18px 0 0; padding-bottom:8px; color:var(--encre);}
+  .sheet-head{position:sticky; top:0; background:#fff; display:flex; align-items:center; gap:8px; padding:6px 8px; border-bottom:1px solid #EEE; font-weight:700;}
+  .sheet-close{width:44px; height:44px; border:none; background:transparent; cursor:pointer; color:var(--texte2); display:grid; place-items:center;}
+  .sheet h4{font:600 13px var(--texte); color:var(--wa-vert); padding:12px 16px 4px; letter-spacing:0;}
+  .sheet .row{display:flex; gap:12px; align-items:flex-start; width:100%; min-height:52px; padding:10px 16px; border:none; background:transparent; text-align:left; cursor:pointer; font-family:var(--texte); color:var(--encre);}
+  .sheet .row:hover{background:#F5F6F6;}
+  .sheet .row .ico{color:var(--wa-vert); margin-top:1px;}
+  .sheet .rt{display:block; font-size:15px; font-weight:700;}
+  .sheet .rd{display:block; font-size:13px; color:#667781; line-height:1.35;}
 
-  /* Langues */
-  .languages{background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
-  .spoken{list-style:none; margin:48px 0 0; padding:0; border-top:1px solid var(--rule);}
-  .spoken li{display:flex; align-items:baseline; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; padding:20px 0; border-bottom:1px solid var(--rule);}
-  .spoken .name{font-family:var(--font-display); font-weight:700; font-size:clamp(44px,8vw,104px); line-height:0.95; color:var(--forest-deep); letter-spacing:-0.045em;}
-  .spoken li:nth-child(3) .name{color:var(--terre);}
-  .spoken .what{font-size:15.5px; color:var(--muted); text-align:right;}
-  .spoken .soon{display:inline-block; margin-left:6px; padding:2px 10px; border-radius:999px; background:var(--gold); color:var(--forest-deep); font-size:13px; font-weight:700; white-space:nowrap;}
-  .understood{margin-top:44px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:16px 40px; align-items:baseline;}
-  .understood h3{font-size:22px; color:var(--forest-deep);}
-  .understood h3 + p{font-size:15.5px; color:var(--muted); margin-top:6px;}
-  .understood .names{font-family:var(--font-display); font-weight:600; font-size:clamp(24px,2.6vw,32px); color:var(--forest); line-height:1.35; letter-spacing:-0.02em;}
-  @media (max-width:760px){
-    .spoken .what{text-align:left;}
-    .understood{grid-template-columns:1fr;}
-  }
+  /* Choix de la situation */
+  .situations{display:grid; gap:10px; justify-items:center; max-width:440px;}
+  .onglets{display:flex; flex-wrap:wrap; justify-content:center; gap:8px;}
+  .situations p{width:100%; text-align:center; font-size:15px; color:rgba(255,255,255,0.8);}
+  .tab{min-height:44px; padding:0 16px; border-radius:999px; border:1.5px solid var(--trait-clair); background:transparent; color:#fff; font:600 15px var(--texte); cursor:pointer;}
+  .tab:hover{border-color:rgba(255,255,255,0.6);}
+  .tab[aria-selected="true"]{background:var(--mais); border-color:var(--mais); color:var(--vert-nuit);}
 
-  /* Sources */
-  .sources{background:var(--forest-deep); color:var(--cream); position:relative; overflow:hidden;}
-  .sources .answer h2{color:var(--cream);}
-  .sources .answer > p{color:rgba(251,248,241,0.74);}
-  .source-list{list-style:none; margin:52px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:0 40px;}
-  .source-list li{padding:20px 0 20px 28px; border-top:1px solid var(--rule-light); position:relative; font-size:16.5px;}
-  .source-list li::before{
-    content:""; position:absolute; left:2px; top:28px; width:9px; height:13px;
-    background:var(--gold); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; transform:rotate(40deg);
-  }
-  @media (max-width:860px){ .source-list{grid-template-columns:1fr;} }
+  /* ---------- Sections ---------- */
+  .section{padding:var(--rythme) 0;}
+  .section.gris{background:var(--fond);}
+  .tete{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px 64px; align-items:end; padding-top:20px; border-top:3px solid var(--vert); margin-bottom:clamp(36px,5vw,56px);}
+  .tete h2{font-size:clamp(2rem,4.4vw,3.4rem);}
+  .tete p{font-size:19px; color:var(--texte2); max-width:32em;}
+  @media (max-width:800px){ .tete{grid-template-columns:1fr;} }
+
+  /* Fiche : façons de demander */
+  .fiche{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr); gap:clamp(40px,6vw,88px);}
+  .facons li{display:grid; grid-template-columns:48px minmax(0,1fr); gap:4px 16px; padding:20px 0; border-bottom:1px solid var(--trait); list-style:none;}
+  .facons li:first-child{border-top:1px solid var(--trait);}
+  .facons .pastille{grid-row:span 2; width:48px; height:48px; border-radius:14px; background:var(--vert-pale); color:var(--vert); display:grid; place-items:center;}
+  .facons h3{font-size:22px; letter-spacing:-0.01em;}
+  .facons p{color:var(--texte2);}
+  .encart{display:grid; gap:36px; align-content:start;}
+  .encart h3{font-size:22px; margin-bottom:12px;}
+  .langues{list-style:none;}
+  .langues li{display:flex; justify-content:space-between; gap:16px; align-items:baseline; padding:10px 0; border-bottom:1px solid var(--trait); list-style:none;}
+  .langues b{font:700 26px var(--titre); color:var(--vert);}
+  .langues span{font-size:15px; color:var(--texte2); text-align:right;}
+  .encart .petit{font-size:16px; color:var(--texte2); margin-top:12px;}
+  .sources{list-style:none; display:grid; gap:8px;}
+  .sources li{display:flex; gap:10px; align-items:flex-start; font-size:16px; color:var(--texte2); list-style:none;}
+  .sources .ico{color:var(--vert); width:20px; height:20px; margin-top:3px;}
+  @media (max-width:900px){ .fiche{grid-template-columns:1fr;} }
 
   /* Agronome */
-  .agro .wrap{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:64px; align-items:end;}
-  .agro-steps{list-style:none; margin:0; padding:0; counter-reset:a; background:var(--cream); border:1px solid var(--rule); border-radius:24px; padding:8px 26px;}
-  .agro-steps li{counter-increment:a; display:grid; grid-template-columns:38px 1fr; gap:14px; padding:18px 0; border-top:1px solid var(--rule); font-size:16px; align-items:center;}
-  .agro-steps li:first-child{border-top:none;}
-  .agro-steps li::before{content:counter(a); font:700 17px var(--font-display); color:var(--gold); background:var(--forest); width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
-  @media (max-width:860px){ .agro .wrap{grid-template-columns:1fr; gap:36px;} .agro-steps{padding:4px 18px;} }
-  .agro .join{display:inline-block; margin-top:24px; font-weight:600; color:var(--forest); text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:5px;}
-  .agro .join:hover{color:var(--forest-deep);}
-
-  /* Tarifs */
-  .tarifs{background:var(--paper); border-top:1px solid var(--rule);}
-  .plans{margin-top:56px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; align-items:stretch;}
-  .plan{background:var(--cream); border:1px solid var(--rule); border-radius:24px; padding:28px 24px 26px; display:flex; flex-direction:column; position:relative;}
-  .plan .tag{position:absolute; top:-12px; left:22px; padding:4px 11px; border-radius:999px; font-size:12.5px; font-weight:700;}
-  .plan .tag.new{background:var(--terre); color:var(--cream);}
-  .plan .tag.best{background:var(--gold); color:var(--forest-deep);}
-  .plan h3{font-size:22px; color:var(--forest-deep);}
-  .plan .price{margin-top:18px; font:700 clamp(38px,3.6vw,48px)/1 var(--font-display); letter-spacing:-0.035em; color:var(--forest-deep);}
-  .plan .price small{font:600 16px var(--font-body); letter-spacing:0; margin-left:4px;}
-  .plan .price small.pre{margin:0 6px 0 0;}
-  .plan .price{white-space:nowrap;}
-  .plan .per{margin-top:6px; font-size:14.5px; color:var(--muted);}
-  .plan ul{list-style:none; margin:22px 0 0; padding:18px 0 0; border-top:1px solid var(--rule); display:grid; gap:10px; font-size:15.5px;}
-  .plan li{display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start;}
-  .plan li::before{content:""; width:16px; height:16px; margin-top:4px; border-radius:50%; background:var(--forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-5' fill='none' stroke='%23F0B23A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;}
-  .plan.featured{background:var(--forest-deep); color:var(--cream); border-color:var(--forest-deep);}
-  .plan.featured h3, .plan.featured .price{color:var(--cream);}
-  .plan.featured .per{color:rgba(251,248,241,0.7);}
-  .plan.featured ul{border-top-color:var(--rule-light);}
-  .plan.featured li::before{background-color:var(--gold); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-5' fill='none' stroke='%230A2A1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
-  .plan .how{margin-top:auto; padding-top:22px; font-size:14px; color:var(--muted);}
-  .plan.featured .how{color:rgba(251,248,241,0.7);}
-  .plan .how b{color:inherit;}
-  .plan .how a{color:var(--forest); font-weight:600; text-decoration-color:var(--gold); text-underline-offset:4px;}
-  .plans-note{margin-top:28px; display:flex; flex-wrap:wrap; gap:10px 28px; font-size:15px; color:var(--muted);}
-  .plans-note p{max-width:62ch;}
-  .plans-note strong{color:var(--forest);}
-  @media (max-width:1040px){ .plans{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 16px;} }
-  @media (max-width:600px){ .plans{grid-template-columns:1fr;} }
-
-  /* Démarrer */
-  .start{background:var(--cream); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
-  .steps{list-style:none; margin:52px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:40px; counter-reset:step;}
-  .steps li{counter-increment:step; border-top:2px solid var(--forest); padding-top:20px;}
-  .steps li::before{
-    content:"0" counter(step); display:block;
-    font:700 15px/1 var(--font-body); color:var(--terre); margin-bottom:14px; letter-spacing:0.06em;
+  .agro{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; list-style:none; counter-reset:etape;}
+  .agro li{counter-increment:etape; padding:20px 24px 0 0; border-top:1px solid var(--trait); list-style:none; font-size:17px;}
+  .agro li::before{content:counter(etape); display:grid; place-items:center; width:36px; height:36px; margin:-38px 0 16px; border-radius:50%; background:var(--vert); color:var(--mais); font:700 17px var(--titre);}
+  .agro-pied{margin-top:40px; display:flex; flex-wrap:wrap; gap:12px 32px; align-items:center;}
+  .agro-pied p{color:var(--texte2); max-width:40em;}
+  .lien-fort{display:inline-flex; align-items:center; gap:8px; min-height:44px; font-weight:700; color:var(--vert);}
+  @media (max-width:800px){
+    .agro{grid-template-columns:1fr; gap:0;}
+    .agro li{display:grid; grid-template-columns:36px 1fr; gap:16px; padding:16px 0; border-top:none; border-bottom:1px solid var(--trait);}
+    .agro li::before{margin:0;}
   }
-  .steps h3{font-size:24px; color:var(--forest-deep); margin-bottom:10px;}
-  .steps p{font-size:15.5px; color:var(--muted);}
-  @media (max-width:760px){ .steps{grid-template-columns:1fr; gap:30px;} }
 
-  /* Pour qui */
-  .audience{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:52px;}
-  .audience div{border-radius:24px; padding:28px 26px; background:var(--cream); border:1px solid var(--rule);}
-  .audience div:first-child{background:var(--forest); color:var(--cream); border-color:var(--forest);}
-  .audience div:first-child h3{color:var(--gold);}
-  .audience div:first-child p{color:rgba(251,248,241,0.8);}
-  .audience h3{font-size:24px; color:var(--forest-deep); margin-bottom:12px;}
-  .audience p{font-size:15.5px; color:var(--muted);}
-  @media (max-width:860px){ .audience{grid-template-columns:1fr;} }
-
-  /* Partenariats */
-  .partner{background:var(--gold); color:var(--forest-deep); padding:88px 0;}
-  .partner .wrap{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:48px; align-items:center;}
-  .partner h2{font-size:clamp(32px,4.2vw,54px); text-wrap:balance;}
-  .partner p{margin-top:16px; font-size:17.5px; max-width:52ch;}
-  .partner-actions{display:flex; flex-direction:column; align-items:flex-start; gap:14px;}
-  .partner-actions .mail a{font-weight:700; overflow-wrap:anywhere;}
-  @media (max-width:860px){ .partner{padding:64px 0;} .partner .wrap{grid-template-columns:1fr; gap:28px;} }
-
-  /* Questions fréquentes */
-  .faq{border-top:1px solid var(--rule);}
-  .faq .wrap{display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr); gap:56px; align-items:start;}
-  .faq-list{border-top:1px solid var(--rule);}
-  .faq-list details{border-bottom:1px solid var(--rule);}
-  .faq-list summary{
-    list-style:none; cursor:pointer; padding:22px 48px 22px 0; position:relative;
-    font:650 clamp(19px,2vw,22px)/1.3 var(--font-display); color:var(--forest-deep); letter-spacing:-0.01em;
+  /* Tarifs producteurs */
+  .formules{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:2px solid var(--vert);}
+  .formule{padding:28px 28px 32px; border-right:1px solid var(--trait);}
+  .formule:last-child{border-right:none;}
+  .formule.forte{background:var(--vert); color:#fff;}
+  .formule h3{font-size:22px;}
+  .formule .prix{margin-top:14px; font:700 clamp(40px,5vw,56px)/1 var(--titre); letter-spacing:-0.03em;}
+  .formule .prix small{font:600 17px var(--texte); margin-left:6px; letter-spacing:0;}
+  .formule .duree{margin-top:6px; color:var(--texte2);}
+  .formule.forte .duree{color:rgba(255,255,255,0.8);}
+  .formule .note-forte{display:block; margin-top:4px; font-weight:700; color:var(--mais);}
+  .formule ul{list-style:none; margin-top:22px; display:grid; gap:10px;}
+  .formule li{display:flex; gap:10px; align-items:flex-start; list-style:none; font-size:17px;}
+  .formule li .ico{width:20px; height:20px; margin-top:3px; color:var(--vert);}
+  .formule.forte li .ico{color:var(--mais);}
+  .formules-note{margin-top:24px; display:grid; gap:6px; font-size:16px; color:var(--texte2); max-width:52em;}
+  @media (max-width:860px){
+    .formules{grid-template-columns:1fr;}
+    .formule{border-right:none; border-bottom:1px solid var(--trait);}
+    .formule.forte{border-radius:0;}
   }
-  .faq-list summary::-webkit-details-marker{display:none;}
-  .faq-list summary::after{
-    content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%);
-    width:30px; height:30px; border-radius:50%; background:var(--cream); border:1px solid var(--rule);
-    display:flex; align-items:center; justify-content:center; font:400 20px/1 var(--font-body); color:var(--forest);
-    transition:transform 0.2s ease, background .2s ease;
-  }
-  .faq-list details[open] summary::after{transform:translateY(-50%) rotate(45deg); background:var(--gold); border-color:var(--gold);}
-  .faq-list details p{padding:0 0 24px; font-size:16.5px; color:var(--muted); max-width:62ch;}
-  .faq-list details p a{color:var(--forest); font-weight:600;}
-  @media (max-width:860px){ .faq .wrap{grid-template-columns:1fr; gap:36px;} }
 
-  footer{background:var(--forest-deep); color:rgba(251,248,241,0.7); font-size:14px; padding:36px 0;}
-  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px 24px;}
-  footer a{text-decoration:none;}
-  footer a:hover{color:var(--cream); text-decoration:underline;}
-  footer .links{display:flex; flex-wrap:wrap; gap:8px 20px;}
+  /* ---------- Organisations (fond vert) ---------- */
+  .orgs{background:var(--vert-nuit); color:#fff; padding:var(--rythme) 0;}
+  .orgs .tete{border-top-color:var(--mais);}
+  .orgs .tete p{color:rgba(255,255,255,0.82);}
+  .orgs-grille{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(40px,6vw,88px); align-items:start;}
+  .inclus{list-style:none; display:grid; gap:0;}
+  .inclus li{display:grid; grid-template-columns:28px minmax(0,1fr); gap:14px; padding:18px 0; border-bottom:1px solid var(--trait-clair); list-style:none;}
+  .inclus .ico{color:var(--mais); margin-top:2px;}
+  .inclus b{display:block; font:700 20px/1.25 var(--titre); letter-spacing:-0.01em;}
+  .inclus span{color:rgba(255,255,255,0.8); font-size:16px;}
+  .grille-prix{margin-top:36px; width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums;}
+  .grille-prix caption{text-align:left; font:700 20px var(--titre); padding-bottom:10px;}
+  .grille-prix th, .grille-prix td{text-align:left; padding:12px 0; border-bottom:1px solid var(--trait-clair); font-size:17px;}
+  .grille-prix thead th{font-size:14px; color:rgba(255,255,255,0.75); font-weight:700; border-bottom:2px solid var(--mais);}
+  .grille-prix td:last-child, .grille-prix th:last-child{text-align:right;}
+  .grille-prix td b{font:700 22px var(--titre);}
+  .orgs .petit{margin-top:12px; font-size:15px; color:rgba(255,255,255,0.75);}
+  .orgs-actions{margin-top:36px; display:flex; flex-wrap:wrap; gap:12px;}
+  .orgs-actions .btn.contour{color:#fff;}
+  .orgs-contact{margin-top:18px; font-size:16px; color:rgba(255,255,255,0.85);}
+  .orgs-contact a{display:inline-flex; align-items:center; min-height:44px; color:#fff; font-weight:600;}
 
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    .chat.play .bubble, .sheet{animation:none;}
-    .btn:hover{transform:none;}
-  }
+  /* Aperçu du rapport mensuel (document d'exemple) */
+  .rapport{margin:0; background:#fff; color:var(--encre); border-radius:6px; padding:clamp(20px,3vw,28px); box-shadow:0 24px 50px rgba(0,0,0,0.35); transform:rotate(-0.6deg); position:sticky; top:100px;}
+  .rapport .bandeau{display:inline-block; font:600 12px var(--texte); letter-spacing:0.04em; text-transform:uppercase; color:var(--terre); border:1.5px solid var(--terre); border-radius:6px; padding:3px 8px;}
+  .rapport h3{margin-top:14px; font-size:24px;}
+  .rapport .sous{color:var(--texte2); font-size:15px; margin-top:4px;}
+  .rapport dl{display:grid; grid-template-columns:1fr auto; margin:20px 0 0; border-top:2px solid var(--vert); font-variant-numeric:tabular-nums;}
+  .rapport dt, .rapport dd{margin:0; padding:9px 0; border-bottom:1px solid var(--trait); font-size:15px;}
+  .rapport dd{font-weight:700; text-align:right;}
+  .rapport h4{margin-top:22px; font:600 15px var(--texte); letter-spacing:0;}
+  .barres{list-style:none; display:grid; gap:9px; margin-top:10px;}
+  .barres li{display:grid; grid-template-columns:minmax(0,9em) minmax(0,1fr) 2.5em; gap:10px; align-items:center; font-size:14px; list-style:none;}
+  .barres i{display:block; height:12px; border-radius:3px; background:var(--vert);}
+  .barres li:first-child i{background:var(--terre);}
+  .barres em{font-style:normal; text-align:right; font-variant-numeric:tabular-nums; color:var(--texte2);}
+  .rapport .lien-fort{margin-top:18px;}
+  @media (max-width:900px){ .orgs-grille{grid-template-columns:1fr;} .rapport{transform:none; position:static;} }
+
+  /* ---------- Questions ---------- */
+  .faq{display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr); gap:clamp(32px,6vw,88px);}
+  .faq h2{font-size:clamp(2rem,4.4vw,3.4rem); padding-top:20px; border-top:3px solid var(--vert); align-self:start;}
+  .faq-liste details{border-bottom:1px solid var(--trait);}
+  .faq-liste details:first-child{border-top:1px solid var(--trait);}
+  .faq-liste summary{display:flex; justify-content:space-between; align-items:center; gap:16px; min-height:64px; padding:12px 0; cursor:pointer; list-style:none; font:700 19px/1.3 var(--titre); letter-spacing:-0.01em;}
+  .faq-liste summary::-webkit-details-marker{display:none;}
+  .faq-liste summary .ico{transition:transform .2s ease; color:var(--vert);}
+  .faq-liste details[open] summary .ico{transform:rotate(45deg);}
+  .faq-liste details p{padding:0 0 20px; color:var(--texte2); max-width:40em;}
+  @media (max-width:860px){ .faq{grid-template-columns:1fr;} }
+
+  /* ---------- Pied ---------- */
+  .derniere{background:var(--mais); color:var(--vert-nuit); padding:clamp(48px,7vw,80px) 0;}
+  .derniere .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px;}
+  .derniere h2{font-size:clamp(1.9rem,4vw,3rem); max-width:16em;}
+  footer{background:var(--vert-nuit); color:rgba(255,255,255,0.8); padding:28px 0 36px; font-size:15px;}
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px 24px;}
+  footer .liens{display:flex; flex-wrap:wrap; gap:0 8px;}
+  footer .liens a{display:inline-flex; align-items:center; min-height:44px; padding:0 8px; text-decoration:none;}
+  footer .liens a:hover{color:#fff; text-decoration:underline;}
 </style>
 </head>
 <body id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-ecrit" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/><path d="M8 8.5h8M8 12h5"/></symbol>
+  <symbol id="i-micro" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.2l1.6-2.2h5.4L16.3 7h2.2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="13" r="3.3"/></symbol>
+  <symbol id="i-lieu" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="i-meteo" viewBox="0 0 24 24"><path d="M8 4.5v1.2M3.8 9.3H5M4.9 5.6l.9.9M11.2 5.6l-.9.9"/><path d="M5.6 12.4A3.8 3.8 0 0 1 11.9 8"/><path d="M8.5 19h9a3.5 3.5 0 0 0 .4-7 5 5 0 0 0-9.6 1.2A2.9 2.9 0 0 0 8.5 19z"/></symbol>
+  <symbol id="i-agronome" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20.5c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/><path d="M15.5 14.8 14 18l-2-2-2 2-1.5-3.2"/></symbol>
+  <symbol id="i-equipe" viewBox="0 0 24 24"><path d="M5 4.5h3l1.5 4-2 1.3a10 10 0 0 0 6.7 6.7l1.3-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5z"/></symbol>
+  <symbol id="i-etoile" viewBox="0 0 24 24"><path d="m12 3.8 2.5 5.2 5.7.7-4.2 3.9 1.1 5.6L12 16.5l-5.1 2.7L8 13.6 3.8 9.7l5.7-.7z"/></symbol>
+  <symbol id="i-groupe" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c.4-3 2.6-5 5.5-5s5.1 2 5.5 5"/><path d="M15.5 5.3a3 3 0 0 1 0 5.4M17 14.7c2 .5 3.2 2.3 3.5 4.8"/></symbol>
+  <symbol id="i-compte" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></symbol>
+  <symbol id="i-profil" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6"/></symbol>
+  <symbol id="i-liste" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.8" cy="6.5" r=".6"/><circle cx="4.8" cy="12" r=".6"/><circle cx="4.8" cy="17.5" r=".6"/></symbol>
+  <symbol id="i-coche" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7"/></symbol>
+  <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-bulle" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4a8.4 8.4 0 1 1 15.4-4.5z"/></symbol>
+  <symbol id="i-courriel" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-document" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4M9 12.5h6M9 16h6"/></symbol>
+  <symbol id="i-livre" viewBox="0 0 24 24"><path d="M4 5.5c2.7-1 5.3-1 8 .8 2.7-1.8 5.3-1.8 8-.8v13c-2.7-1-5.3-1-8 .8-2.7-1.8-5.3-1.8-8-.8z"/><path d="M12 6.3v13"/></symbol>
+</svg>
+
 <a class="skip" href="#contenu" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
 
 <header>
   <div class="nav">
-    <a class="wordmark" href="#top" aria-label="SikaGlé — retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a>
+    <a class="wordmark" href="#top" aria-label="SikaGlé, retour en haut de la page"><a class="wordmark" href="#top" aria-label="SikaGlé — retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a></a>
     <nav class="navlinks" aria-label="Navigation principale">
-      <a href="#fonctionnalites" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
-      <a href="#menu" data-fr="Le menu" data-en="The menu">Le menu</a>
-      <a href="#langues" data-fr="Langues" data-en="Languages">Langues</a>
+      <a href="#producteurs" data-fr="Producteurs" data-en="Farmers">Producteurs</a>
       <a href="#tarifs" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
-      <a href="#pour-qui" data-fr="Pour qui" data-en="Who it's for">Pour qui</a>
-      <a href="#faq" data-fr="Questions" data-en="FAQ">Questions</a>
-      <a href="#contact" data-fr="Partenariats" data-en="Partnerships">Partenariats</a>
+      <a href="#organisations" data-fr="Organisations" data-en="Organisations">Organisations</a>
+      <a href="#questions" data-fr="Questions" data-en="FAQ">Questions</a>
       <a href="/agronomes" data-fr="Agronomes" data-en="Agronomists">Agronomes</a>
     </nav>
     <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Langue">
-        <button id="btn-fr" class="active" onclick="setLang('fr')" aria-pressed="true">FR</button>
-        <button id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+      <div class="lang" role="group" aria-label="Langue du site">
+        <button type="button" id="btn-fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+        <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
       </div>
-      <a class="btn gold small" href="https://wa.me/22966024902" target="_blank" rel="noopener">WhatsApp</a>
-      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Menu">
-        <span class="barres" aria-hidden="true"><span></span></span>
-      </button>
+      <a class="btn mais petit" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><span data-fr="Écrire à SikaGlé" data-en="Message SikaGlé">Écrire à SikaGlé</span></a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
     </div>
   </div>
   <nav class="menu-mobile" id="menu-mobile" aria-label="Menu" hidden>
-    <a href="#fonctionnalites" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
-    <a href="#menu" data-fr="Le menu" data-en="The menu">Le menu</a>
-      <a href="#langues" data-fr="Langues" data-en="Languages">Langues</a>
-    <a href="#sources" data-fr="Sources" data-en="Sources">Sources</a>
+    <a href="#producteurs" data-fr="Producteurs" data-en="Farmers">Producteurs</a>
     <a href="#tarifs" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
-      <a href="#pour-qui" data-fr="Pour qui" data-en="Who it's for">Pour qui</a>
-    <a href="#faq" data-fr="Questions" data-en="FAQ">Questions</a>
-    <a href="#contact" data-fr="Partenariats" data-en="Partnerships">Partenariats</a>
-    <a class="menu-agro" href="/agronomes" data-fr="Vous êtes agronome ? Inscrivez-vous" data-en="Are you an agronomist? Sign up">Vous êtes agronome ? Inscrivez-vous</a>
+    <a href="#organisations" data-fr="Coopératives, ONG et programmes" data-en="Cooperatives, NGOs and programmes">Coopératives, ONG et programmes</a>
+    <a href="#questions" data-fr="Questions fréquentes" data-en="FAQ">Questions fréquentes</a>
+    <a href="/agronomes" data-fr="Vous êtes agronome ? Inscrivez-vous" data-en="Are you an agronomist? Sign up">Vous êtes agronome ? Inscrivez-vous</a>
+    <a class="btn mais" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><span data-fr="Écrire à SikaGlé sur WhatsApp" data-en="Message SikaGlé on WhatsApp">Écrire à SikaGlé sur WhatsApp</span></a>
   </nav>
 </header>
 
 <main id="contenu">
 
-<section class="hero" aria-labelledby="titre-principal">
+<section class="ouverture" aria-labelledby="titre-principal">
   <div class="wrap">
     <div>
-      <span class="live"><i aria-hidden="true"></i><span data-fr="Sur WhatsApp, 24 h/24" data-en="On WhatsApp, 24/7">Sur WhatsApp, 24 h/24</span></span>
-      <h1 id="titre-principal"><span data-fr="Un conseiller agricole " data-en="An agricultural advisor ">Un conseiller agricole </span><span class="mark" data-fr="dans la poche" data-en="in every farmer's pocket">dans la poche</span><span data-fr=" de chaque producteur." data-en=".">&nbsp;de chaque producteur.</span></h1>
-      <p class="lead" data-fr="Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées." data-en="Ask your question on WhatsApp, in writing, by voice note or with a photo. SikaGlé answers in French, English or Fon, with advice drawn from verified agricultural sources.">Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées.</p>
-      <div class="reach">
-        <div>
-          <small data-fr="Le numéro de SikaGlé sur WhatsApp" data-en="SikaGlé's WhatsApp number">Le numéro de SikaGlé sur WhatsApp</small>
-          <a class="number" href="https://wa.me/22966024902" target="_blank" rel="noopener">+229 01 66 02 49 02</a>
+      <h1 id="titre-principal"><span data-fr="Un conseiller agricole dans la poche de chaque producteur." data-en="An agricultural advisor in every farmer's pocket.">Un conseiller agricole dans la poche de chaque producteur.</span></h1>
+      <p class="chapeau" data-fr="Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées. Rien à installer." data-en="Ask your question on WhatsApp, in writing, by voice note or with a photo. SikaGlé answers in French, English or Fon, with advice drawn from verified agricultural sources. Nothing to install.">Posez votre question sur WhatsApp, par écrit, en vocal ou avec une photo. SikaGlé vous répond en français, en anglais ou en fon, avec des conseils tirés de sources agricoles vérifiées. Rien à installer.</p>
+      <div class="numero">
+        <small data-fr="Le numéro de SikaGlé sur WhatsApp" data-en="SikaGlé's WhatsApp number">Le numéro de SikaGlé sur WhatsApp</small>
+        <a class="tel" href="https://wa.me/22966024902" target="_blank" rel="noopener">+229 01 66 02 49 02</a>
+        <div class="actions">
+          <a class="btn mais" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><span data-fr="Démarrer la conversation" data-en="Start the conversation">Démarrer la conversation</span></a>
+          <a class="btn contour" href="#organisations"><span data-fr="Offre organisations" data-en="For organisations">Offre organisations</span><svg class="ico" aria-hidden="true"><use href="#i-fleche"/></svg></a>
         </div>
-        <a class="btn gold" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><span data-fr="Démarrer la conversation" data-en="Start the conversation">Démarrer la conversation</span></a>
-      </div>
-      <div class="org-links">
-        <a class="org-link" href="#contact" data-fr="Vous êtes une coopérative, une ONG ou une entreprise ? Parlons partenariat." data-en="Are you a cooperative, an NGO or a company? Let's talk partnership.">Vous êtes une coopérative, une ONG ou une entreprise ? Parlons partenariat.</a>
-        <a class="org-link agro-link" href="/agronomes" data-fr="Vous êtes agronome ? Devenez agronome partenaire de SikaGlé." data-en="Are you an agronomist? Become a SikaGlé partner agronomist.">Vous êtes agronome ? Devenez agronome partenaire de SikaGlé.</a>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="hero-photo"><img src="/producteur.jpg" width="920" height="688" fetchpriority="high" data-fr="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ" data-en="A Beninese farmer consulting SikaGlé on WhatsApp in his field" alt="Un agriculteur béninois consulte SikaGlé sur WhatsApp dans son champ"></div>
-      <div class="demo">
-        <div class="phone" role="region" aria-label="Exemple de conversation">
-          <div class="screen">
-            <div class="chat-head">
-              <div class="avatar" aria-hidden="true">e</div>
-              <div>
-                <div class="chat-name">SikaGlé</div>
-                <div class="chat-status" data-fr="En ligne" data-en="Online">En ligne</div>
-              </div>
-            </div>
-<div class="chat play" id="chat-texte" role="tabpanel" aria-labelledby="tab-texte">
-            <div class="bubble me"><span data-fr="Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants." data-en="Good evening. My maize leaves have holes and there's something like sawdust in the heart of the plants.">Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants.</span><span class="time">18:02</span></div>
-            <div class="bubble bot"><span data-fr="Bonsoir. Ces signes font penser à la chenille légionnaire. Voici quoi faire :" data-en="Good evening. These signs point to fall armyworm. Here's what to do:">Bonsoir. Ces signes font penser à la chenille légionnaire. Voici quoi faire :</span>
-              <ol>
-                <li data-fr="Ouvrez le cœur de quelques plants et écrasez les chenilles." data-en="Open the heart of a few plants and crush the caterpillars.">Ouvrez le cœur de quelques plants et écrasez les chenilles.</li>
-                <li data-fr="Pulvérisez un extrait de feuilles de neem le soir." data-en="Spray a neem leaf extract in the evening.">Pulvérisez un extrait de feuilles de neem le soir.</li>
-              </ol><span class="time">18:02</span></div>
-            <div class="bubble bot"><span data-fr="Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles." data-en="How old are your plants, roughly? Young plants are the most vulnerable.">Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles.</span><span class="time">18:03</span></div>
-          </div>
-
-          <div class="chat" id="chat-vocal" role="tabpanel" aria-labelledby="tab-vocal" hidden>
-            <div class="bubble me">
-              <div class="voice"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#0C271D"/></svg></span><svg class="wave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><g fill="#F5F1E6" opacity="0.85"><rect x="0" y="9" width="3" height="6" rx="1.5"/><rect x="7" y="5" width="3" height="14" rx="1.5"/><rect x="14" y="2" width="3" height="20" rx="1.5"/><rect x="21" y="7" width="3" height="10" rx="1.5"/><rect x="28" y="4" width="3" height="16" rx="1.5"/><rect x="35" y="9" width="3" height="6" rx="1.5"/><rect x="42" y="3" width="3" height="18" rx="1.5"/><rect x="49" y="6" width="3" height="12" rx="1.5"/><rect x="56" y="1" width="3" height="22" rx="1.5"/><rect x="63" y="8" width="3" height="8" rx="1.5"/><rect x="70" y="5" width="3" height="14" rx="1.5"/><rect x="77" y="9" width="3" height="6" rx="1.5"/><rect x="84" y="4" width="3" height="16" rx="1.5"/><rect x="91" y="7" width="3" height="10" rx="1.5"/><rect x="98" y="10" width="3" height="4" rx="1.5"/><rect x="105" y="6" width="3" height="12" rx="1.5"/><rect x="112" y="9" width="3" height="6" rx="1.5"/></g></svg><span class="dur">0:14</span></div>
-              <span class="time" data-fr="Message vocal en fon · 07:15" data-en="Voice note in Fon · 07:15">Message vocal en fon · 07:15</span>
-            </div>
-            <div class="bubble bot"><span data-fr="Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :" data-en="Got it. For your tomatoes that wilt as soon as the sun gets hot, here's my advice by voice:">Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :</span><span class="time">07:15</span></div>
-            <div class="bubble bot">
-              <div class="voice"><span class="play" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#F5F1E6"/></svg></span><svg class="wave" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><g fill="#123528" opacity="0.75"><rect x="0" y="7" width="3" height="10" rx="1.5"/><rect x="7" y="3" width="3" height="18" rx="1.5"/><rect x="14" y="8" width="3" height="8" rx="1.5"/><rect x="21" y="2" width="3" height="20" rx="1.5"/><rect x="28" y="6" width="3" height="12" rx="1.5"/><rect x="35" y="4" width="3" height="16" rx="1.5"/><rect x="42" y="9" width="3" height="6" rx="1.5"/><rect x="49" y="5" width="3" height="14" rx="1.5"/><rect x="56" y="2" width="3" height="20" rx="1.5"/><rect x="63" y="7" width="3" height="10" rx="1.5"/><rect x="70" y="3" width="3" height="18" rx="1.5"/><rect x="77" y="8" width="3" height="8" rx="1.5"/><rect x="84" y="5" width="3" height="14" rx="1.5"/><rect x="91" y="9" width="3" height="6" rx="1.5"/><rect x="98" y="4" width="3" height="16" rx="1.5"/><rect x="105" y="7" width="3" height="10" rx="1.5"/><rect x="112" y="10" width="3" height="4" rx="1.5"/></g></svg><span class="dur">0:38</span></div>
-              <span class="time">07:16</span>
-            </div>
-          </div>
-
-          <div class="chat" id="chat-photo" role="tabpanel" aria-labelledby="tab-photo" hidden>
-            <div class="bubble me">
-              <div class="photo"><svg viewBox="0 0 240 150" role="img" data-fr="Photo d'une feuille de tomate avec des taches brunes" data-en="Photo of a tomato leaf with brown spots" aria-label="Photo d'une feuille de tomate avec des taches brunes"><rect width="240" height="150" fill="#3B5E2B"/><rect width="240" height="150" fill="#24401C" opacity="0.35"/><path d="M30 120 C70 40 160 20 215 30 C200 80 140 135 30 120 Z" fill="#6E9A3E"/><path d="M30 120 C90 90 150 60 215 30" stroke="#4E7529" stroke-width="3" fill="none"/><path d="M95 92 L80 62 M125 74 L118 44 M155 58 L156 34 M110 84 L132 98 M140 66 L166 80" stroke="#4E7529" stroke-width="2" fill="none"/><g fill="#5B3A1C"><circle cx="88" cy="80" r="9"/><circle cx="140" cy="88" r="7"/><circle cx="170" cy="50" r="6"/><circle cx="118" cy="60" r="5"/></g><g fill="none" stroke="#3A230F" stroke-width="1.5"><circle cx="88" cy="80" r="5"/><circle cx="140" cy="88" r="3.5"/><circle cx="170" cy="50" r="3"/></g><g fill="#C9B14A" opacity="0.55"><circle cx="88" cy="80" r="13"/><circle cx="140" cy="88" r="10"/></g></svg></div>
-              <span data-fr="Les feuilles du bas de mes tomates ont ces taches." data-en="The lower leaves of my tomatoes have these spots.">Les feuilles du bas de mes tomates ont ces taches.</span><span class="time">10:40</span>
-            </div>
-            <div class="bubble bot"><span data-fr="Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : cela ressemble à l'alternariose. Les cas connus les plus proches vont dans le même sens." data-en="Brown ringed spots with a yellow halo on the older leaves: this looks like early blight. The closest known cases point the same way.">Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : cela ressemble à l'alternariose. Les cas connus les plus proches vont dans le même sens.</span><span class="time">10:41</span></div>
-            <div class="bubble bot"><span data-fr="Retirez et brûlez les feuilles touchées, et arrosez au pied, pas sur les feuilles. Les taches sont-elles aussi sur les fruits ?" data-en="Remove and burn the affected leaves, and water at the base, not on the leaves. Are the spots on the fruit too?">Retirez et brûlez les feuilles touchées, et arrosez au pied, pas sur les feuilles. Les taches sont-elles aussi sur les fruits ?</span><span class="time">10:41</span></div>
-          </div>
-
-          <div class="chat" id="chat-meteo" role="tabpanel" aria-labelledby="tab-meteo" hidden>
-            <div class="bubble me"><span data-fr="Je veux pulvériser mon niébé demain." data-en="I want to spray my cowpeas tomorrow.">Je veux pulvériser mon niébé demain.</span><span class="time">16:20</span></div>
-            <div class="bubble bot"><span data-fr="Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir." data-en="Careful: rain is forecast tomorrow afternoon in your area. The product could be washed off before it works.">Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir.</span><span class="time">16:20</span></div>
-            <div class="bubble bot"><span data-fr="Le mieux : traitez tôt le matin, quand il n'y a pas de vent, et au moins quelques heures avant la pluie. Ou attendez un jour sec." data-en="Best option: spray early in the morning when there's no wind, and at least a few hours before the rain. Or wait for a dry day.">Le mieux : traitez tôt le matin, quand il n'y a pas de vent, et au moins quelques heures avant la pluie. Ou attendez un jour sec.</span><span class="time">16:21</span></div>
-          </div>
-
-          <div class="chat" id="chat-agronome" role="tabpanel" aria-labelledby="tab-agronome" hidden>
-            <div class="bubble me"><span data-fr="Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome." data-en="My pineapple plants are turning yellow and I've tried everything. I want to talk to an agronomist.">Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome.</span><span class="time">09:05</span></div>
-            <div class="bubble bot"><span data-fr="D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème." data-en="Sure. I found an agronomist from your region who speaks your language. I'm sending them a summary of your problem.">D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème.</span><span class="time">09:05</span></div>
-            <div class="bubble bot"><span data-fr="Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous." data-en="They will call you back directly on this number. Keep your phone close.">Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous.</span><span class="time">09:06</span></div>
-          
-          </div>
-          </div>
-        </div>
-      <div class="scenes">
-        <p data-fr="Exemples de conversations : choisissez une situation." data-en="Example conversations: pick a situation.">Exemples de conversations : choisissez une situation.</p>
-        <div class="tabs" role="tablist" aria-label="Situations">
-          <button class="tab" role="tab" id="tab-texte" aria-controls="chat-texte" aria-selected="true" data-fr="Question écrite" data-en="Written question">Question écrite</button>
-          <button class="tab" role="tab" id="tab-vocal" aria-controls="chat-vocal" aria-selected="false" tabindex="-1" data-fr="Vocal en fon" data-en="Voice note in Fon">Vocal en fon</button>
-          <button class="tab" role="tab" id="tab-photo" aria-controls="chat-photo" aria-selected="false" tabindex="-1" data-fr="Photo" data-en="Photo">Photo</button>
-          <button class="tab" role="tab" id="tab-meteo" aria-controls="chat-meteo" aria-selected="false" tabindex="-1" data-fr="Météo" data-en="Weather">Météo</button>
-          <button class="tab" role="tab" id="tab-agronome" aria-controls="chat-agronome" aria-selected="false" tabindex="-1" data-fr="Agronome" data-en="Agronomist">Agronome</button>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="proof" aria-label="SikaGlé en chiffres">
-  <div class="wrap">
-    <ul>
-      <li><b data-fr="6 000+" data-en="6,000+">6 000+</b><span data-fr="documents scientifiques et fiches pratiques dans sa base de connaissances" data-en="scientific documents and practical guides in its knowledge base">documents scientifiques et fiches pratiques dans sa base de connaissances</span></li>
-      <li><b data-fr="40 000+" data-en="40,000+">40 000+</b><span data-fr="images de maladies de référence pour comparer vos photos" data-en="reference disease images to compare your photos with">images de maladies de référence pour comparer vos photos</span></li>
-      <li><b>9</b><span data-fr="langues comprises, dont 3 dans lesquelles il répond" data-en="languages understood, 3 of which it answers in">langues comprises, dont 3 dans lesquelles il répond</span></li>
-      <li><b data-fr="24 h/24" data-en="24/7">24 h/24</b><span data-fr="sur WhatsApp, sans application à installer" data-en="on WhatsApp, with no app to install">sur WhatsApp, sans application à installer</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="q" id="fonctionnalites" aria-labelledby="titre-facons">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Je ne connais pas les mots techniques. Je peux quand même te demander ?" data-en="I don't know the technical words. Can I still ask you?">Je ne connais pas les mots techniques. Je peux quand même te demander ?</span></div>
-    <h2 id="titre-facons" data-fr="Oui. Demandez comme vous parleriez à un voisin." data-en="Yes. Ask the way you'd talk to a neighbour.">Oui. Demandez comme vous parleriez à un voisin.</h2>
-    <p data-fr="SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ." data-en="SikaGlé understands the way you say things, then asks the questions it needs to understand your field.">SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ.</p>
-    <ul class="ways">
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
-        <h3 data-fr="Par écrit" data-en="In writing">Par écrit</h3>
-        <p data-fr="Décrivez ce que vous voyez, avec vos mots." data-en="Describe what you see, in your own words.">Décrivez ce que vous voyez, avec vos mots.</p>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
-        <h3 data-fr="En vocal" data-en="By voice">En vocal</h3>
-        <p data-fr="Parlez simplement, même dans votre langue." data-en="Just speak, even in your own language.">Parlez simplement, même dans votre langue.</p>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></span>
-        <h3 data-fr="En photo" data-en="With a photo">En photo</h3>
-        <p data-fr="La photo est comparée à des milliers de cas de maladies connus." data-en="The photo is compared with thousands of known disease cases.">La photo est comparée à des milliers de cas de maladies connus.</p>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-        <h3 data-fr="Avec votre position" data-en="With your location">Avec votre position</h3>
-        <p data-fr="Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ." data-en="Share it if you like: the advice takes your field's weather into account.">Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="q menu-sec" id="menu" aria-labelledby="titre-menu">
-  <div class="wrap">
-    <div class="answer">
-      <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Je ne sais pas par où commencer." data-en="I don't know where to start.">Je ne sais pas par où commencer.</span></div>
-      <h2 id="titre-menu" data-fr="Écrivez « menu » : tout est là, d'un seul geste." data-en="Type “menu”: everything is there, one tap away.">Écrivez « menu » : tout est là, d'un seul geste.</h2>
-      <p data-fr="Poser une question, envoyer une photo, voir la météo de votre champ, parler à un agronome : chaque service s'ouvre en touchant une ligne. Le menu s'affiche aussi tout seul quand vous dites bonjour." data-en="Ask a question, send a photo, check your field's weather, talk to an agronomist: each service opens with a single tap. The menu also appears on its own when you say hello.">Poser une question, envoyer une photo, voir la météo de votre champ, parler à un agronome : chaque service s'ouvre en touchant une ligne. Le menu s'affiche aussi tout seul quand vous dites bonjour.</p>
-      <ul class="menu-points">
-        <li><span aria-hidden="true">💬</span><span data-fr="Poser une question" data-en="Ask a question">Poser une question</span></li>
-        <li><span aria-hidden="true">📸</span><span data-fr="Diagnostic photo" data-en="Photo diagnosis">Diagnostic photo</span></li>
-        <li><span aria-hidden="true">🌦️</span><span data-fr="Météo de mon champ" data-en="Weather on my farm">Météo de mon champ</span></li>
-        <li><span aria-hidden="true">🩺</span><span data-fr="Parler à un agronome" data-en="Talk to an agronomist">Parler à un agronome</span></li>
-        <li><span aria-hidden="true">⭐</span><span data-fr="Passer en Premium" data-en="Go Premium">Passer en Premium</span></li>
-        <li><span aria-hidden="true">🤝</span><span data-fr="Ma coopérative" data-en="My cooperative">Ma coopérative</span></li>
-      </ul>
-      <p class="try"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-fr="Essayez : touchez « Voir le menu » dans le téléphone." data-en="Try it: tap “See the menu” on the phone.">Essayez : touchez « Voir le menu » dans le téléphone.</span></p>
-    </div>
-
-    <div class="menu-demo">
-      <div class="phone" role="region" aria-label="Démonstration du menu WhatsApp">
+    <div class="demo">
+      <div class="phone" role="region" aria-label="Exemple de conversation avec SikaGlé" data-fr="Exemple de conversation avec SikaGlé" data-en="Example conversation with SikaGlé">
         <div class="screen">
           <div class="chat-head">
             <div class="avatar" aria-hidden="true">e</div>
@@ -627,232 +386,296 @@
               <div class="chat-status" data-fr="En ligne" data-en="Online">En ligne</div>
             </div>
           </div>
-          <div class="chat" id="menu-chat" aria-live="polite">
-            <div class="bubble me"><span>Bonjour</span><span class="time">08:30</span></div>
-            <div class="bubble bot listmsg">
-              <span data-fr="Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous." data-en="Hello, I'm SikaGlé, your farming adviser. Ask me your question in writing or by voice note, or choose from the menu below.">Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous.</span>
-              <span class="time">08:30</span>
-              <button class="listbtn" type="button" id="open-sheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg><span data-fr="Voir le menu" data-en="See the menu">Voir le menu</span></button>
-            </div>
-            <button class="reset" type="button" id="menu-reset" hidden data-fr="↺ Recommencer" data-en="↺ Start again">↺ Recommencer</button>
+
+          <div class="chat play-in" id="chat-texte" role="tabpanel" aria-labelledby="tab-texte">
+            <div class="bubble me"><span data-fr="Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants." data-en="Good evening. My maize leaves have holes and there's something like sawdust in the heart of the plants.">Bonsoir. Les feuilles de mon maïs ont des trous et il y a comme de la sciure au cœur des plants.</span><span class="heure">18:02</span></div>
+            <div class="bubble bot"><span data-fr="Ces signes font penser à la chenille légionnaire. Voici quoi faire aujourd'hui :" data-en="These signs point to fall armyworm. Here's what to do today:">Ces signes font penser à la chenille légionnaire. Voici quoi faire aujourd'hui :</span>
+              <ol>
+                <li data-fr="Ouvrez le cœur de quelques plants et écrasez les chenilles." data-en="Open the heart of a few plants and crush the caterpillars.">Ouvrez le cœur de quelques plants et écrasez les chenilles.</li>
+                <li data-fr="Pulvérisez un extrait de feuilles de neem le soir." data-en="Spray a neem leaf extract in the evening.">Pulvérisez un extrait de feuilles de neem le soir.</li>
+              </ol><span class="heure">18:02</span></div>
+            <div class="bubble bot"><span data-fr="Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles." data-en="How old are your plants, roughly? Young plants are the most vulnerable.">Vos plants ont quel âge environ ? Les jeunes plants sont les plus fragiles.</span><span class="heure">18:03</span></div>
           </div>
+
+          <div class="chat" id="chat-vocal" role="tabpanel" aria-labelledby="tab-vocal" hidden>
+            <div class="bubble me">
+              <div class="voice"><span class="play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span><svg class="onde" viewBox="0 0 120 22" preserveAspectRatio="none" aria-hidden="true"><g fill="#4A8E78"><rect x="0" y="8" width="3" height="6" rx="1.5"/><rect x="7" y="4" width="3" height="14" rx="1.5"/><rect x="14" y="1" width="3" height="20" rx="1.5"/><rect x="21" y="6" width="3" height="10" rx="1.5"/><rect x="28" y="3" width="3" height="16" rx="1.5"/><rect x="35" y="8" width="3" height="6" rx="1.5"/><rect x="42" y="2" width="3" height="18" rx="1.5"/><rect x="49" y="5" width="3" height="12" rx="1.5"/><rect x="56" y="0" width="3" height="22" rx="1.5"/><rect x="63" y="7" width="3" height="8" rx="1.5"/><rect x="70" y="4" width="3" height="14" rx="1.5"/><rect x="77" y="8" width="3" height="6" rx="1.5"/><rect x="84" y="3" width="3" height="16" rx="1.5"/><rect x="91" y="6" width="3" height="10" rx="1.5"/><rect x="98" y="9" width="3" height="4" rx="1.5"/><rect x="105" y="5" width="3" height="12" rx="1.5"/><rect x="112" y="8" width="3" height="6" rx="1.5"/></g></svg><span class="duree">0:14</span></div>
+              <span class="heure" data-fr="Message vocal en fon · 07:15" data-en="Voice note in Fon · 07:15">Message vocal en fon · 07:15</span>
+            </div>
+            <div class="bubble bot"><span data-fr="Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :" data-en="Got it. For your tomatoes that wilt as soon as the sun gets hot, here's my advice by voice:">Bien reçu. Pour vos tomates qui fanent dès que le soleil chauffe, voici mes conseils en vocal :</span><span class="heure">07:15</span></div>
+            <div class="bubble bot">
+              <div class="voice"><span class="play" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg></span><svg class="onde" viewBox="0 0 120 22" preserveAspectRatio="none" aria-hidden="true"><g fill="#8A9A93"><rect x="0" y="6" width="3" height="10" rx="1.5"/><rect x="7" y="2" width="3" height="18" rx="1.5"/><rect x="14" y="7" width="3" height="8" rx="1.5"/><rect x="21" y="1" width="3" height="20" rx="1.5"/><rect x="28" y="5" width="3" height="12" rx="1.5"/><rect x="35" y="3" width="3" height="16" rx="1.5"/><rect x="42" y="8" width="3" height="6" rx="1.5"/><rect x="49" y="4" width="3" height="14" rx="1.5"/><rect x="56" y="1" width="3" height="20" rx="1.5"/><rect x="63" y="6" width="3" height="10" rx="1.5"/><rect x="70" y="2" width="3" height="18" rx="1.5"/><rect x="77" y="7" width="3" height="8" rx="1.5"/><rect x="84" y="4" width="3" height="14" rx="1.5"/><rect x="91" y="8" width="3" height="6" rx="1.5"/><rect x="98" y="3" width="3" height="16" rx="1.5"/><rect x="105" y="6" width="3" height="10" rx="1.5"/><rect x="112" y="9" width="3" height="4" rx="1.5"/></g></svg><span class="duree">0:38</span></div>
+              <span class="heure">07:16</span>
+            </div>
+          </div>
+
+          <div class="chat" id="chat-photo" role="tabpanel" aria-labelledby="tab-photo" hidden>
+            <div class="bubble me">
+              <div class="feuille-photo"><svg viewBox="0 0 240 150" role="img" data-fr="Dessin d'une feuille de tomate avec des taches brunes" data-en="Drawing of a tomato leaf with brown spots" aria-label="Dessin d'une feuille de tomate avec des taches brunes"><rect width="240" height="150" fill="#3B5E2B"/><rect width="240" height="150" fill="#24401C" opacity="0.35"/><path d="M30 120 C70 40 160 20 215 30 C200 80 140 135 30 120 Z" fill="#6E9A3E"/><path d="M30 120 C90 90 150 60 215 30" stroke="#4E7529" stroke-width="3" fill="none"/><path d="M95 92 L80 62 M125 74 L118 44 M155 58 L156 34 M110 84 L132 98 M140 66 L166 80" stroke="#4E7529" stroke-width="2" fill="none"/><g fill="#C9B14A" opacity="0.55"><circle cx="88" cy="80" r="13"/><circle cx="140" cy="88" r="10"/></g><g fill="#5B3A1C"><circle cx="88" cy="80" r="9"/><circle cx="140" cy="88" r="7"/><circle cx="170" cy="50" r="6"/><circle cx="118" cy="60" r="5"/></g><g fill="none" stroke="#3A230F" stroke-width="1.5"><circle cx="88" cy="80" r="5"/><circle cx="140" cy="88" r="3.5"/><circle cx="170" cy="50" r="3"/></g></svg></div>
+              <span data-fr="Les feuilles du bas de mes tomates ont ces taches." data-en="The lower leaves of my tomatoes have these spots.">Les feuilles du bas de mes tomates ont ces taches.</span><span class="heure">10:40</span>
+            </div>
+            <div class="bubble bot"><span data-fr="Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : c'est probablement l'alternariose." data-en="Brown ringed spots with a yellow halo on the older leaves: this is probably early blight.">Taches brunes en anneaux, entourées de jaune, sur les vieilles feuilles : c'est probablement l'alternariose.</span><span class="heure">10:41</span></div>
+            <div class="bubble bot"><span data-fr="Coupez les feuilles du bas les plus tachées et sortez-les du champ. Arrosez au pied, tôt le matin. Les taches sont-elles aussi sur les fruits ?" data-en="Cut the most spotted lower leaves and take them out of the field. Water at the base, early in the morning. Are the spots on the fruit too?">Coupez les feuilles du bas les plus tachées et sortez-les du champ. Arrosez au pied, tôt le matin. Les taches sont-elles aussi sur les fruits ?</span><span class="heure">10:41</span></div>
+          </div>
+
+          <div class="chat" id="chat-meteo" role="tabpanel" aria-labelledby="tab-meteo" hidden>
+            <div class="bubble me"><span data-fr="Je veux pulvériser mon niébé demain." data-en="I want to spray my cowpeas tomorrow.">Je veux pulvériser mon niébé demain.</span><span class="heure">16:20</span></div>
+            <div class="bubble bot"><span data-fr="Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir." data-en="Careful: rain is forecast tomorrow afternoon in your area. The product could be washed off before it works.">Attention : de la pluie est annoncée demain après-midi dans votre zone. Le produit risque d'être lavé avant d'agir.</span><span class="heure">16:20</span></div>
+            <div class="bubble bot"><span data-fr="Le mieux : traitez tôt le matin, sans vent, au moins quelques heures avant la pluie. Ou attendez un jour sec." data-en="Best option: spray early in the morning with no wind, at least a few hours before the rain. Or wait for a dry day.">Le mieux : traitez tôt le matin, sans vent, au moins quelques heures avant la pluie. Ou attendez un jour sec.</span><span class="heure">16:21</span></div>
+          </div>
+
+          <div class="chat" id="chat-agronome" role="tabpanel" aria-labelledby="tab-agronome" hidden>
+            <div class="bubble me"><span data-fr="Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome." data-en="My pineapple plants are turning yellow and I've tried everything. I want to talk to an agronomist.">Mes plants d'ananas jaunissent, j'ai déjà tout essayé. Je veux parler à un agronome.</span><span class="heure">09:05</span></div>
+            <div class="bubble bot"><span data-fr="D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème." data-en="Sure. I found an agronomist from your region who speaks your language. I'm sending them a summary of your problem.">D'accord. J'ai trouvé un agronome de votre région qui parle votre langue. Je lui transmets un résumé de votre problème.</span><span class="heure">09:05</span></div>
+            <div class="bubble bot"><span data-fr="Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous." data-en="They will call you back directly on this number. Keep your phone close.">Il vous rappellera directement sur ce numéro. Gardez votre téléphone près de vous.</span><span class="heure">09:06</span></div>
+          </div>
+
+          <div class="chat" id="chat-menu" role="tabpanel" aria-labelledby="tab-menu" aria-live="polite" hidden>
+            <div class="bubble me"><span>Bonjour</span><span class="heure">08:30</span></div>
+            <div class="bubble bot">
+              <span data-fr="Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous." data-en="Hello, I'm SikaGlé, your farming adviser. Ask me your question in writing or by voice note, or choose from the menu below.">Bonjour, je suis SikaGlé, votre conseiller agricole. Posez-moi votre question par écrit ou en vocal, ou choisissez dans le menu ci-dessous.</span>
+              <span class="heure">08:30</span>
+              <button class="liste-btn" type="button" id="open-sheet"><svg class="ico" aria-hidden="true"><use href="#i-liste"/></svg><span data-fr="Voir le menu" data-en="See the menu">Voir le menu</span></button>
+            </div>
+            <button class="recommencer" type="button" id="menu-reset" hidden data-fr="Recommencer" data-en="Start again">Recommencer</button>
+          </div>
+
           <div class="sheet-back" id="sheet" hidden>
             <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-              <div class="sheet-head"><button class="sheet-close" type="button" id="close-sheet" aria-label="Fermer">×</button><span id="sheet-title" data-fr="Voir le menu" data-en="See the menu">Voir le menu</span></div>
+              <div class="sheet-head"><button class="sheet-close" type="button" id="close-sheet" aria-label="Fermer"><svg class="ico" aria-hidden="true"><use href="#i-fermer"/></svg></button><span id="sheet-title" data-fr="Voir le menu" data-en="See the menu">Voir le menu</span></div>
               <div id="sheet-rows"></div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="situations">
+        <p data-fr="Choisissez une situation :" data-en="Pick a situation:">Choisissez une situation :</p>
+        <div class="onglets" role="tablist" aria-label="Situations">
+          <button class="tab" type="button" role="tab" id="tab-texte" aria-controls="chat-texte" aria-selected="true" data-fr="Question écrite" data-en="Written question">Question écrite</button>
+          <button class="tab" type="button" role="tab" id="tab-vocal" aria-controls="chat-vocal" aria-selected="false" tabindex="-1" data-fr="Vocal en fon" data-en="Voice in Fon">Vocal en fon</button>
+          <button class="tab" type="button" role="tab" id="tab-photo" aria-controls="chat-photo" aria-selected="false" tabindex="-1" data-fr="Photo" data-en="Photo">Photo</button>
+          <button class="tab" type="button" role="tab" id="tab-meteo" aria-controls="chat-meteo" aria-selected="false" tabindex="-1" data-fr="Météo" data-en="Weather">Météo</button>
+          <button class="tab" type="button" role="tab" id="tab-agronome" aria-controls="chat-agronome" aria-selected="false" tabindex="-1" data-fr="Agronome" data-en="Agronomist">Agronome</button>
+          <button class="tab" type="button" role="tab" id="tab-menu" aria-controls="chat-menu" aria-selected="false" tabindex="-1" data-fr="Le menu" data-en="The menu">Le menu</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="q languages" id="langues" aria-labelledby="titre-langues">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Tu parles fon ?" data-en="Do you speak Fon?">Tu parles fon ?</span></div>
-    <h2 id="titre-langues" data-fr="SikaGlé comprend et répond en trois langues." data-en="SikaGlé understands and answers in three languages.">SikaGlé comprend et répond en trois langues.</h2>
-    <ul class="spoken">
-      <li><span class="name" data-fr="Français" data-en="French">Français</span><span class="what" data-fr="par écrit et en vocal" data-en="in writing and by voice">par écrit et en vocal</span></li>
-      <li><span class="name" data-fr="Anglais" data-en="English">Anglais</span><span class="what" data-fr="par écrit et en vocal" data-en="in writing and by voice">par écrit et en vocal</span></li>
-      <li><span class="name">Fon</span><span class="what"><span data-fr="par écrit, et bientôt en vocal" data-en="in writing, and soon by voice">par écrit, et bientôt en vocal</span><span class="soon" data-fr="voix en finalisation" data-en="voice almost ready">voix en finalisation</span></span></li>
-    </ul>
-    <div class="understood">
-      <div>
-        <h3 data-fr="Il comprend aussi" data-en="It also understands">Il comprend aussi</h3>
-        <p data-fr="Posez votre question dans ces langues : SikaGlé la comprend et vous répond en français." data-en="Ask your question in these languages: SikaGlé understands it and answers in French.">Posez votre question dans ces langues : SikaGlé la comprend et vous répond en français.</p>
-      </div>
-      <p class="names" data-fr="Yoruba, bariba, adja, goun, dendi, fulfuldé" data-en="Yoruba, Bariba, Adja, Goun, Dendi, Fulfulde">Yoruba, bariba, adja, goun, dendi, fulfuldé</p>
-    </div>
-  </div>
-</section>
-
-<section class="q sources" id="sources" aria-labelledby="titre-sources">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Tes conseils, ils viennent d'où ?" data-en="Where does your advice come from?">Tes conseils, ils viennent d'où ?</span></div>
-    <h2 id="titre-sources" data-fr="De la recherche agricole, pas de suppositions." data-en="From agricultural research, not guesswork.">De la recherche agricole, pas de suppositions.</h2>
-    <p data-fr="Chaque réponse s'appuie sur des dizaines de sources scientifiques et de fiches pratiques, vérifiées une à une. Quand l'information manque, SikaGlé le dit au lieu de deviner." data-en="Every answer relies on dozens of scientific sources and practical guides, checked one by one. When information is missing, SikaGlé says so instead of guessing.">Chaque réponse s'appuie sur des dizaines de sources scientifiques et de fiches pratiques, vérifiées une à une. Quand l'information manque, SikaGlé le dit au lieu de deviner.</p>
-    <ul class="source-list">
-      <li data-fr="Instituts de recherche agricole internationaux" data-en="International agricultural research institutes">Instituts de recherche agricole internationaux</li>
-      <li data-fr="Centres de recherche spécialisés par culture" data-en="Crop-specific research centers">Centres de recherche spécialisés par culture</li>
-      <li data-fr="Fiches pratiques pour les producteurs" data-en="Practical guides for farmers">Fiches pratiques pour les producteurs</li>
-      <li data-fr="Recherche agronomique béninoise" data-en="Beninese agronomic research">Recherche agronomique béninoise</li>
-      <li data-fr="Bases de diagnostic visuel des maladies" data-en="Visual disease diagnosis databases">Bases de diagnostic visuel des maladies</li>
-      <li data-fr="Programmes régionaux ouest-africains" data-en="West African regional programs">Programmes régionaux ouest-africains</li>
-    </ul>
-  </div>
-</section>
-
-<section class="q agro" aria-labelledby="titre-agro">
+<section class="section" id="producteurs" aria-labelledby="titre-producteurs">
   <div class="wrap">
-    <div class="answer">
-      <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Et si mon problème est plus grave ?" data-en="And if my problem is more serious?">Et si mon problème est plus grave ?</span></div>
-      <h2 id="titre-agro" data-fr="Un vrai agronome vous rappelle." data-en="A real agronomist calls you back.">Un vrai agronome vous rappelle.</h2>
-      <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives." data-en="When a situation goes beyond what SikaGlé can say with certainty, it connects you with an agronomist from your region. On demand for everyone, with consultations included for Premium subscribers and cooperative members.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région. À la demande pour tous, avec des consultations incluses pour les abonnés Premium et les membres de coopératives.</p>
-      <a class="join" href="/agronomes" data-fr="Vous êtes agronome ? Rejoignez SikaGlé →" data-en="Are you an agronomist? Join SikaGlé →">Vous êtes agronome ? Rejoignez SikaGlé →</a>
+    <div class="tete">
+      <h2 id="titre-producteurs" data-fr="Demandez comme vous parleriez à un voisin." data-en="Ask the way you'd talk to a neighbour.">Demandez comme vous parleriez à un voisin.</h2>
+      <p data-fr="Pas besoin des mots techniques. SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ." data-en="No need for technical words. SikaGlé understands the way you say things, then asks the questions it needs to understand your field.">Pas besoin des mots techniques. SikaGlé comprend votre façon de dire les choses, puis il vous pose les questions qui manquent pour bien comprendre votre champ.</p>
     </div>
-    <ol class="agro-steps">
+    <div class="fiche">
+      <ul class="facons">
+        <li>
+          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-ecrit"/></svg></span>
+          <h3 data-fr="Par écrit" data-en="In writing">Par écrit</h3>
+          <p data-fr="Décrivez ce que vous voyez, avec vos mots." data-en="Describe what you see, in your own words.">Décrivez ce que vous voyez, avec vos mots.</p>
+        </li>
+        <li>
+          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-micro"/></svg></span>
+          <h3 data-fr="En vocal" data-en="By voice">En vocal</h3>
+          <p data-fr="Parlez simplement, même dans votre langue. SikaGlé peut aussi vous répondre en vocal." data-en="Just speak, even in your own language. SikaGlé can answer by voice too.">Parlez simplement, même dans votre langue. SikaGlé peut aussi vous répondre en vocal.</p>
+        </li>
+        <li>
+          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg></span>
+          <h3 data-fr="En photo" data-en="With a photo">En photo</h3>
+          <p data-fr="Photographiez la plante malade : la photo est comparée à des milliers de cas de maladies connus." data-en="Take a picture of the sick plant: it is compared with thousands of known disease cases.">Photographiez la plante malade : la photo est comparée à des milliers de cas de maladies connus.</p>
+        </li>
+        <li>
+          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-lieu"/></svg></span>
+          <h3 data-fr="Avec votre position" data-en="With your location">Avec votre position</h3>
+          <p data-fr="Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ." data-en="Share it if you like: the advice takes your field's weather into account.">Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ.</p>
+        </li>
+      </ul>
+
+      <div class="encart">
+        <div>
+          <h3 data-fr="Dans votre langue" data-en="In your language">Dans votre langue</h3>
+          <ul class="langues">
+            <li><b data-fr="Français" data-en="French">Français</b><span data-fr="écrit et vocal" data-en="text and voice">écrit et vocal</span></li>
+            <li><b data-fr="Anglais" data-en="English">Anglais</b><span data-fr="écrit et vocal" data-en="text and voice">écrit et vocal</span></li>
+            <li><b>Fon</b><span data-fr="écrit, voix bientôt prête" data-en="text, voice coming soon">écrit, voix bientôt prête</span></li>
+          </ul>
+          <p class="petit" data-fr="SikaGlé comprend aussi le yoruba, le bariba, l'adja, le goun, le dendi et le fulfuldé, et répond alors en français." data-en="SikaGlé also understands Yoruba, Bariba, Adja, Goun, Dendi and Fulfulde, and then answers in French.">SikaGlé comprend aussi le yoruba, le bariba, l'adja, le goun, le dendi et le fulfuldé, et répond alors en français.</p>
+        </div>
+        <div>
+          <h3 data-fr="D'où viennent les conseils" data-en="Where the advice comes from">D'où viennent les conseils</h3>
+          <ul class="sources">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-livre"/></svg><span data-fr="Instituts de recherche agricole internationaux et ouest-africains" data-en="International and West African agricultural research institutes">Instituts de recherche agricole internationaux et ouest-africains</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-livre"/></svg><span data-fr="Recherche agronomique béninoise" data-en="Beninese agronomic research">Recherche agronomique béninoise</span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-livre"/></svg><span data-fr="Fiches pratiques pour les producteurs" data-en="Practical guides for farmers">Fiches pratiques pour les producteurs</span></li>
+          </ul>
+          <p class="petit" data-fr="Quand l'information manque, SikaGlé le dit au lieu de deviner. Il ne donne jamais de dose pour un produit chimique : il renvoie à l'étiquette du produit homologué." data-en="When information is missing, SikaGlé says so instead of guessing. It never gives a dose for a chemical product: it points to the label of the approved product.">Quand l'information manque, SikaGlé le dit au lieu de deviner. Il ne donne jamais de dose pour un produit chimique : il renvoie à l'étiquette du produit homologué.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gris" id="agronome" aria-labelledby="titre-agro">
+  <div class="wrap">
+    <div class="tete">
+      <h2 id="titre-agro" data-fr="Quand c'est sérieux, un vrai agronome vous rappelle." data-en="When it's serious, a real agronomist calls you back.">Quand c'est sérieux, un vrai agronome vous rappelle.</h2>
+      <p data-fr="Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région." data-en="When a situation goes beyond what SikaGlé can say with certainty, it connects you with an agronomist from your region.">Quand une situation dépasse ce que SikaGlé peut affirmer avec certitude, il vous met en relation avec un agronome de votre région.</p>
+    </div>
+    <ol class="agro">
       <li data-fr="Vous écrivez « je veux parler à un agronome »." data-en="You write “I want to talk to an agronomist”.">Vous écrivez « je veux parler à un agronome ».</li>
       <li data-fr="SikaGlé choisit un agronome qui parle votre langue et connaît votre région." data-en="SikaGlé picks an agronomist who speaks your language and knows your region.">SikaGlé choisit un agronome qui parle votre langue et connaît votre région.</li>
       <li data-fr="Il lui envoie le résumé de votre conversation : vous n'avez pas à tout réexpliquer." data-en="It sends them a summary of your conversation: you don't have to explain everything again.">Il lui envoie le résumé de votre conversation : vous n'avez pas à tout réexpliquer.</li>
-      <li data-fr="L'agronome vous rappelle directement." data-en="The agronomist calls you back directly.">L'agronome vous rappelle directement.</li>
+      <li data-fr="L'agronome vous rappelle directement, et SikaGlé vérifie ensuite avec vous que l'appel a bien eu lieu." data-en="The agronomist calls you back directly, and SikaGlé then checks with you that the call happened.">L'agronome vous rappelle directement, et SikaGlé vérifie ensuite avec vous que l'appel a bien eu lieu.</li>
     </ol>
-  </div>
-</section>
-
-<section class="q tarifs" id="tarifs" aria-labelledby="titre-tarifs">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Ça coûte combien ?" data-en="How much does it cost?">Ça coûte combien ?</span></div>
-    <h2 id="titre-tarifs" data-fr="Gratuit au quotidien. Des formules pour aller plus loin." data-en="Free every day. Plans to go further.">Gratuit au quotidien. Des formules pour aller plus loin.</h2>
-    <p data-fr="Tous les prix sont en francs CFA. Paiement par Mobile Money (MTN, Moov) ou par carte, directement depuis WhatsApp. Aucun prélèvement automatique." data-en="All prices are in CFA francs. Pay by Mobile Money (MTN, Moov) or card, right from WhatsApp. No automatic charges.">Tous les prix sont en francs CFA. Paiement par Mobile Money (MTN, Moov) ou par carte, directement depuis WhatsApp. Aucun prélèvement automatique.</p>
-
-    <div class="plans">
-      <article class="plan">
-        <h3 data-fr="Gratuit" data-en="Free">Gratuit</h3>
-        <div class="price">0<small>FCFA</small></div>
-        <p class="per" data-fr="pour toujours" data-en="forever">pour toujours</p>
-        <ul>
-          <li data-fr="10 messages par jour" data-en="10 messages a day">10 messages par jour</li>
-          <li data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</li>
-          <li data-fr="Météo de votre zone" data-en="Weather for your area">Météo de votre zone</li>
-          <li data-fr="Agronome à la carte : 1 200 FCFA" data-en="Agronomist on demand: 1,200 FCFA">Agronome à la carte : 1 200 FCFA</li>
-        </ul>
-      </article>
-
-      <article class="plan">
-        <span class="tag new" data-fr="Nouveau" data-en="New">Nouveau</span>
-        <h3 data-fr="Premium Semaine" data-en="Premium Week">Premium Semaine</h3>
-        <div class="price">500<small>FCFA</small></div>
-        <p class="per" data-fr="pour 7 jours" data-en="for 7 days">pour 7 jours</p>
-        <ul>
-          <li data-fr="25 messages par jour" data-en="25 messages a day">25 messages par jour</li>
-          <li data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</li>
-          <li data-fr="Météo de votre zone" data-en="Weather for your area">Météo de votre zone</li>
-          <li data-fr="Agronome à la carte : 1 200 FCFA" data-en="Agronomist on demand: 1,200 FCFA">Agronome à la carte : 1 200 FCFA</li>
-        </ul>
-        <p class="how" data-fr="Idéal pour une période de traitement ou de récolte." data-en="Ideal during a treatment or harvest period.">Idéal pour une période de traitement ou de récolte.</p>
-      </article>
-
-      <article class="plan featured">
-        <span class="tag best" data-fr="Le plus avantageux" data-en="Best value">Le plus avantageux</span>
-        <h3 data-fr="Premium Mois" data-en="Premium Month">Premium Mois</h3>
-        <div class="price">1 500<small>FCFA</small></div>
-        <p class="per" data-fr="pour 30 jours, soit 50 FCFA par jour" data-en="for 30 days, just 50 FCFA a day">pour 30 jours, soit 50 FCFA par jour</p>
-        <ul>
-          <li data-fr="40 messages par jour" data-en="40 messages a day">40 messages par jour</li>
-          <li data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</li>
-          <li data-fr="1 consultation d'agronome incluse" data-en="1 agronomist consultation included">1 consultation d'agronome incluse</li>
-          <li data-fr="Puis 1 000 FCFA la consultation, au lieu de 1 200" data-en="Then 1,000 FCFA per consultation, instead of 1,200">Puis 1 000 FCFA la consultation, au lieu de 1 200</li>
-        </ul>
-        <p class="how" data-fr="Dans WhatsApp : menu, puis « Passer en Premium »." data-en="In WhatsApp: menu, then “Go Premium”.">Dans WhatsApp : menu, puis « Passer en Premium ».</p>
-      </article>
-
-      <article class="plan">
-        <h3 data-fr="Coopératives" data-en="Cooperatives">Coopératives</h3>
-        <div class="price">1 000<small>FCFA</small></div>
-        <p class="per" data-fr="par membre et par mois, dès 10 membres. Moins cher au-delà de 50 membres." data-en="per member per month, from 10 members. Cheaper above 50 members.">par membre et par mois, dès 10 membres. Moins cher au-delà de 50 membres.</p>
-        <ul>
-          <li data-fr="30 messages par jour pour chaque membre" data-en="30 messages a day for each member">30 messages par jour pour chaque membre</li>
-          <li data-fr="Agronomes de la coopérative gratuits" data-en="Free access to the cooperative's agronomists">Agronomes de la coopérative gratuits</li>
-          <li data-fr="Un code d'adhésion pour vos membres" data-en="A joining code for your members">Un code d'adhésion pour vos membres</li>
-          <li data-fr="Conversations privées : le responsable voit la liste, pas les messages" data-en="Private chats: the manager sees the list, not the messages">Conversations privées : le responsable voit la liste, pas les messages</li>
-        </ul>
-        <p class="how"><a href="#contact" data-fr="Tarif selon la taille : demandez un devis →" data-en="Price depends on size: ask for a quote →">Tarif selon la taille : demandez un devis →</a></p>
-      </article>
-    </div>
-
-    <div class="plans-note">
-      <p><strong data-fr="Bienvenue :" data-en="Welcome:">Bienvenue :</strong> <span data-fr="chaque nouveau compte reçoit 20 messages par jour pendant ses 7 premiers jours." data-en="every new account gets 20 messages a day during its first 7 days.">chaque nouveau compte reçoit 20 messages par jour pendant ses 7 premiers jours.</span></p>
-      <p data-fr="Les prix peuvent évoluer ; le prix en vigueur vous est toujours indiqué dans WhatsApp avant le paiement." data-en="Prices may change; the current price is always shown in WhatsApp before you pay.">Les prix peuvent évoluer ; le prix en vigueur vous est toujours indiqué dans WhatsApp avant le paiement.</p>
+    <div class="agro-pied">
+      <p data-fr="À la demande pour tous (1 200 FCFA), inclus dans Premium Mois, et gratuit avec les agronomes de votre coopérative." data-en="On demand for everyone (1,200 FCFA), included in Premium Month, and free with your cooperative's agronomists.">À la demande pour tous (1 200 FCFA), inclus dans Premium Mois, et gratuit avec les agronomes de votre coopérative.</p>
+      <a class="lien-fort" href="/agronomes"><span data-fr="Vous êtes agronome ? Rejoignez SikaGlé" data-en="Are you an agronomist? Join SikaGlé">Vous êtes agronome ? Rejoignez SikaGlé</span><svg class="ico" aria-hidden="true"><use href="#i-fleche"/></svg></a>
     </div>
   </div>
 </section>
 
-<section class="q start" aria-labelledby="titre-start">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Un producteur demande" data-en="A farmer asks">Un producteur demande</small><span data-fr="Comment je commence ?" data-en="How do I start?">Comment je commence ?</span></div>
-    <h2 id="titre-start" data-fr="Trois messages, et c'est parti." data-en="Three messages, and you're set.">Trois messages, et c'est parti.</h2>
-    <p data-fr="Aucune application à installer, aucune formation." data-en="No app to install, no training.">Aucune application à installer, aucune formation.</p>
-    <ol class="steps">
-      <li>
-        <h3 data-fr="Choisissez votre langue" data-en="Choose your language">Choisissez votre langue</h3>
-        <p data-fr="Français, anglais ou fon : SikaGlé vous demande dans quelle langue échanger." data-en="French, English or Fon: SikaGlé asks which language you'd like to use.">Français, anglais ou fon : SikaGlé vous demande dans quelle langue échanger.</p>
-      </li>
-      <li>
-        <h3 data-fr="Dites ce que vous cultivez" data-en="Say what you grow">Dites ce que vous cultivez</h3>
-        <p data-fr="Une phrase suffit. Les réponses s'adaptent ensuite à vos cultures." data-en="One sentence is enough. Answers then adapt to your crops.">Une phrase suffit. Les réponses s'adaptent ensuite à vos cultures.</p>
-      </li>
-      <li>
-        <h3 data-fr="Posez votre question" data-en="Ask your question">Posez votre question</h3>
-        <p data-fr="Par écrit, en vocal ou avec une photo. La réponse arrive dans la conversation." data-en="In writing, by voice or with a photo. The answer arrives in the conversation.">Par écrit, en vocal ou avec une photo. La réponse arrive dans la conversation.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="q" id="pour-qui" aria-labelledby="titre-pour-qui">
-  <div class="wrap answer">
-    <div class="ask"><small data-fr="Une organisation demande" data-en="An organisation asks">Une organisation demande</small><span data-fr="SikaGlé, c'est pour qui ?" data-en="Who is SikaGlé for?">SikaGlé, c'est pour qui ?</span></div>
-    <h2 id="titre-pour-qui" data-fr="Pour ceux qui travaillent la terre, et ceux qui les accompagnent." data-en="For those who work the land, and those who support them.">Pour ceux qui travaillent la terre, et ceux qui les accompagnent.</h2>
-    <div class="audience">
-      <div>
-        <h3 data-fr="Agriculteurs" data-en="Farmers">Agriculteurs</h3>
-        <p data-fr="Des réponses immédiates sur vos cultures, les maladies de vos plantes et la météo de votre zone, sur le téléphone que vous utilisez déjà." data-en="Immediate answers about your crops, plant diseases and the weather in your area, on the phone you already use.">Des réponses immédiates sur vos cultures, les maladies de vos plantes et la météo de votre zone, sur le téléphone que vous utilisez déjà.</p>
-      </div>
-      <div>
-        <h3 data-fr="Coopératives" data-en="Cooperatives">Coopératives</h3>
-        <p data-fr="Un premier niveau de conseil disponible à toute heure pour vos membres, et l'accès gratuit aux agronomes de votre coopérative." data-en="A first level of advice available at any hour for your members, plus free access to your cooperative's agronomists.">Un premier niveau de conseil disponible à toute heure pour vos membres, et l'accès gratuit aux agronomes de votre coopérative.</p>
-      </div>
-      <div>
-        <h3 data-fr="ONG et programmes agricoles" data-en="NGOs and agricultural programs">ONG et programmes agricoles</h3>
-        <p data-fr="Un outil qui complète vos équipes de terrain et touche plus de producteurs avec les mêmes moyens." data-en="A tool that complements your field teams and reaches more farmers with the same resources.">Un outil qui complète vos équipes de terrain et touche plus de producteurs avec les mêmes moyens.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="q faq" id="faq" aria-labelledby="titre-faq">
+<section class="section" id="tarifs" aria-labelledby="titre-tarifs">
   <div class="wrap">
-    <div class="answer">
-    <div class="ask"><small data-fr="Les questions qu'on nous pose" data-en="Questions we often get">Les questions qu'on nous pose</small><span data-fr="Et le reste ?" data-en="What else?">Et le reste ?</span></div>
-    <h2 id="titre-faq" data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</h2>
+    <div class="tete">
+      <h2 id="titre-tarifs" data-fr="Gratuit au quotidien. Plus de messages si besoin." data-en="Free every day. More messages when you need them.">Gratuit au quotidien. Plus de messages si besoin.</h2>
+      <p data-fr="Prix en francs CFA. Paiement par Mobile Money (MTN, Moov) ou par carte, directement depuis WhatsApp. Aucun prélèvement automatique." data-en="Prices in CFA francs. Pay by Mobile Money (MTN, Moov) or card, right from WhatsApp. No automatic charges.">Prix en francs CFA. Paiement par Mobile Money (MTN, Moov) ou par carte, directement depuis WhatsApp. Aucun prélèvement automatique.</p>
     </div>
-    <div class="faq-list">
+    <div class="formules">
+      <article class="formule">
+        <h3 data-fr="Gratuit" data-en="Free">Gratuit</h3>
+        <div class="prix">0<small>FCFA</small></div>
+        <p class="duree" data-fr="pour toujours" data-en="forever">pour toujours</p>
+        <ul>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="10 messages par jour" data-en="10 messages a day">10 messages par jour</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Météo de votre zone" data-en="Weather for your area">Météo de votre zone</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Agronome à la carte : 1 200 FCFA" data-en="Agronomist on demand: 1,200 FCFA">Agronome à la carte : 1 200 FCFA</span></li>
+        </ul>
+      </article>
+      <article class="formule">
+        <h3 data-fr="Premium Semaine" data-en="Premium Week">Premium Semaine</h3>
+        <div class="prix">500<small>FCFA</small></div>
+        <p class="duree" data-fr="pour 7 jours, pendant un traitement ou une récolte" data-en="for 7 days, during a treatment or harvest">pour 7 jours, pendant un traitement ou une récolte</p>
+        <ul>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="25 messages par jour" data-en="25 messages a day">25 messages par jour</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Météo de votre zone" data-en="Weather for your area">Météo de votre zone</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Agronome à la carte : 1 200 FCFA" data-en="Agronomist on demand: 1,200 FCFA">Agronome à la carte : 1 200 FCFA</span></li>
+        </ul>
+      </article>
+      <article class="formule forte">
+        <h3 data-fr="Premium Mois" data-en="Premium Month">Premium Mois</h3>
+        <div class="prix">1 500<small>FCFA</small></div>
+        <p class="duree"><span data-fr="pour 30 jours, soit 50 FCFA par jour" data-en="for 30 days, just 50 FCFA a day">pour 30 jours, soit 50 FCFA par jour</span><span class="note-forte" data-fr="Le plus avantageux" data-en="Best value">Le plus avantageux</span></p>
+        <ul>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="40 messages par jour" data-en="40 messages a day">40 messages par jour</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Texte, vocal et photo" data-en="Text, voice and photo">Texte, vocal et photo</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="1 consultation d'agronome incluse" data-en="1 agronomist consultation included">1 consultation d'agronome incluse</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-coche"/></svg><span data-fr="Puis 1 000 FCFA la consultation, au lieu de 1 200" data-en="Then 1,000 FCFA per consultation, instead of 1,200">Puis 1 000 FCFA la consultation, au lieu de 1 200</span></li>
+        </ul>
+      </article>
+    </div>
+    <div class="formules-note">
+      <p data-fr="Bienvenue : chaque nouveau compte reçoit 20 messages par jour pendant ses 7 premiers jours. Pour s'abonner : écrivez « menu » dans WhatsApp, puis « Passer en Premium »." data-en="Welcome: every new account gets 20 messages a day during its first 7 days. To subscribe: type “menu” in WhatsApp, then “Go Premium”.">Bienvenue : chaque nouveau compte reçoit 20 messages par jour pendant ses 7 premiers jours. Pour s'abonner : écrivez « menu » dans WhatsApp, puis « Passer en Premium ».</p>
+      <p data-fr="Les prix peuvent évoluer ; le prix en vigueur est toujours indiqué dans WhatsApp avant le paiement." data-en="Prices may change; the current price is always shown in WhatsApp before you pay.">Les prix peuvent évoluer ; le prix en vigueur est toujours indiqué dans WhatsApp avant le paiement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="orgs" id="organisations" aria-labelledby="titre-orgs">
+  <div class="wrap">
+    <div class="tete">
+      <h2 id="titre-orgs" data-fr="Vous accompagnez des producteurs ? SikaGlé travaille pour vos membres." data-en="You support farmers? SikaGlé works for your members.">Vous accompagnez des producteurs ? SikaGlé travaille pour vos membres.</h2>
+      <p data-fr="Coopératives, ONG, programmes et projets agricoles : vos producteurs ont un conseiller à toute heure, et vous voyez chaque mois ce qui se passe sur le terrain." data-en="Cooperatives, NGOs, agricultural programmes and projects: your farmers get an advisor at any hour, and every month you see what is happening in the field.">Coopératives, ONG, programmes et projets agricoles : vos producteurs ont un conseiller à toute heure, et vous voyez chaque mois ce qui se passe sur le terrain.</p>
+    </div>
+    <div class="orgs-grille">
+      <div>
+        <ul class="inclus">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><div><b data-fr="Un conseiller pour chaque membre" data-en="An advisor for every member">Un conseiller pour chaque membre</b><span data-fr="30 messages par jour, par écrit, en vocal ou en photo." data-en="30 messages a day, in writing, by voice or with a photo.">30 messages par jour, par écrit, en vocal ou en photo.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-agronome"/></svg><div><b data-fr="Vos agronomes, gratuitement pour vos membres" data-en="Your agronomists, free for your members">Vos agronomes, gratuitement pour vos membres</b><span data-fr="Les demandes difficiles arrivent à vos techniciens, avec le résumé du problème." data-en="Difficult requests go to your field staff, with a summary of the problem.">Les demandes difficiles arrivent à vos techniciens, avec le résumé du problème.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-document"/></svg><div><b data-fr="Un rapport chaque mois" data-en="A report every month">Un rapport chaque mois</b><span data-fr="Questions posées, problèmes les plus fréquents, cultures et zones touchées." data-en="Questions asked, most frequent problems, crops and areas affected.">Questions posées, problèmes les plus fréquents, cultures et zones touchées.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-groupe"/></svg><div><b data-fr="Un code d'adhésion, et des conversations privées" data-en="A joining code, and private chats">Un code d'adhésion, et des conversations privées</b><span data-fr="Vos membres rejoignent avec un code. Vous voyez la liste, jamais leurs messages." data-en="Members join with a code. You see the list, never their messages.">Vos membres rejoignent avec un code. Vous voyez la liste, jamais leurs messages.</span></div></li>
+        </ul>
+
+        <table class="grille-prix">
+          <caption data-fr="Prix par membre et par mois" data-en="Price per member per month">Prix par membre et par mois</caption>
+          <thead><tr><th scope="col" data-fr="Nombre de membres" data-en="Number of members">Nombre de membres</th><th scope="col" data-fr="Prix" data-en="Price">Prix</th></tr></thead>
+          <tbody>
+            <tr><td data-fr="10 à 49" data-en="10 to 49">10 à 49</td><td><b>1 000</b> FCFA</td></tr>
+            <tr><td data-fr="50 à 199" data-en="50 to 199">50 à 199</td><td><b>900</b> FCFA</td></tr>
+            <tr><td data-fr="200 et plus" data-en="200 and more">200 et plus</td><td><b>800</b> FCFA</td></tr>
+          </tbody>
+        </table>
+        <p class="petit" data-fr="Pour un programme ou un projet, nous établissons un devis selon le nombre de producteurs et la durée." data-en="For a programme or project, we prepare a quote based on the number of farmers and the duration.">Pour un programme ou un projet, nous établissons un devis selon le nombre de producteurs et la durée.</p>
+
+        <div class="orgs-actions">
+          <a class="btn mais" href="https://wa.me/2290192410001" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><span data-fr="Demander un devis" data-en="Ask for a quote">Demander un devis</span></a>
+          <a class="btn contour" href="mailto:contact@sikagle.com"><svg class="ico" aria-hidden="true"><use href="#i-courriel"/></svg><span>contact@sikagle.com</span></a>
+        </div>
+        <p class="orgs-contact"><span data-fr="L'équipe SikaGlé sur WhatsApp :" data-en="The SikaGlé team on WhatsApp:">L'équipe SikaGlé sur WhatsApp :</span> <a href="https://wa.me/2290192410001" target="_blank" rel="noopener">+229 01 92 41 00 01</a></p>
+      </div>
+
+      <figure class="rapport" aria-labelledby="titre-rapport">
+        <span class="bandeau" data-fr="Exemple · chiffres fictifs" data-en="Sample · fictional figures">Exemple · chiffres fictifs</span>
+        <h3 id="titre-rapport" data-fr="Rapport mensuel · octobre" data-en="Monthly report · October">Rapport mensuel · octobre</h3>
+        <p class="sous" data-fr="Coopérative exemple, 120 membres" data-en="Sample cooperative, 120 members">Coopérative exemple, 120 membres</p>
+        <dl>
+          <dt data-fr="Membres actifs ce mois" data-en="Members active this month">Membres actifs ce mois</dt><dd>87</dd>
+          <dt data-fr="Questions posées" data-en="Questions asked">Questions posées</dt><dd>642</dd>
+          <dt data-fr="Photos de plantes analysées" data-en="Plant photos analysed">Photos de plantes analysées</dt><dd>118</dd>
+          <dt data-fr="Appels d'agronome" data-en="Agronomist calls">Appels d'agronome</dt><dd>9</dd>
+        </dl>
+        <h4 data-fr="Problèmes les plus signalés" data-en="Most reported problems">Problèmes les plus signalés</h4>
+        <ul class="barres">
+          <li><span data-fr="Chenille légionnaire" data-en="Fall armyworm">Chenille légionnaire</span><i style="width:100%"></i><em>34 %</em></li>
+          <li><span data-fr="Alternariose (tomate)" data-en="Early blight (tomato)">Alternariose (tomate)</span><i style="width:56%"></i><em>19 %</em></li>
+          <li><span data-fr="Fertilisation" data-en="Fertilising">Fertilisation</span><i style="width:41%"></i><em>14 %</em></li>
+          <li><span data-fr="Pucerons" data-en="Aphids">Pucerons</span><i style="width:29%"></i><em>10 %</em></li>
+        </ul>
+        <a class="lien-fort" href="/exemple-rapport-mensuel.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-document"/></svg><span data-fr="Voir un exemple complet (PDF, 3 pages)" data-en="See a full sample (PDF, 3 pages, in French)">Voir un exemple complet (PDF, 3 pages)</span></a>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions" aria-labelledby="titre-faq">
+  <div class="wrap faq">
+    <h2 id="titre-faq" data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</h2>
+    <div class="faq-liste">
       <details>
-        <summary><span data-fr="Est-ce que SikaGlé est gratuit ?" data-en="Is SikaGlé free?">Est-ce que SikaGlé est gratuit ?</span></summary>
-        <p data-fr="Oui. Les questions de tous les jours sont gratuites, avec un nombre de messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, des consultations d'agronome incluses, ou pour les coopératives." data-en="Yes. Everyday questions are free, within a daily number of messages. Paid plans exist for those who want more messages, included agronomist consultations, or for cooperatives.">Oui. Les questions de tous les jours sont gratuites, avec un nombre de messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, des consultations d'agronome incluses, ou pour les coopératives.</p>
+        <summary><span data-fr="Est-ce que SikaGlé est gratuit ?" data-en="Is SikaGlé free?">Est-ce que SikaGlé est gratuit ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p data-fr="Oui. Les questions de tous les jours sont gratuites, avec 10 messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, une consultation d'agronome incluse, ou pour les coopératives." data-en="Yes. Everyday questions are free, with 10 messages a day. Paid plans exist for those who want more messages, an included agronomist consultation, or for cooperatives.">Oui. Les questions de tous les jours sont gratuites, avec 10 messages par jour. Des formules payantes existent pour ceux qui veulent plus de messages, une consultation d'agronome incluse, ou pour les coopératives.</p>
       </details>
       <details>
-        <summary><span data-fr="Sur quelles cultures peut-il m'aider ?" data-en="Which crops can it help with?">Sur quelles cultures peut-il m'aider ?</span></summary>
-        <p data-fr="Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le poivron ou la pomme de terre." data-en="The common crops of Benin and West Africa: maize, cassava, cowpea, rice, tomato, chilli, pineapple and many more. Photo comparison is most precise for the best-documented crops, such as tomato, maize, pepper and potato.">Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le poivron ou la pomme de terre.</p>
+        <summary><span data-fr="Comment je commence ?" data-en="How do I start?">Comment je commence ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p data-fr="Écrivez « Bonjour » au +229 01 66 02 49 02 sur WhatsApp. SikaGlé vous demande votre langue, puis ce que vous cultivez. Ensuite, posez votre question par écrit, en vocal ou avec une photo." data-en="Write “Hello” to +229 01 66 02 49 02 on WhatsApp. SikaGlé asks your language, then what you grow. Then ask your question in writing, by voice or with a photo.">Écrivez « Bonjour » au +229 01 66 02 49 02 sur WhatsApp. SikaGlé vous demande votre langue, puis ce que vous cultivez. Ensuite, posez votre question par écrit, en vocal ou avec une photo.</p>
       </details>
       <details>
-        <summary><span data-fr="Est-ce que SikaGlé remplace un agronome ?" data-en="Does SikaGlé replace an agronomist?">Est-ce que SikaGlé remplace un agronome ?</span></summary>
+        <summary><span data-fr="Sur quelles cultures peut-il m'aider ?" data-en="Which crops can it help with?">Sur quelles cultures peut-il m'aider ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p data-fr="Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le piment ou la pomme de terre." data-en="The common crops of Benin and West Africa: maize, cassava, cowpea, rice, tomato, chilli, pineapple and many more. Photo comparison is most precise for the best-documented crops, such as tomato, maize, chilli and potato.">Sur les cultures courantes du Bénin et de l'Afrique de l'Ouest : maïs, manioc, niébé, riz, tomate, piment, ananas et bien d'autres. La comparaison de photos est la plus précise pour les cultures les mieux documentées, comme la tomate, le maïs, le piment ou la pomme de terre.</p>
+      </details>
+      <details>
+        <summary><span data-fr="Est-ce que SikaGlé remplace un agronome ?" data-en="Does SikaGlé replace an agronomist?">Est-ce que SikaGlé remplace un agronome ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p data-fr="Non. SikaGlé est un premier niveau de conseil, disponible à toute heure. Quand une situation est sérieuse ou incertaine, il vous le dit et vous met en relation avec un vrai agronome." data-en="No. SikaGlé is a first level of advice, available at any hour. When a situation is serious or uncertain, it tells you so and connects you with a real agronomist.">Non. SikaGlé est un premier niveau de conseil, disponible à toute heure. Quand une situation est sérieuse ou incertaine, il vous le dit et vous met en relation avec un vrai agronome.</p>
       </details>
       <details>
-        <summary><span data-fr="Faut-il beaucoup de connexion ?" data-en="Do I need a strong connection?">Faut-il beaucoup de connexion ?</span></summary>
+        <summary><span data-fr="Faut-il beaucoup de connexion ?" data-en="Do I need a strong connection?">Faut-il beaucoup de connexion ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p data-fr="Non. Il suffit que WhatsApp fonctionne sur votre téléphone. Les messages écrits consomment très peu de données ; les vocaux et les photos un peu plus." data-en="No. WhatsApp just needs to work on your phone. Text messages use very little data; voice notes and photos a bit more.">Non. Il suffit que WhatsApp fonctionne sur votre téléphone. Les messages écrits consomment très peu de données ; les vocaux et les photos un peu plus.</p>
       </details>
       <details>
-        <summary><span data-fr="Que deviennent mes informations ?" data-en="What happens to my information?">Que deviennent mes informations ?</span></summary>
+        <summary><span data-fr="Que deviennent mes informations ?" data-en="What happens to my information?">Que deviennent mes informations ?</span><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p><span data-fr="Elles servent à vous répondre et à adapter les conseils à vos cultures. Votre position n'est utilisée que si vous choisissez de la partager. Tout est expliqué dans notre " data-en="It is used to answer you and to tailor advice to your crops. Your location is only used if you choose to share it. Everything is explained in our ">Elles servent à vous répondre et à adapter les conseils à vos cultures. Votre position n'est utilisée que si vous choisissez de la partager. Tout est expliqué dans notre </span><a href="/confidentialite" data-fr="politique de confidentialité" data-en="privacy policy">politique de confidentialité</a>.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section class="partner" id="contact" aria-labelledby="titre-contact">
+<section class="derniere" aria-labelledby="titre-fin">
   <div class="wrap">
-    <div>
-      <h2 id="titre-contact" data-fr="Vous représentez une organisation agricole ?" data-en="Do you represent an agricultural organization?">Vous représentez une organisation agricole ?</h2>
-      <p data-fr="Fournisseur de semences, coopérative, ONG ou institution : parlons de la façon dont SikaGlé peut s'intégrer à vos programmes ou compléter votre offre auprès des producteurs." data-en="Seed supplier, cooperative, NGO or institution: let's talk about how SikaGlé can fit into your programs or complement what you offer farmers.">Fournisseur de semences, coopérative, ONG ou institution : parlons de la façon dont SikaGlé peut s'intégrer à vos programmes ou compléter votre offre auprès des producteurs.</p>
-    </div>
-    <div class="partner-actions">
-      <a class="btn" href="https://wa.me/2290192410001" target="_blank" rel="noopener" data-fr="Nous contacter pour un partenariat" data-en="Contact us about a partnership">Nous contacter pour un partenariat</a>
-      <p class="mail"><span data-fr="Assistance et partenariats sur WhatsApp :" data-en="Support and partnerships on WhatsApp:">Assistance et partenariats sur WhatsApp :</span> <a href="https://wa.me/2290192410001" target="_blank" rel="noopener">+229 01 92 41 00 01</a></p>
-      <p class="mail"><span data-fr="Ou par e-mail :" data-en="Or by email:">Ou par e-mail :</span> <a href="mailto:contact@sikagle.com">contact@sikagle.com</a></p>
-    </div>
+    <h2 id="titre-fin" data-fr="Votre prochaine question, posez-la à SikaGlé." data-en="Your next question: ask SikaGlé.">Votre prochaine question, posez-la à SikaGlé.</h2>
+    <a class="btn vert" href="https://wa.me/22966024902" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bulle"/></svg><span>+229 01 66 02 49 02</span></a>
   </div>
 </section>
 
@@ -861,8 +684,8 @@
 <footer>
   <div class="wrap">
     <div data-fr="© 2026 SikaGlé, assistant agricole, Bénin" data-en="© 2026 SikaGlé, agricultural assistant, Benin">© 2026 SikaGlé, assistant agricole, Bénin</div>
-    <div class="links">
-      <a href="/confidentialite" data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</a>
+    <div class="liens">
+      <a href="/confidentialite" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
       <a href="/conditions" data-fr="Conditions d'utilisation" data-en="Terms of use">Conditions d'utilisation</a>
       <a href="/agronomes" data-fr="Devenir agronome partenaire" data-en="Become a partner agronomist">Devenir agronome partenaire</a>
       <a href="mailto:contact@sikagle.com">contact@sikagle.com</a>
@@ -871,16 +694,10 @@
 </footer>
 
 <script>
-  /* ----- Langue FR / EN ----- */
   /* ----- Menu mobile ----- */
   const menuBtn = document.getElementById('menu-btn');
   const menuMobile = document.getElementById('menu-mobile');
-
-  function fermerMenu() {
-    menuMobile.hidden = true;
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }
-
+  function fermerMenu() { menuMobile.hidden = true; menuBtn.setAttribute('aria-expanded', 'false'); }
   menuBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const ouvrir = menuMobile.hidden;
@@ -888,172 +705,155 @@
     menuBtn.setAttribute('aria-expanded', String(ouvrir));
   });
   menuMobile.querySelectorAll('a').forEach((lien) => lien.addEventListener('click', fermerMenu));
-  document.addEventListener('click', (e) => {
-    if (!menuMobile.hidden && !menuMobile.contains(e.target)) fermerMenu();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !menuMobile.hidden) { fermerMenu(); menuBtn.focus(); }
-  });
+  document.addEventListener('click', (e) => { if (!menuMobile.hidden && !menuMobile.contains(e.target)) fermerMenu(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menuMobile.hidden) { fermerMenu(); menuBtn.focus(); } });
 
+  /* ----- Langue FR / EN ----- */
   let langueActuelle = 'fr';
-
   function setLang(lang) {
     langueActuelle = lang;
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-fr]').forEach((el) => {
-      const text = el.getAttribute('data-' + lang);
-      if (text === null) return;
-      if (el.tagName === 'IMG') {
-        el.setAttribute('alt', text);
-      } else if (el.getAttribute('role') === 'img') {
-        el.setAttribute('aria-label', text);
-      } else {
-        el.textContent = text;
-      }
+      const texte = el.getAttribute('data-' + lang);
+      if (texte === null) return;
+      if (el.tagName === 'IMG') el.setAttribute('alt', texte);
+      else if (el.getAttribute('role') === 'img' || el.getAttribute('role') === 'region') el.setAttribute('aria-label', texte);
+      else el.textContent = texte;
     });
-    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.getElementById('btn-fr').setAttribute('aria-pressed', lang === 'fr');
-    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
-    if (typeof resetBtn !== 'undefined') resetBtn.click();
+    document.getElementById('btn-fr').setAttribute('aria-pressed', String(lang === 'fr'));
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+    reinitialiserMenu();
   }
 
-  /* ----- Démo de conversation ----- */
+  /* ----- Démonstration : choix de la situation ----- */
   const tabs = Array.from(document.querySelectorAll('.tab'));
-
   function selectTab(tab, focus) {
     tabs.forEach((t) => {
-      const selected = t === tab;
-      t.setAttribute('aria-selected', selected);
-      t.tabIndex = selected ? 0 : -1;
-      const panel = document.getElementById(t.getAttribute('aria-controls'));
-      panel.hidden = !selected;
-      panel.classList.remove('play');
-      if (selected) {
-        void panel.offsetWidth;   /* relance l'animation des bulles */
-        panel.classList.add('play');
-      }
+      const choisi = t === tab;
+      t.setAttribute('aria-selected', String(choisi));
+      t.tabIndex = choisi ? 0 : -1;
+      const panneau = document.getElementById(t.getAttribute('aria-controls'));
+      panneau.hidden = !choisi;
+      panneau.classList.remove('play-in');
+      if (choisi) { void panneau.offsetWidth; panneau.classList.add('play-in'); }
     });
+    fermerFeuille(false);
     if (focus) tab.focus();
   }
-
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => selectTab(tab, false));
     tab.addEventListener('keydown', (e) => {
-      const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
-      if (keys[e.key]) {
-        e.preventDefault();
-        selectTab(tabs[(i + keys[e.key] + tabs.length) % tabs.length], true);
-      }
+      const sens = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (sens) { e.preventDefault(); selectTab(tabs[(i + sens + tabs.length) % tabs.length], true); }
     });
   });
 
   /* ----- Démonstration du menu WhatsApp ----- */
   const MENU = [
     { fr: 'Mes conseils', en: 'My advice', rows: [
-      { id: 'question', fr: ['💬 Poser une question', 'Cultures, élevage, sol, ravageurs… par écrit ou en vocal'], en: ['💬 Ask a question', 'Crops, animals, soil, pests… in writing or by voice'],
-        rep: { fr: '💬 Je vous écoute ! Posez votre question par écrit ou envoyez un message vocal. Par exemple : « Mes feuilles de maïs jaunissent, que faire ? »', en: '💬 I\'m listening! Ask your question in writing or send a voice note. For example: “My maize leaves are turning yellow, what should I do?”' } },
-      { id: 'photo', fr: ['📸 Diagnostic photo', 'Envoyez la photo d\'une plante malade'], en: ['📸 Photo diagnosis', 'Send a photo of a sick plant'],
-        rep: { fr: '📸 Envoyez-moi une photo de la plante malade, en plein jour et de près, avec les feuilles bien visibles.', en: '📸 Send me a photo of the sick plant, in daylight and up close, with the leaves clearly visible.' } },
-      { id: 'meteo', fr: ['🌦️ Météo de mon champ', 'La météo du jour là où se trouve votre champ'], en: ['🌦️ Weather on my farm', 'Today\'s weather where your field is'],
-        rep: { fr: '🌦️ Météo de votre champ aujourd\'hui : 31 °C, ciel nuageux, pluie possible en fin d\'après-midi. Si vous voulez traiter, faites-le ce matin.', en: '🌦️ Your field\'s weather today: 31 °C, cloudy, rain possible late afternoon. If you want to spray, do it this morning.' } },
-      { id: 'position', fr: ['📍 Ma géolocalisation', 'Partagez la position exacte de votre champ'], en: ['📍 My location', 'Share your field\'s exact position'],
-        rep: { fr: '📍 Touchez le bouton « Envoyer ma position » quand vous êtes dans votre champ : la météo et les conseils seront plus précis.', en: '📍 Tap “Send my location” while you are in your field: weather and advice will be more precise.' } },
+      { icone: 'i-ecrit', fr: ['Poser une question', 'Cultures, élevage, sol, ravageurs… par écrit ou en vocal'], en: ['Ask a question', 'Crops, animals, soil, pests… in writing or by voice'],
+        rep: { fr: 'Je vous écoute ! Posez votre question par écrit ou envoyez un message vocal. Par exemple : « Mes feuilles de maïs jaunissent, que faire ? »', en: 'I\'m listening! Ask your question in writing or send a voice note. For example: “My maize leaves are turning yellow, what should I do?”' } },
+      { icone: 'i-photo', fr: ['Diagnostic photo', 'Envoyez la photo d\'une plante malade'], en: ['Photo diagnosis', 'Send a photo of a sick plant'],
+        rep: { fr: 'Envoyez-moi une photo de la plante malade, en plein jour et de près, avec les feuilles bien visibles.', en: 'Send me a photo of the sick plant, in daylight and up close, with the leaves clearly visible.' } },
+      { icone: 'i-meteo', fr: ['Météo de mon champ', 'La météo du jour là où se trouve votre champ'], en: ['Weather on my farm', 'Today\'s weather where your field is'],
+        rep: { fr: 'Météo de votre champ aujourd\'hui : 31 °C, ciel nuageux, pluie possible en fin d\'après-midi. Si vous voulez traiter, faites-le ce matin.', en: 'Your field\'s weather today: 31 °C, cloudy, rain possible late afternoon. If you want to spray, do it this morning.' } },
+      { icone: 'i-lieu', fr: ['Ma géolocalisation', 'Partagez la position exacte de votre champ'], en: ['My location', 'Share your field\'s exact position'],
+        rep: { fr: 'Touchez le bouton « Envoyer ma position » quand vous êtes dans votre champ : la météo et les conseils seront plus précis.', en: 'Tap “Send my location” while you are in your field: weather and advice will be more precise.' } },
     ]},
     { fr: 'Parler à quelqu\'un', en: 'Talk to someone', rows: [
-      { id: 'agronome', fr: ['🩺 Parler à un agronome', 'Un vrai agronome vous rappelle'], en: ['🩺 Talk to an agronomist', 'A real agronomist calls you back'],
-        rep: { fr: '🩺 D\'accord. Je transmets le résumé de votre problème à un agronome de votre région. Il vous rappelle directement sur ce numéro.', en: '🩺 Sure. I\'m sending a summary of your problem to an agronomist from your region. They will call you back on this number.' } },
-      { id: 'equipe', fr: ['📞 Contacter l\'équipe', 'Réclamation, avis ou demande pour l\'équipe SikaGlé'], en: ['📞 Contact the team', 'Complaint, feedback or request for the SikaGlé team'],
-        rep: { fr: '📞 L\'équipe SikaGlé : pour une réclamation, votre avis ou une demande, de vraies personnes vous répondent. Touchez « Envoyer un message » sur le contact SikaGlé Équipe que je vous envoie.', en: '📞 The SikaGlé team: for a complaint, your feedback or a request, real people answer you. Tap “Message” on the SikaGlé Équipe contact I\'m sending you.' } },
+      { icone: 'i-agronome', fr: ['Parler à un agronome', 'Un vrai agronome vous rappelle'], en: ['Talk to an agronomist', 'A real agronomist calls you back'],
+        rep: { fr: 'D\'accord. Je transmets le résumé de votre problème à un agronome de votre région. Il vous rappelle directement sur ce numéro.', en: 'Sure. I\'m sending a summary of your problem to an agronomist from your region. They will call you back on this number.' } },
+      { icone: 'i-equipe', fr: ['Contacter l\'équipe', 'Réclamation, avis ou demande pour l\'équipe SikaGlé'], en: ['Contact the team', 'Complaint, feedback or request for the SikaGlé team'],
+        rep: { fr: 'L\'équipe SikaGlé : pour une réclamation, votre avis ou une demande, de vraies personnes vous répondent. Touchez « Envoyer un message » sur le contact SikaGlé Équipe que je vous envoie.', en: 'The SikaGlé team: for a complaint, your feedback or a request, real people answer you. Tap “Message” on the SikaGlé Équipe contact I\'m sending you.' } },
     ]},
     { fr: 'Mon compte', en: 'My account', rows: [
-      { id: 'premium', fr: ['⭐ Passer en Premium', '500 F la semaine ou 1500 F le mois'], en: ['⭐ Go Premium', '500 F a week or 1500 F a month'],
-        rep: { fr: '⭐ Choisissez votre formule :\nSemaine : 500 F pour 7 jours, 25 messages par jour.\nMois : 1500 F pour 30 jours, 40 messages par jour + 1 consultation d\'agronome.', en: '⭐ Choose your plan:\nWeek: 500 F for 7 days, 25 messages a day.\nMonth: 1500 F for 30 days, 40 messages a day + 1 agronomist consultation.' } },
-      { id: 'coop', fr: ['🤝 Ma coopérative', 'La rejoindre avec un code, ou l\'inscrire'], en: ['🤝 My cooperative', 'Join with a code, or register your cooperative'],
-        rep: { fr: '🤝 Voulez-vous rejoindre votre coopérative avec son code, ou inscrire une nouvelle coopérative ?', en: '🤝 Do you want to join your cooperative with its code, or register a new cooperative?' } },
-      { id: 'compte', fr: ['📊 Mon compte', 'Ma formule et mes messages restants aujourd\'hui'], en: ['📊 My account', 'My plan and messages left today'],
-        rep: { fr: '📊 Formule : Gratuit\nMessages restants aujourd\'hui : 8 sur 10', en: '📊 Plan: Free\nMessages left today: 8 of 10' } },
-      { id: 'profil', fr: ['⚙️ Mon profil', 'Mes cultures et ma langue'], en: ['⚙️ My profile', 'My crops and my language'],
-        rep: { fr: '⚙️ Mon profil : que voulez-vous changer ? Vos cultures (maïs, tomate, piment) ou votre langue (français, anglais ou fon) ?', en: '⚙️ My profile: what do you want to change? Your crops (maize, tomato, chilli) or your language (French, English or Fon)?' } },
+      { icone: 'i-etoile', fr: ['Passer en Premium', '500 F la semaine ou 1 500 F le mois'], en: ['Go Premium', '500 F a week or 1,500 F a month'],
+        rep: { fr: 'Choisissez votre formule :\nSemaine : 500 F pour 7 jours, 25 messages par jour.\nMois : 1 500 F pour 30 jours, 40 messages par jour et 1 consultation d\'agronome.', en: 'Choose your plan:\nWeek: 500 F for 7 days, 25 messages a day.\nMonth: 1,500 F for 30 days, 40 messages a day and 1 agronomist consultation.' } },
+      { icone: 'i-groupe', fr: ['Ma coopérative', 'La rejoindre avec un code, ou l\'inscrire'], en: ['My cooperative', 'Join with a code, or register your cooperative'],
+        rep: { fr: 'Voulez-vous rejoindre votre coopérative avec son code, ou inscrire une nouvelle coopérative ?', en: 'Do you want to join your cooperative with its code, or register a new cooperative?' } },
+      { icone: 'i-compte', fr: ['Mon compte', 'Ma formule et mes messages restants aujourd\'hui'], en: ['My account', 'My plan and messages left today'],
+        rep: { fr: 'Formule : Gratuit\nMessages restants aujourd\'hui : 8 sur 10', en: 'Plan: Free\nMessages left today: 8 of 10' } },
+      { icone: 'i-profil', fr: ['Mon profil', 'Mes cultures et ma langue'], en: ['My profile', 'My crops and my language'],
+        rep: { fr: 'Que voulez-vous changer ? Vos cultures (maïs, tomate, piment) ou votre langue (français, anglais ou fon) ?', en: 'What do you want to change? Your crops (maize, tomato, chilli) or your language (French, English or Fon)?' } },
     ]},
   ];
 
-  const sheet = document.getElementById('sheet');
-  const sheetRows = document.getElementById('sheet-rows');
-  const menuChat = document.getElementById('menu-chat');
-  const resetBtn = document.getElementById('menu-reset');
-  const openBtn = document.getElementById('open-sheet');
+  const feuille = document.getElementById('sheet');
+  const lignes = document.getElementById('sheet-rows');
+  const chatMenu = document.getElementById('chat-menu');
+  const btnRecommencer = document.getElementById('menu-reset');
+  const btnOuvrir = document.getElementById('open-sheet');
 
-  function heure() {
-    return '08:3' + Math.min(9, menuChat.querySelectorAll('.added').length + 1);
-  }
+  function heure() { return '08:3' + Math.min(9, chatMenu.querySelectorAll('.ajoute').length + 1); }
 
   function construireLignes() {
-    sheetRows.innerHTML = '';
+    lignes.innerHTML = '';
     MENU.forEach((section) => {
       const h = document.createElement('h4');
       h.textContent = section[langueActuelle];
-      sheetRows.appendChild(h);
+      lignes.appendChild(h);
       section.rows.forEach((ligne) => {
         const b = document.createElement('button');
         b.type = 'button';
         b.className = 'row';
-        b.innerHTML = '<span class="rt"></span><span class="rd"></span>';
+        b.innerHTML = '<svg class="ico" aria-hidden="true"><use href="#' + ligne.icone + '"/></svg><span><span class="rt"></span><span class="rd"></span></span>';
         b.querySelector('.rt').textContent = ligne[langueActuelle][0];
         b.querySelector('.rd').textContent = ligne[langueActuelle][1];
         b.addEventListener('click', () => choisir(ligne));
-        sheetRows.appendChild(b);
+        lignes.appendChild(b);
       });
     });
   }
 
   function bulle(classe, texte) {
     const d = document.createElement('div');
-    d.className = 'bubble added ' + classe;
+    d.className = 'bubble ajoute ' + classe;
     const s = document.createElement('span');
     s.style.whiteSpace = 'pre-line';
     s.textContent = texte;
     const t = document.createElement('span');
-    t.className = 'time';
+    t.className = 'heure';
     t.textContent = heure();
     d.append(s, t);
-    menuChat.insertBefore(d, resetBtn);
-    d.style.animation = 'pop .4s ease both';
-    return d;
+    chatMenu.insertBefore(d, btnRecommencer);
+    d.style.animation = 'pop .4s cubic-bezier(.2,.8,.2,1) both';
+    d.scrollIntoView({ block: 'nearest' });
   }
 
   function choisir(ligne) {
-    fermerFeuille();
+    fermerFeuille(true);
     bulle('me', ligne[langueActuelle][0]);
     setTimeout(() => {
       bulle('bot', ligne.rep[langueActuelle]);
-      resetBtn.hidden = false;
-      const vieilles = menuChat.querySelectorAll('.added');
+      btnRecommencer.hidden = false;
+      const vieilles = chatMenu.querySelectorAll('.ajoute');
       if (vieilles.length > 4) { vieilles[0].remove(); vieilles[1].remove(); }
+      chatMenu.scrollTop = chatMenu.scrollHeight;
     }, 650);
   }
 
   function ouvrirFeuille() {
     construireLignes();
-    sheet.hidden = false;
-    const premier = sheetRows.querySelector('button');
+    feuille.hidden = false;
+    const premier = lignes.querySelector('button');
     if (premier) premier.focus();
   }
-
-  function fermerFeuille() {
-    sheet.hidden = true;
-    openBtn.focus({ preventScroll: true });
+  function fermerFeuille(rendreFocus) {
+    if (feuille.hidden) return;
+    feuille.hidden = true;
+    if (rendreFocus) btnOuvrir.focus({ preventScroll: true });
+  }
+  function reinitialiserMenu() {
+    chatMenu.querySelectorAll('.ajoute').forEach((b) => b.remove());
+    btnRecommencer.hidden = true;
+    fermerFeuille(false);
   }
 
-  openBtn.addEventListener('click', ouvrirFeuille);
-  document.getElementById('close-sheet').addEventListener('click', fermerFeuille);
-  sheet.addEventListener('click', (e) => { if (e.target === sheet) fermerFeuille(); });
-  sheet.addEventListener('keydown', (e) => { if (e.key === 'Escape') fermerFeuille(); });
-  resetBtn.addEventListener('click', () => {
-    menuChat.querySelectorAll('.added').forEach((b) => b.remove());
-    resetBtn.hidden = true;
-  });
+  btnOuvrir.addEventListener('click', ouvrirFeuille);
+  document.getElementById('close-sheet').addEventListener('click', () => fermerFeuille(true));
+  feuille.addEventListener('click', (e) => { if (e.target === feuille) fermerFeuille(true); });
+  feuille.addEventListener('keydown', (e) => { if (e.key === 'Escape') fermerFeuille(true); });
+  btnRecommencer.addEventListener('click', reinitialiserMenu);
 </script>
-
 </body>
 </html>
