@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devenir agronome partenaire — SikaGlé</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' rx='44' fill='%23123528'/><g transform='translate(58.9,154)'><path d='M44.1 1.65Q32.25 1.65 23.02 -3.22Q13.79 -8.1 8.54 -16.8Q3.3 -25.5 3.3 -36.45Q3.3 -47.4 8.47 -56.02Q13.65 -64.64 22.5 -69.6Q31.34 -74.55 42.44 -74.55Q53.25 -74.55 61.5 -69.9Q69.75 -65.25 74.47 -57.0Q79.2 -48.75 79.2 -38.1Q79.2 -36.15 78.97 -33.97Q78.75 -31.79 78.14 -28.95L25.95 -28.79Q26.4 -27.15 27.3 -25.65Q29.54 -21.0 33.82 -18.52Q38.1 -16.05 43.94 -16.05Q49.35 -16.05 53.7 -17.92Q58.05 -19.8 61.34 -23.55L73.95 -10.95Q68.55 -4.64 60.9 -1.49Q53.25 1.65 44.1 1.65ZM25.95 -44.55 57.75 -44.69Q57.3 -46.8 56.55 -48.6Q54.75 -52.65 51.22 -54.82Q47.69 -57.0 42.6 -57.0Q37.19 -57.0 33.22 -54.52Q29.25 -52.05 27.15 -47.55Q26.4 -46.19 25.95 -44.55Z' fill='%23F5F1E6'></path></g><path d='M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z' fill='%23E3A93B' transform='translate(119.7,40.0) rotate(52) scale(0.34)'></path></svg>">
-<meta name="theme-color" content="#123528">
+<meta name="theme-color" content="#0F3B2A">
 <meta name="description" content="Agronomes du Bénin : rejoignez SikaGlé et conseillez les producteurs par téléphone. Envoyez votre candidature en quelques minutes.">
 <link rel="canonical" href="https://sikagle.com/agronomes">
 <meta property="og:type" content="website">
@@ -17,15 +17,15 @@
 <meta property="og:locale" content="fr_FR">
 <style>
   @font-face{font-family:'Bricolage'; src:url('/bricolage.woff2') format('woff2'); font-weight:200 800; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('/instrument-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
-  @font-face{font-family:'Instrument'; src:url('/instrument-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
+  @font-face{font-family:'Lexend'; src:url('/lexend-400.woff2') format('woff2'); font-weight:400; font-display:swap;}
+  @font-face{font-family:'Lexend'; src:url('/lexend-600.woff2') format('woff2'); font-weight:600 700; font-display:swap;}
   :root{
-    --forest:#123528; --forest-deep:#0C271D; --forest-mid:#1E4A39;
-    --gold:#E3A93B; --gold-soft:#F0C273;
-    --paper:#F7F4EC; --cream:#F5F1E6; --ink:#17231C; --muted:#4F5D54;
-    --rule:rgba(18,53,40,0.14); --error:#A3361F; --ok:#1E6B45;
+    --forest:#0F3B2A; --forest-deep:#0A2A1E; --forest-mid:#1F5A42;
+    --gold:#F0B23A; --gold-soft:#F5C25B;
+    --paper:#FFFFFF; --fond:#F4F6F1; --cream:#FFFFFF; --ink:#13201A; --muted:#3D4B43;
+    --rule:rgba(15,59,42,0.18); --error:#A63D1C; --ok:#1E6B45;
     --font-display:'Bricolage','Arial Narrow',system-ui,sans-serif;
-    --font-body:'Instrument',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --font-body:'Lexend',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;}
@@ -35,28 +35,28 @@
   :focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:4px;}
   .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
 
-  header{background:rgba(247,244,236,0.94); border-bottom:1px solid var(--rule);}
-  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1040px; margin:0 auto;}
-  a.wordmark{display:block; text-decoration:none;}
-  .back{font-size:15px; color:var(--muted); text-decoration:none; border-bottom:2px solid transparent;}
-  .back:hover{color:var(--forest); border-bottom-color:var(--gold);}
+  header{position:sticky; top:0; z-index:20; background:rgba(255,255,255,0.96); border-bottom:1px solid var(--rule);}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:68px; padding:0 24px; max-width:1040px; margin:0 auto;}
+  a.wordmark{display:flex; align-items:center; min-height:44px; text-decoration:none;}
+  .back{display:inline-flex; align-items:center; min-height:44px; padding:0 12px; border-radius:10px; font-size:16px; color:var(--muted); text-decoration:none;}
+  .back:hover{color:var(--forest); background:#E8F0EA;}
 
-  .hero{background:var(--forest-deep); color:var(--cream); padding:64px 0 72px;}
+  .hero{background:var(--forest); color:#fff; padding:clamp(48px,7vw,88px) 0 clamp(56px,7vw,96px);}
   .eyebrow{font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);}
-  .hero h1{margin-top:14px; font-size:clamp(32px,5vw,54px); letter-spacing:-0.02em; max-width:22ch; text-wrap:balance;}
-  .hero .lead{margin-top:20px; font-size:19px; color:rgba(245,241,230,0.82); max-width:56ch;}
+  .hero h1{font-size:clamp(34px,5.4vw,60px); letter-spacing:-0.03em; line-height:1.05; max-width:20ch; text-wrap:balance;}
+  .hero .lead{margin-top:24px; font-size:19px; color:rgba(255,255,255,0.86); max-width:56ch;}
 
-  .steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; padding:56px 0 8px;}
-  .step .n{font-family:var(--font-display); font-size:30px; color:var(--gold); line-height:1;}
-  .step h3{margin-top:10px; font-size:20px; color:var(--forest);}
+  .steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; margin-top:64px; padding-top:28px; border-top:3px solid var(--forest);}
+  .step .n{display:grid; place-items:center; width:36px; height:36px; border-radius:50%; background:var(--forest); color:var(--gold); font:700 17px var(--font-display); line-height:1;}
+  .step h3{margin-top:14px; font-size:20px; color:var(--forest);}
   .step p{margin-top:6px; color:var(--muted); font-size:15.5px;}
   @media (max-width:860px){ .steps{grid-template-columns:1fr 1fr;} }
   @media (max-width:520px){ .steps{grid-template-columns:1fr; gap:22px;} }
 
-  .pay{margin-top:36px; padding:18px 22px; border-left:4px solid var(--gold); background:#fff; border-radius:0 12px 12px 0; color:var(--ink); font-size:16px;}
+  .pay{margin-top:40px; padding:20px 24px; background:var(--fond); border-radius:16px; color:var(--ink); font-size:16px; max-width:760px;}
 
-  .form-zone{padding:48px 0 80px;}
-  form{background:#fff; border:1px solid var(--rule); border-radius:20px; padding:36px; max-width:760px;}
+  .form-zone{padding:48px 0 clamp(64px,9vw,112px);}
+  form{background:#fff; border:1px solid var(--rule); border-top:3px solid var(--forest); border-radius:4px 4px 20px 20px; padding:36px; max-width:760px;}
   @media (max-width:560px){ form{padding:24px 18px; border-radius:16px;} }
   form h2{font-size:28px; color:var(--forest);}
   .intro{margin-top:8px; color:var(--muted); font-size:15.5px;}
@@ -68,14 +68,14 @@
   @media (max-width:560px){ .row{grid-template-columns:1fr;} }
   input[type=text], input[type=tel], input[type=email], input[type=number], textarea{
     width:100%; font:inherit; font-size:16px; color:var(--ink);
-    padding:12px 14px; border:1.5px solid var(--rule); border-radius:12px; background:var(--paper);
+    min-height:48px; padding:12px 14px; border:1.5px solid var(--rule); border-radius:12px; background:var(--fond);
   }
   input:focus, textarea:focus{outline:none; border-color:var(--forest); background:#fff;}
   textarea{min-height:110px; resize:vertical;}
   .cases{display:flex; flex-wrap:wrap; gap:10px;}
   .case{position:relative; cursor:pointer;}
   .case input{position:absolute; opacity:0; width:1px; height:1px;}
-  .case span{display:inline-block; padding:8px 14px; border:1.5px solid var(--rule); border-radius:999px; font-size:15px; background:var(--paper); user-select:none;}
+  .case span{display:inline-flex; align-items:center; min-height:44px; padding:0 16px; border:1.5px solid var(--rule); border-radius:999px; font-size:15px; background:var(--fond); user-select:none;}
   .case input:checked + span{background:var(--forest); border-color:var(--forest); color:var(--cream);}
   .case input:focus-visible + span{outline:3px solid var(--gold); outline-offset:2px;}
   .consent{display:flex; gap:12px; align-items:flex-start; margin-top:30px; font-size:15px; color:var(--ink);}
@@ -84,7 +84,7 @@
   [hidden]{display:none !important;}
   .piege{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
   .actions{margin-top:28px; display:flex; flex-wrap:wrap; align-items:center; gap:16px;}
-  .btn{display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:999px; padding:14px 28px; font:700 16px var(--font-body); cursor:pointer; background:var(--gold); color:var(--forest-deep);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; border:none; border-radius:14px; min-height:52px; padding:0 28px; font:600 17px var(--font-body); cursor:pointer; background:var(--gold); color:var(--forest-deep);}
   .btn:hover{background:var(--gold-soft);}
   .btn:disabled{opacity:0.6; cursor:wait;}
   .message{margin-top:22px; padding:14px 18px; border-radius:12px; font-size:15.5px; display:none;}
@@ -93,9 +93,9 @@
 
   footer{background:var(--forest-deep); color:rgba(245,241,230,0.7); font-size:14px; padding:32px 0;}
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 24px;}
-  footer a{text-decoration:none;}
+  footer a{display:inline-flex; align-items:center; min-height:44px; text-decoration:none;}
   footer a:hover{color:var(--cream); text-decoration:underline;}
-  footer .links{display:flex; flex-wrap:wrap; gap:8px 20px;}
+  footer .links{display:flex; flex-wrap:wrap; gap:0 20px;}
 </style>
 </head>
 <body>
@@ -110,7 +110,6 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Agronomes partenaires</p>
       <h1>Conseillez les producteurs du Bénin, depuis votre téléphone</h1>
       <p class="lead">SikaGlé répond chaque jour aux questions des producteurs sur WhatsApp. Pour les cas qui demandent un professionnel, nous les mettons en relation avec des agronomes de terrain. Rejoignez-nous.</p>
     </div>
