@@ -187,14 +187,16 @@
   .tete p{font-size:19px; color:var(--texte2); max-width:32em;}
   @media (max-width:800px){ .tete{grid-template-columns:1fr;} }
 
-  /* Fiche : façons de demander */
-  .fiche{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr); gap:clamp(40px,6vw,88px);}
-  .facons li{display:grid; grid-template-columns:48px minmax(0,1fr); gap:4px 16px; padding:20px 0; border-bottom:1px solid var(--trait); list-style:none;}
-  .facons li:first-child{border-top:1px solid var(--trait);}
-  .facons .pastille{grid-row:span 2; width:48px; height:48px; border-radius:14px; background:var(--vert-pale); color:var(--vert); display:grid; place-items:center;}
-  .facons h3{font-size:22px; letter-spacing:-0.01em;}
-  .facons p{color:var(--texte2);}
-  .encart{display:grid; gap:36px; align-content:start;}
+  /* Façons de demander : 4 vignettes illustrées (inspiré de « Comment ça marche », 10/11/2026) */
+  .fiche{display:grid; gap:clamp(48px,6vw,80px);}
+  .facons{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(16px,2vw,24px); list-style:none;}
+  .facons li{list-style:none; display:grid; gap:8px; align-content:start;}
+  .facons .vignette{display:block; width:100%; height:auto; border-radius:20px; background:var(--fond); margin-bottom:10px;}
+  .facons h3{font-size:21px; letter-spacing:-0.01em;}
+  .facons p{color:var(--texte2); font-size:16px;}
+  @media (max-width:900px){ .facons{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  @media (max-width:480px){ .facons{gap:20px 12px;} .facons h3{font-size:18px;} .facons p{font-size:14px; line-height:1.45;} .facons .vignette{border-radius:14px; margin-bottom:4px;} }
+  .encart{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(36px,6vw,88px); align-content:start;}
   .encart h3{font-size:22px; margin-bottom:12px;}
   .langues{list-style:none;}
   .langues li{display:flex; justify-content:space-between; gap:16px; align-items:baseline; padding:10px 0; border-bottom:1px solid var(--trait); list-style:none;}
@@ -204,7 +206,7 @@
   .sources{list-style:none; display:grid; gap:8px;}
   .sources li{display:flex; gap:10px; align-items:flex-start; font-size:16px; color:var(--texte2); list-style:none;}
   .sources .ico{color:var(--vert); width:20px; height:20px; margin-top:3px;}
-  @media (max-width:900px){ .fiche{grid-template-columns:1fr;} }
+  @media (max-width:800px){ .encart{grid-template-columns:1fr;} }
 
   /* Agronome */
   .agro{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; list-style:none; counter-reset:etape;}
@@ -472,22 +474,59 @@
     <div class="fiche">
       <ul class="facons">
         <li>
-          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-ecrit"/></svg></span>
+          <svg class="vignette" viewBox="0 0 280 180" aria-hidden="true">
+            <rect x="24" y="22" width="232" height="136" rx="16" fill="#EFE7DD"/>
+            <rect x="96" y="36" width="144" height="54" rx="10" fill="#D9FDD3"/>
+            <rect x="110" y="50" width="112" height="7" rx="3.5" fill="#7FA897"/>
+            <rect x="110" y="64" width="84" height="7" rx="3.5" fill="#7FA897"/>
+            <rect x="40" y="102" width="118" height="40" rx="10" fill="#fff"/>
+            <circle cx="60" cy="122" r="4.5" fill="#0F3B2A"/><circle cx="77" cy="122" r="4.5" fill="#0F3B2A" opacity=".6"/><circle cx="94" cy="122" r="4.5" fill="#0F3B2A" opacity=".3"/>
+            <rect x="200" y="110" width="40" height="34" rx="10" fill="#F0B23A"/>
+            <path d="M212 127h16M222 121l6 6-6 6" stroke="#0A2A1E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <h3 data-fr="Par écrit" data-en="In writing">Par écrit</h3>
           <p data-fr="Décrivez ce que vous voyez, avec vos mots." data-en="Describe what you see, in your own words.">Décrivez ce que vous voyez, avec vos mots.</p>
         </li>
         <li>
-          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-micro"/></svg></span>
+          <svg class="vignette" viewBox="0 0 280 180" aria-hidden="true">
+            <rect x="24" y="22" width="232" height="136" rx="16" fill="#EFE7DD"/>
+            <rect x="62" y="48" width="178" height="48" rx="10" fill="#D9FDD3"/>
+            <circle cx="84" cy="72" r="12" fill="#006B58"/><path d="M80.5 66v12l9.5-6z" fill="#fff"/>
+            <g fill="#4A8E78"><rect x="104" y="66" width="4" height="12" rx="2"/><rect x="112" y="60" width="4" height="24" rx="2"/><rect x="120" y="64" width="4" height="16" rx="2"/><rect x="128" y="57" width="4" height="30" rx="2"/><rect x="136" y="63" width="4" height="18" rx="2"/><rect x="144" y="67" width="4" height="10" rx="2"/><rect x="152" y="59" width="4" height="26" rx="2"/><rect x="160" y="64" width="4" height="16" rx="2"/><rect x="168" y="61" width="4" height="22" rx="2"/><rect x="176" y="66" width="4" height="12" rx="2"/><rect x="184" y="63" width="4" height="18" rx="2"/><rect x="192" y="68" width="4" height="8" rx="2"/></g>
+            <text x="212" y="77" font-family="Lexend, sans-serif" font-size="12" fill="#5F6E66">0:14</text>
+            <circle cx="214" cy="128" r="22" fill="#0F3B2A"/>
+            <rect x="208" y="115" width="12" height="18" rx="6" fill="none" stroke="#F0B23A" stroke-width="2.5"/>
+            <path d="M203.5 127a10.5 10.5 0 0 0 21 0M214 137.5v4" stroke="#F0B23A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <text x="44" y="135" font-family="Bricolage, sans-serif" font-weight="700" font-size="20" fill="#0F3B2A">Fon</text>
+          </svg>
           <h3 data-fr="En vocal" data-en="By voice">En vocal</h3>
           <p data-fr="Parlez simplement, même dans votre langue. SikaGlé peut aussi vous répondre en vocal." data-en="Just speak, even in your own language. SikaGlé can answer by voice too.">Parlez simplement, même dans votre langue. SikaGlé peut aussi vous répondre en vocal.</p>
         </li>
         <li>
-          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg></span>
+          <svg class="vignette" viewBox="0 0 280 180" aria-hidden="true">
+            <rect x="24" y="22" width="232" height="136" rx="16" fill="#3B5E2B"/>
+            <path d="M58 140 C96 62 178 40 232 46 C220 96 160 150 58 140 Z" fill="#6E9A3E"/>
+            <path d="M58 140 C114 112 172 82 232 46" stroke="#4E7529" stroke-width="3" fill="none"/>
+            <g fill="#C9B14A" opacity=".55"><circle cx="118" cy="104" r="13"/><circle cx="168" cy="108" r="10"/></g>
+            <g fill="#5B3A1C"><circle cx="118" cy="104" r="8.5"/><circle cx="168" cy="108" r="6.5"/><circle cx="192" cy="72" r="5.5"/><circle cx="146" cy="80" r="4.5"/></g>
+            <g stroke="#F0B23A" stroke-width="4" fill="none" stroke-linecap="round"><path d="M92 76v-18h18"/><path d="M196 58h18v18"/><path d="M92 122v18h18"/><path d="M214 122v18h-18"/></g>
+          </svg>
           <h3 data-fr="En photo" data-en="With a photo">En photo</h3>
           <p data-fr="Photographiez la plante malade : la photo est comparée à des milliers de cas de maladies connus." data-en="Take a picture of the sick plant: it is compared with thousands of known disease cases.">Photographiez la plante malade : la photo est comparée à des milliers de cas de maladies connus.</p>
         </li>
         <li>
-          <span class="pastille"><svg class="ico" aria-hidden="true"><use href="#i-lieu"/></svg></span>
+          <svg class="vignette" viewBox="0 0 280 180" aria-hidden="true">
+            <rect x="24" y="22" width="232" height="136" rx="16" fill="#DCE8D6"/>
+            <path d="M24 92 L140 70 L256 98" stroke="#fff" stroke-width="6" fill="none"/>
+            <path d="M24 92 L140 70 L256 98 V158 H24Z" fill="#C8DCC0"/>
+            <g stroke="#9DBF92" stroke-width="2"><path d="M40 112h70M40 124h82M40 136h90M150 104h90M150 118h96M150 132h90"/></g>
+            <path d="M140 70 V158" stroke="#fff" stroke-width="4"/>
+            <path d="M140 118s-20-17.5-20-32a20 20 0 0 1 40 0c0 14.5-20 32-20 32z" fill="#A63D1C"/>
+            <circle cx="140" cy="86" r="7" fill="#fff"/>
+            <rect x="178" y="34" width="66" height="34" rx="17" fill="#fff"/>
+            <circle cx="196" cy="51" r="7" fill="#F0B23A"/>
+            <text x="208" y="56" font-family="Lexend, sans-serif" font-weight="600" font-size="14" fill="#0F3B2A">31°</text>
+          </svg>
           <h3 data-fr="Avec votre position" data-en="With your location">Avec votre position</h3>
           <p data-fr="Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ." data-en="Share it if you like: the advice takes your field's weather into account.">Partagez-la si vous voulez : les conseils tiennent compte de la météo de votre champ.</p>
         </li>
