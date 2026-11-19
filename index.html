@@ -221,6 +221,11 @@
     .agro li::before{margin:0;}
   }
 
+  /* Ambassadeurs (18/11/2026) */
+  .amb-pied{margin-top:28px; display:flex; flex-wrap:wrap; gap:12px 28px; align-items:center;}
+  .amb-pied .note{width:100%; font-size:16px; color:var(--texte2); max-width:52em;}
+  .amb .formules{margin-top:48px;}
+
   /* Tarifs producteurs */
   .formules{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:2px solid var(--vert);}
   .formule{padding:28px 28px 32px; border-right:1px solid var(--trait);}
@@ -327,6 +332,7 @@
   <symbol id="i-bulle" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4a8.4 8.4 0 1 1 15.4-4.5z"/></symbol>
   <symbol id="i-courriel" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7 8 6 8-6"/></symbol>
   <symbol id="i-document" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4M9 12.5h6M9 16h6"/></symbol>
+  <symbol id="i-cadeau" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18M12 9v11M12 9c-1.5-3.5-5.5-4-5.5-1.5S10 9 12 9zM12 9c1.5-3.5 5.5-4 5.5-1.5S14 9 12 9z"/></symbol>
   <symbol id="i-livre" viewBox="0 0 24 24"><path d="M4 5.5c2.7-1 5.3-1 8 .8 2.7-1.8 5.3-1.8 8-.8v13c-2.7-1-5.3-1-8 .8-2.7-1.8-5.3-1.8-8-.8z"/><path d="M12 6.3v13"/></symbol>
 </svg>
 
@@ -334,7 +340,7 @@
 
 <header>
   <div class="nav">
-    <a class="wordmark" href="#top" aria-label="SikaGlé, retour en haut de la page"><a class="wordmark" href="#top" aria-label="SikaGlé — retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a></a>
+    <a class="wordmark" href="#top" aria-label="SikaGlé, retour en haut de la page"><svg aria-hidden="true" focusable="false" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 437 150"><path d="M33.6 121.32Q23.16 121.32 15.66 117.9Q8.16 114.48 1.92 107.52L14.16 95.4Q18.24 100.08 23.22 102.66Q28.2 105.24 34.8 105.24Q40.8 105.24 44.09 103.08Q47.4 100.92 47.4 97.08Q47.4 93.6 45.23 91.44Q43.08 89.28 39.54 87.72Q36.0 86.16 31.74 84.72Q27.48 83.28 23.28 81.42Q19.08 79.56 15.54 76.74Q12.0 73.92 9.84 69.66Q7.68 65.4 7.68 58.92Q7.68 51.12 11.46 45.48Q15.24 39.84 21.96 36.90Q28.68 33.96 37.44 33.96Q46.32 33.96 53.7 37.08Q61.08 40.2 65.88 45.60L53.64 57.72Q49.8 53.76 45.9 51.84Q42.0 49.92 37.08 49.92Q32.16 49.92 29.27 51.78Q26.4 53.64 26.4 57.12Q26.4 60.36 28.56 62.33Q30.72 64.32 34.26 65.75Q37.8 67.2 42.06 68.64Q46.32 70.08 50.51 72.0Q54.72 73.92 58.26 76.86Q61.8 79.80 63.96 84.30Q66.12 88.8 66.12 95.4Q66.12 107.52 57.48 114.41Q48.83 121.32 33.6 121.32Z" fill="#123528"></path><path d="M76.44 120.0V61.68H94.8V120.0ZM85.67 53.64Q81.36 53.64 78.53 50.7Q75.72 47.76 75.72 43.56Q75.72 39.24 78.53 36.36Q81.36 33.48 85.67 33.48Q90.0 33.48 92.75 36.36Q95.52 39.24 95.52 43.56Q95.52 47.76 92.75 50.7Q90.0 53.64 85.67 53.64Z" fill="#123528"></path><path d="M145.07 120.0 126.12 91.92V120.0H107.76V32.88H126.12V87.72L144.96 61.68H165.48L144.12 89.16L166.68 120.0Z" fill="#123528"></path><path d="M197.64 121.2Q189.60 121.2 183.3 117.24Q177.0 113.28 173.34 106.44Q169.68 99.6 169.68 90.84Q169.68 82.08 173.34 75.24Q177.0 68.4 183.3 64.44Q189.60 60.48 197.64 60.48Q203.52 60.48 208.32 62.76Q211.32 64.2 213.72 66.48V61.68H231.72V120.0H213.72V115.32Q211.44 117.48 208.32 118.92Q203.52 121.2 197.64 121.2ZM201.36 104.64Q207.24 104.64 210.84 100.74Q214.44 96.84 214.44 90.84Q214.44 86.75 212.82 83.64Q211.20 80.52 208.26 78.78Q205.32 77.03 201.48 77.03Q197.64 77.03 194.70 78.78Q191.76 80.52 190.02 83.64Q188.28 86.75 188.28 90.84Q188.28 94.8 189.96 97.91Q191.64 101.03 194.64 102.84Q197.64 104.64 201.36 104.64Z" fill="#123528"></path><path d="M286.32 121.32Q277.08 121.32 268.98 117.96Q260.88 114.6 254.88 108.66Q248.88 102.72 245.45 94.74Q242.04 86.75 242.04 77.52Q242.04 68.28 245.51 60.36Q249.0 52.44 255.18 46.5Q261.36 40.56 269.64 37.26Q277.91 33.96 287.4 33.96Q298.32 33.96 307.26 37.92Q316.2 41.88 322.08 48.84L309.24 61.68Q305.15 56.40 299.64 53.76Q294.12 51.12 287.15 51.12Q279.71 51.12 273.84 54.42Q267.96 57.72 264.65 63.66Q261.36 69.6 261.36 77.52Q261.36 85.44 264.6 91.44Q267.84 97.44 273.48 100.8Q279.12 104.16 286.44 104.16Q293.88 104.16 299.1 101.34Q304.32 98.52 307.2 93.12Q308.28 90.96 309.0 88.32L284.64 87.96V72.0H329.15V74.76Q329.15 90.0 323.7 100.38Q318.24 110.76 308.58 116.03Q298.91 121.32 286.32 121.32Z" fill="#123528"></path><path d="M338.88 120.0V32.88H357.23V120.0Z" fill="#123528"></path><path d="M399.0 121.32Q389.52 121.32 382.14 117.41Q374.76 113.52 370.55 106.56Q366.35 99.6 366.35 90.84Q366.35 82.08 370.5 75.18Q374.64 68.28 381.71 64.32Q388.79 60.36 397.67 60.36Q406.32 60.36 412.91 64.08Q419.52 67.80 423.29 74.4Q427.08 81.0 427.08 89.52Q427.08 91.08 426.9 92.82Q426.71 94.56 426.23 96.84L384.47 96.96Q384.84 98.28 385.55 99.48Q387.35 103.2 390.78 105.18Q394.2 107.16 398.88 107.16Q403.2 107.16 406.67 105.66Q410.15 104.16 412.79 101.16L422.88 111.24Q418.55 116.28 412.43 118.8Q406.32 121.32 399.0 121.32ZM384.47 84.36 409.91 84.24Q409.55 82.56 408.96 81.12Q407.52 77.88 404.7 76.14Q401.88 74.4 397.79 74.4Q393.47 74.4 390.29 76.38Q387.11 78.36 385.43 81.96Q384.84 83.03 384.47 84.36Z" fill="#123528"></path><path d="M0,-50 C30,-28 30,28 0,50 C-30,28 -30,-28 0,-50 Z" fill="#E3A93B" transform="translate(403.2,30.0) rotate(42) scale(0.36)"></path></svg></a>
     <nav class="navlinks" aria-label="Navigation principale">
       <a href="#producteurs" data-fr="Producteurs" data-en="Farmers">Producteurs</a>
       <a href="#tarifs" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
@@ -623,6 +629,43 @@
   </div>
 </section>
 
+<section class="section gris amb" id="ambassadeurs" aria-labelledby="titre-amb">
+  <div class="wrap">
+    <div class="tete">
+      <h2 id="titre-amb" data-fr="Recommandez SikaGlé, gagnez de l'argent." data-en="Recommend SikaGlé, earn money.">Recommandez SikaGlé, gagnez de l'argent.</h2>
+      <p data-fr="Producteurs, agronomes : partagez votre lien de parrainage. Chaque fois qu'une personne que vous avez invitée prend un abonnement, vous êtes payé par Mobile Money." data-en="Farmers, agronomists: share your referral link. Every time someone you invited takes a subscription, you get paid by Mobile Money.">Producteurs, agronomes : partagez votre lien de parrainage. Chaque fois qu'une personne que vous avez invitée prend un abonnement, vous êtes payé par Mobile Money.</p>
+    </div>
+    <ol class="agro">
+      <li data-fr="Écrivez « PARRAINAGE » à SikaGlé : vous recevez votre code et votre lien." data-en="Write “PARRAINAGE” to SikaGlé: you get your code and your link.">Écrivez « PARRAINAGE » à SikaGlé : vous recevez votre code et votre lien.</li>
+      <li data-fr="Transférez votre lien aux producteurs, groupements et coopératives que vous connaissez." data-en="Forward your link to the farmers, groups and cooperatives you know.">Transférez votre lien aux producteurs, groupements et coopératives que vous connaissez.</li>
+      <li data-fr="En touchant le lien, ils ouvrent SikaGlé avec votre code déjà écrit." data-en="When they tap the link, SikaGlé opens with your code already written.">En touchant le lien, ils ouvrent SikaGlé avec votre code déjà écrit.</li>
+      <li data-fr="Quand ils s'abonnent, vous êtes payé le mois suivant, par Mobile Money." data-en="When they subscribe, you get paid the following month, by Mobile Money.">Quand ils s'abonnent, vous êtes payé le mois suivant, par Mobile Money.</li>
+    </ol>
+    <div class="formules">
+      <article class="formule">
+        <h3 data-fr="Premium Semaine" data-en="Premium Week">Premium Semaine</h3>
+        <div class="prix">100<small>FCFA</small></div>
+        <p class="duree" data-fr="par abonnement de votre filleul" data-en="per subscription of the person you referred">par abonnement de votre filleul</p>
+      </article>
+      <article class="formule forte">
+        <h3 data-fr="Premium Mois" data-en="Premium Month">Premium Mois</h3>
+        <div class="prix">300<small>FCFA</small></div>
+        <p class="duree"><span data-fr="par abonnement de votre filleul" data-en="per subscription of the person you referred">par abonnement de votre filleul</span><span class="note-forte" data-fr="Sur ses 3 premiers abonnements" data-en="On their first 3 subscriptions">Sur ses 3 premiers abonnements</span></p>
+      </article>
+      <article class="formule">
+        <h3 data-fr="Coopérative" data-en="Cooperative">Coopérative</h3>
+        <div class="prix">10 à 15<small>%</small></div>
+        <p class="duree" data-fr="de son premier mois d'abonnement, une seule fois" data-en="of its first month's subscription, once">de son premier mois d'abonnement, une seule fois</p>
+      </article>
+    </div>
+    <div class="amb-pied">
+      <p class="note" data-fr="À partir de 30 filleuls qui ont payé, vous devenez Ambassadeur partenaire : 150 FCFA par Premium Semaine, 400 FCFA par Premium Mois, et un contrat avec SikaGlé. Versement dès 1 000 FCFA de gains." data-en="From 30 paying referrals, you become a Partner Ambassador: 150 FCFA per Premium Week, 400 FCFA per Premium Month, and a contract with SikaGlé. Payout from 1,000 FCFA in earnings.">À partir de 30 filleuls qui ont payé, vous devenez Ambassadeur partenaire : 150 FCFA par Premium Semaine, 400 FCFA par Premium Mois, et un contrat avec SikaGlé. Versement dès 1 000 FCFA de gains.</p>
+      <a class="btn vert" href="https://wa.me/22966024902?text=PARRAINAGE" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cadeau"/></svg><span data-fr="Recevoir mon lien de parrainage" data-en="Get my referral link">Recevoir mon lien de parrainage</span></a>
+      <a class="lien-fort" href="/programme-ambassadeurs.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-document"/></svg><span data-fr="Lire le programme complet (PDF, 2 pages)" data-en="Read the full programme (PDF, 2 pages, in French)">Lire le programme complet (PDF, 2 pages)</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="orgs" id="organisations" aria-labelledby="titre-orgs">
   <div class="wrap">
     <div class="tete">
@@ -727,6 +770,7 @@
       <a href="/confidentialite" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
       <a href="/conditions" data-fr="Conditions d'utilisation" data-en="Terms of use">Conditions d'utilisation</a>
       <a href="/agronomes" data-fr="Devenir agronome partenaire" data-en="Become a partner agronomist">Devenir agronome partenaire</a>
+      <a href="#ambassadeurs" data-fr="Devenir ambassadeur" data-en="Become an ambassador">Devenir ambassadeur</a>
       <a href="mailto:contact@sikagle.com">contact@sikagle.com</a>
     </div>
   </div>
@@ -796,8 +840,6 @@
         rep: { fr: 'Envoyez-moi une photo de la plante malade, en plein jour et de près, avec les feuilles bien visibles.', en: 'Send me a photo of the sick plant, in daylight and up close, with the leaves clearly visible.' } },
       { icone: 'i-meteo', fr: ['Météo de mon champ', 'La météo du jour là où se trouve votre champ'], en: ['Weather on my farm', 'Today\'s weather where your field is'],
         rep: { fr: 'Météo de votre champ aujourd\'hui : 31 °C, ciel nuageux, pluie possible en fin d\'après-midi. Si vous voulez traiter, faites-le ce matin.', en: 'Your field\'s weather today: 31 °C, cloudy, rain possible late afternoon. If you want to spray, do it this morning.' } },
-      { icone: 'i-lieu', fr: ['Ma géolocalisation', 'Partagez la position exacte de votre champ'], en: ['My location', 'Share your field\'s exact position'],
-        rep: { fr: 'Touchez le bouton « Envoyer ma position » quand vous êtes dans votre champ : la météo et les conseils seront plus précis.', en: 'Tap “Send my location” while you are in your field: weather and advice will be more precise.' } },
     ]},
     { fr: 'Parler à quelqu\'un', en: 'Talk to someone', rows: [
       { icone: 'i-agronome', fr: ['Parler à un agronome', 'Un vrai agronome vous rappelle'], en: ['Talk to an agronomist', 'A real agronomist calls you back'],
@@ -812,8 +854,10 @@
         rep: { fr: 'Voulez-vous rejoindre votre coopérative avec son code, ou inscrire une nouvelle coopérative ?', en: 'Do you want to join your cooperative with its code, or register a new cooperative?' } },
       { icone: 'i-compte', fr: ['Mon compte', 'Ma formule et mes messages restants aujourd\'hui'], en: ['My account', 'My plan and messages left today'],
         rep: { fr: 'Formule : Gratuit\nMessages restants aujourd\'hui : 8 sur 10', en: 'Plan: Free\nMessages left today: 8 of 10' } },
-      { icone: 'i-profil', fr: ['Mon profil', 'Mes cultures et ma langue'], en: ['My profile', 'My crops and my language'],
-        rep: { fr: 'Que voulez-vous changer ? Vos cultures (maïs, tomate, piment) ou votre langue (français, anglais ou fon) ?', en: 'What do you want to change? Your crops (maize, tomato, chilli) or your language (French, English or Fon)?' } },
+      { icone: 'i-cadeau', fr: ['Parrainage', 'Gagnez de l\'argent en recommandant SikaGlé'], en: ['Referral', 'Earn money by recommending SikaGlé'],
+        rep: { fr: 'Votre code de parrainage : SIKA-7F3A2\nTransférez votre lien aux producteurs que vous connaissez : vous gagnez de l\'argent chaque fois qu\'un filleul prend un abonnement.', en: 'Your referral code: SIKA-7F3A2\nForward your link to farmers you know: you earn money every time someone you referred takes a subscription.' } },
+      { icone: 'i-profil', fr: ['Mon profil', 'Mes cultures, ma langue et ma position'], en: ['My profile', 'My crops, my language and my location'],
+        rep: { fr: 'Que voulez-vous changer ? Vos cultures, votre langue, ou la position de votre champ pour une météo plus précise ?', en: 'What do you want to change? Your crops, your language, or your field\'s location for more precise weather?' } },
     ]},
   ];
 
